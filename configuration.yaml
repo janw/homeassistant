@@ -124,9 +124,23 @@ history:
     entities:
       - sensor.yr_pressure
       - sensor.yr_cloudiness
+      - sensor.time
+  include:
+    domains:
+      - sensor
+      - switch
+      - sun
+
+recorder:
+
 
 # View all events in a logbook
 logbook:
+  exclude:
+    entities:
+      - sensor.time
+    domains:
+      - group
 
 # Track the sun
 sun:
