@@ -26,7 +26,7 @@ DEPENDENCIES = []
 
 DEFAULT_COMMAND = 'ssh -i /home/willhaus/.ssh/id_rsa pi@weatherpi ws500 | tail -n1'
 
-MIN_TIME_BETWEEN_UPDATES = timedelta(seconds=120)
+MIN_TIME_BETWEEN_UPDATES = timedelta(seconds=60)
 
 SENSOR_TYPES = {
     'temperature0': ['Temperature 0', '°C', 0],
@@ -104,10 +104,20 @@ class Ws500Sensor(Entity):
         else:
             return STATE_UNKNOWN
 
-    @property
-    def should_poll(self):  # pylint: disable=no-self-use
-        """No polling needed."""
-        return False
+
+    def update(self):
+        """Get the latest data and updates the state."""
+        self.data.update()
+        #value = self.data.data
+
+        #if value is None:
+        #    value = STATE_UNKNOWN
+        #elif self._value_template is not None:
+        #    self._state = self._value_template.render_with_possible_json_value(
+        #        value, STATE_UNKNOWN)
+        #else:
+        #    self._state = value
+
 
     @property
     def device_state_attributes(self):
@@ -132,7 +142,7 @@ class Ws500SensorData(object):
     @Throttle(MIN_TIME_BETWEEN_UPDATES)
     def update(self):
         """Get the latest data with a shell command."""
-        _LOGGER.info('Running command: %s', self.command)
+        _LOGGER.info('Updating data from WS500')
 
         try:
             return_value = subprocess.check_output(self.command, shell=True,
