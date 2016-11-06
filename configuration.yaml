@@ -14,8 +14,6 @@ homeassistant:
   customize:
     sensor.ping_google:
       icon: mdi:google
-    sensor.ping_github:
-      icon: mdi:github-circle
     sensor.ping_1und1:
       icon: mdi:web
     sensor.yr_temperature:
@@ -194,11 +192,6 @@ sensor:
     unit_of_measurement: ms
 
   - platform: command_line
-    name: Ping GitHub
-    command: ping -qc 3 github.com | tail -1| awk '{print $4}' | cut -d '/' -f 2
-    unit_of_measurement: ms
-
-  - platform: command_line
     name: Ping 1und1
     command: ping -qc 3 1und1.de | tail -1| awk '{print $4}' | cut -d '/' -f 2
     unit_of_measurement: ms
@@ -253,7 +246,6 @@ group:
       - sensor.speedtest_upload
       - sensor.speedtest_ping
       - sensor.ping_google
-      - sensor.ping_github
       - sensor.ping_1und1
 
 # === Views ===
