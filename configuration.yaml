@@ -1,0 +1,239 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Junkerburg
+  # Location required to calculate the time the sun rises and sets
+  latitude: ***REMOVED***
+  longitude: ***REMOVED***
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 5
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Berlin
+
+  customize:
+    sensor.ping_google:
+      icon: mdi:google
+    sensor.ping_github:
+      icon: mdi:github-circle
+    sensor.ping_1und1:
+      icon: mdi:web
+    sensor.yr_temperature:
+      friendly_name: Temperature
+    sensor.ws500_temperature_0:
+      friendly_name: Temperature
+    sensor.ws500_temperature_1:
+      friendly_name: Temperature
+    sensor.ws500_temperature_2:
+      friendly_name: Temperature
+    sensor.ws500_temperature_3:
+      friendly_name: Temperature
+    sensor.ws500_humidity_0:
+      friendly_name: Humidity
+      icon: mdi:water-percent
+    sensor.ws500_humidity_1:
+      friendly_name: Humidity
+      icon: mdi:water-percent
+    sensor.ws500_humidity_2:
+      friendly_name: Humidity
+      icon: mdi:water-percent
+    sensor.ws500_humidity_3:
+      friendly_name: Humidity
+      icon: mdi:water-percent
+    sensor.yr_humidity:
+      friendly_name: Humidity
+      icon: mdi:water-percent
+    sensor.fastcom_download:
+      friendly_name: Fast.com Down
+    sensor.speedtest_download:
+      friendly_name: Speedtest Down
+    sensor.speedtest_upload:
+      friendly_name: Speedtest Up
+    sensor.speedtest_ping:
+      friendly_name: Ping Speedtest
+      icon: mdi:speedometer
+    light.schlazi_decke:
+      friendly_name: Ceiling
+    light.arbeitszimmer:
+      friendly_name: Ceiling
+    light.couchtisch_l:
+      friendly_name: Coffee Table
+    light.esstisch:
+      friendly_name: Dinner Table
+
+# Show links to resources in log and frontend
+#introduction:
+#
+# Checks for available updates
+updater:
+  reporting: False
+
+# Enables the frontend
+frontend:
+
+http:
+  # Uncomment this to add a password (recommended!)
+  api_password: !secret http_password
+  ssl_certificate: /home/willhaus/.homeassistant/homeassistant.crt
+  ssl_key: /home/willhaus/.homeassistant/homeassistant.key
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time.
+history:
+  exclude:
+    entities:
+      - sensor.yr_pressure
+      - sensor.yr_cloudiness
+
+# View all events in a logbook
+logbook:
+
+# Track the sun
+sun:
+
+
+# Weather Prediction
+sensor:
+
+  - platform: ws500
+    monitored_conditions:
+      - temperature0
+      - temperature1
+      - temperature2
+      - temperature3
+      - humidity0
+      - humidity1
+      - humidity2
+      - humidity3
+
+  - platform: yr
+    monitored_conditions:
+      - temperature
+      - humidity
+
+  - platform: speedtest
+    monitored_conditions:
+     - ping
+     - download
+     - upload
+    minute:
+      - 0
+      - 7
+      - 12
+      - 17
+      - 22
+      - 27
+      - 32
+      - 37
+      - 42
+      - 47
+      - 52
+      - 57
+
+  - platform: fastdotcom
+    minute:
+      - 0
+      - 5
+      - 10
+      - 15
+      - 20
+      - 25
+      - 30
+      - 35
+      - 40
+      - 45
+      - 50
+      - 55
+
+  - platform: command_line
+    name: Ping Google
+    command: ping -qc 3 google.com | tail -1| awk '{print $4}' | cut -d '/' -f 2
+    value_template: "{{ value | float }}"
+    unit_of_measurement: ms
+
+  - platform: command_line
+    name: Ping GitHub
+    command: ping -qc 3 github.com | tail -1| awk '{print $4}' | cut -d '/' -f 2
+    unit_of_measurement: ms
+
+  - platform: command_line
+    name: Ping 1und1
+    command: ping -qc 3 1und1.de | tail -1| awk '{print $4}' | cut -d '/' -f 2
+    unit_of_measurement: ms
+
+  - platform: time_date
+    display_options:
+      - 'time'
+
+light:
+  platform: hue
+  host: 10.10.4.99
+
+# Run speedtests
+
+group:
+  Living room:
+    entities:
+      - sensor.ws500_temperature_3
+      - sensor.ws500_humidity_3
+      - light.couchtisch_l
+      - light.duder
+      - light.esstisch
+
+  Bedroom:
+    entities:
+      - sensor.ws500_temperature_1
+      - sensor.ws500_humidity_1
+      - light.schlazi_decke
+
+  Bathroom:
+    entities:
+      - sensor.ws500_temperature_2
+      - sensor.ws500_humidity_2
+
+  Office:
+    entities:
+      - sensor.ws500_temperature_0
+      - sensor.ws500_humidity_0
+      - light.arbeitszimmer
+
+  Weather:
+    entities:
+      - sensor.time
+      - sun.sun
+      - sensor.yr_temperature
+      - sensor.yr_humidity
+
+  Connectivity:
+    entities:
+      - sensor.fastcom_download
+      - sensor.speedtest_download
+      - sensor.speedtest_upload
+      - sensor.speedtest_ping
+      - sensor.ping_google
+      - sensor.ping_github
+      - sensor.ping_1und1
+
+# === Views ===
+
+  Home:
+    name: Home
+    icon: mdi:home
+    view: yes
+    entities:
+        - group.living_room
+        - group.bedroom
+        - group.office
+        - group.bathroom
+
+  Outside:
+    view: yes
+    entities:
+      - group.connectivity
+      - group.weather
+
