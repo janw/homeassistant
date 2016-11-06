@@ -81,7 +81,44 @@ http:
 discovery:
 
 # Allows you to issue voice commands from the frontend in enabled browsers
-conversation:
+#conversation:
+#
+notify:
+#  - name: pushbullet
+#    platform: pushbullet
+#    api_key: !secret pushbullet_api_token
+
+  - name: instapush
+    platform: instapush
+    api_key: !secret instapush_api_key
+    app_secret: !secret instapush_app_secret
+    event: general
+    tracker: message
+
+automation:
+  - alias: bedroomHumidity
+    trigger:
+      platform: numeric_state
+      entity_id: sensor.ws500_humidity_1
+      above: 70
+    action:
+      service: notify.instapush
+      data_template:
+        title: "Bedroom"
+        message: "Humidity has reached {{ states.sensor.ws500_humidity_1.state }} %"
+
+  - alias: livingroomHumidity
+    trigger:
+      platform: numeric_state
+      entity_id: sensor.ws500_humidity_3
+      above: 70
+    action:
+      service: notify.instapush
+      data_template:
+        title: "Living Room"
+        message: "Humidity has reached {{ states.sensor.ws500_humidity_3.state }} %"
+
+
 
 # Enables support for tracking state changes over time.
 history:
