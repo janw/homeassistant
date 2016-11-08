@@ -240,13 +240,14 @@ sensor:
 
   - platform: command_line
     name: Ping Google
-    command: ping -qc 3 google.com | tail -1| awk '{print $4}' | cut -d '/' -f 2
+    command: ping -qc 3 google.de | tail -1 | cut -d '/' -f 5
     value_template: "{{ value | float }}"
     unit_of_measurement: ms
 
   - platform: command_line
     name: Ping 1und1
-    command: ping -qc 3 1und1.de | tail -1| awk '{print $4}' | cut -d '/' -f 2
+    command: ping -qc 3 1und1.de | tail -1 | cut -d '/' -f 5
+    value_template: "{{ value | float }}"
     unit_of_measurement: ms
 
   - platform: time_date
