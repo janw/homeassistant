@@ -1,0 +1,17 @@
+
+b66bcbbd71454aaca21f9c0b16c9acde:
+  hide_if_away: false
+  mac: !secret jan_iphone_mac
+  name: Jans iPhone
+  icon: mdi:cellphone-iphone
+  gravatar: mail@janwillhaus.de
+  track: true
+
+miriams_iphone:
+  hide_if_away: false
+  mac: !secret miriam_iphone_mac
+  name: Miriams iPhone
+  icon: mdi:cellphone-iphone
+  picture:
+  track: true
+

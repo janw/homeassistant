@@ -157,6 +157,11 @@ sun:
 device_tracker:
   - platform: locative
 
+  - platform: unifi
+    username: !secret unifi_username
+    password: !secret unifi_password
+    host: 10.10.9.8
+
 pilight:
   host: 10.10.5.40
   port: 5000
@@ -303,6 +308,11 @@ group:
       - sensor.speedtest_ping
       - sensor.ping_google
       - sensor.ping_1und1
+
+  Presence:
+    entities:
+      - device_tracker.jans_iphone
+      - device_tracker.miriams_iphone
 
 # === Views ===
 
