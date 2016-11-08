@@ -128,11 +128,17 @@ history:
       - sensor.yr_pressure
       - sensor.yr_cloudiness
       - sensor.time
-  include:
+      - group.weather
+      - group.connectivity
+      - group.bathroom
+      - group.all_automations
+      - group.outside
+
     domains:
-      - sensor
-      - switch
-      - sun
+      - automation
+      - updater
+      - http
+      - persistent_notification
 
 recorder:
 
