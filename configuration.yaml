@@ -16,6 +16,8 @@ homeassistant:
       icon: mdi:google
     sensor.ping_1und1:
       icon: mdi:web
+    sensor.ping_ubnt:
+      icon: mdi:access-point-network
     sensor.yr_temperature:
       friendly_name: Temperature Outside
     sensor.ws500_temperature_0:
@@ -254,6 +256,13 @@ sensor:
     command: ping -qc 3 1und1.de | tail -1 | cut -d '/' -f 5
     value_template: "{{ value | float }}"
     unit_of_measurement: ms
+
+  - platform: command_line
+    name: Ping Ubnt
+    command: ping -qc 3 10.10.8.1 | tail -1 | cut -d '/' -f 5
+    value_template: "{{ value | float }}"
+    unit_of_measurement: ms
+
 
   - platform: time_date
     display_options:
