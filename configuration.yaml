@@ -92,4 +92,6 @@ scene: !include scene.yaml
 switch: !include switch.yaml
 sensor: !include sensor.yaml
 notify: !include notify.yaml
+script: !include_dir_merge_list script
 automation: !include_dir_merge_list automation
+input_select: !include input_select.yaml

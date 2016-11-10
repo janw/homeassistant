@@ -1,0 +1,14 @@
+
+sleep_timer:
+  alias: 'Sleep'
+  sequence:
+    - delay:
+        minutes: '{{ states.input_elect.sleep_minutes.state | int }}'
+    - service: switch.turn_off
+      data:
+        entity_id:
+          - group.all_switches
+    - service: light.turn_off
+      data:
+        entity_id:
+          - group.all_lights

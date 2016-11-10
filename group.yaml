@@ -5,6 +5,8 @@ Scenes:
     - scene.romantic
     - scene.bright
     - scene.all_off
+    - input_select.sleep_minutes
+    - script.sleep_timer
 
 Living room:
   entities:

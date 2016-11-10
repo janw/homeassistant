@@ -1,0 +1,12 @@
+# Collection of input select elements
+
+input_select:
+  sleep_minutes:
+    name: Sleep Timer Minutes
+    options:
+     - 10
+     - 20
+     - 30
+     - 60
+    initial: 30
+    icon: mdi:clock-end
