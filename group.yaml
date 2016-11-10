@@ -1,5 +1,11 @@
 # Rooms as groups
 
+Scenes:
+  entities:
+    - scene.romantic
+    - scene.bright
+    - scene.all_off
+
 Living room:
   entities:
     - sensor.ws500_temperature_3
@@ -58,6 +64,7 @@ Home:
   icon: mdi:home
   view: yes
   entities:
+      - group.scenes
       - group.living_room
       - group.bedroom
       - group.office

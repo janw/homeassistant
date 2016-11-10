@@ -88,6 +88,7 @@ light:
 
 # Include other config files
 group: !include group.yaml
+scene: !include scene.yaml
 switch: !include switch.yaml
 sensor: !include sensor.yaml
 notify: !include notify.yaml

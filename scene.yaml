@@ -1,0 +1,29 @@
+# Scenes
+
+- name: Romantic
+  entities:
+    light.couchtisch_l: off
+    light.duder:
+      state: on
+      rgb_color: [255,100,100]
+      brightness: 100
+    switch.color_balls: on
+    switch.curtain_balls: on
+
+- name: Bright
+  entities:
+    light.couchtisch_l:
+      state: on
+      color_temp: 353
+      brightness: 254
+    light.duder:
+      state: on
+      brightness: 200
+     light.esstisch
+    switch.color_balls: off
+    switch.curtain_balls: off
+
+- name: All Off
+  entities:
+      group.all_lights: off
+      group.all_switches: off
