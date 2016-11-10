@@ -1,0 +1,7 @@
+__pycache__
+secrets.yaml
+deps/
+*.db
+homeassistant.key
+homeassistant.crt
+*.log
