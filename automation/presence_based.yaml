@@ -1,0 +1,23 @@
+# Presence-based automations
+
+  - alias: Coming Home
+    trigger:
+      platform: state
+      entity_id: group.presence
+      from: 'not_home'
+      to: 'home'
+    action:
+      - service: homeassistant.turn_on
+        entity_id: light.couchtisch_l
+
+  - alias: Leaving Home
+    trigger:
+      platform: state
+      entity_id: group.presence
+      from: 'home'
+      to: 'not_home'
+    action:
+      - service: homeassistant.turn_off
+        entity_id:
+          - group.all_lights
+          - group.all_switches

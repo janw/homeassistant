@@ -1,0 +1,22 @@
+# Automations that mainly send user-directed notifications
+  - alias: Bedroom Humidity
+    trigger:
+      platform: numeric_state
+      entity_id: sensor.ws500_humidity_1
+      above: 70
+    action:
+      service: notify.instapush
+      data_template:
+        title: "Bedroom"
+        message: "Humidity has reached {{ states.sensor.ws500_humidity_1.state }} %"
+
+  - alias: Living Room Humidity
+    trigger:
+      platform: numeric_state
+      entity_id: sensor.ws500_humidity_3
+      above: 70
+    action:
+      service: notify.instapush
+      data_template:
+        title: "Living Room"
+        message: "Humidity has reached {{ states.sensor.ws500_humidity_3.state }} %"

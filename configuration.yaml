@@ -1,72 +1,14 @@
 homeassistant:
-  # Name of the location where Home Assistant is running
-  name: Junkerburg
-  # Location required to calculate the time the sun rises and sets
-  latitude: ***REMOVED***
-  longitude: ***REMOVED***
-  # Impacts weather/sunrise data (altitude above sea level in meters)
+  name: Home
+  latitude: !secret home_lat
+  longitude: !secret home_lon
   elevation: 5
-  # metric for Metric, imperial for Imperial
   unit_system: metric
-  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: Europe/Berlin
+  # Include customizations
+  customize: !include customize.yaml
 
-  customize:
-    sensor.ping_google:
-      icon: mdi:google
-    sensor.ping_1und1:
-      icon: mdi:web
-    sensor.ping_ubnt:
-      icon: mdi:access-point-network
-    sensor.yr_temperature:
-      friendly_name: Temperature Outside
-    sensor.ws500_temperature_0:
-      friendly_name: Temperature Office
-    sensor.ws500_temperature_1:
-      friendly_name: Temperature Bedroom
-    sensor.ws500_temperature_2:
-      friendly_name: Temperature Bathroom
-    sensor.ws500_temperature_3:
-      friendly_name: Temperature Living Room
-    sensor.ws500_humidity_0:
-      friendly_name: Humidity Office
-      icon: mdi:water-percent
-    sensor.ws500_humidity_1:
-      friendly_name: Humidity Bedroom
-      icon: mdi:water-percent
-    sensor.ws500_humidity_2:
-      friendly_name: Humidity Bathroom
-      icon: mdi:water-percent
-    sensor.ws500_humidity_3:
-      friendly_name: Humidity Living Room
-      icon: mdi:water-percent
-    sensor.yr_humidity:
-      friendly_name: Humidity Outside
-      icon: mdi:water-percent
-    sensor.fastcom_download:
-      icon: mdi:download
-      friendly_name: Fast.com Down
-    sensor.speedtest_download:
-      icon: mdi:download
-      friendly_name: Speedtest Down
-    sensor.speedtest_upload:
-      icon: mdi:upload
-      friendly_name: Speedtest Up
-    sensor.speedtest_ping:
-      friendly_name: Ping Speedtest
-      icon: mdi:speedometer
-    light.schlazi_decke:
-      friendly_name: Ceiling Bedroom
-    light.arbeitszimmer:
-      friendly_name: Ceiling Office
-    light.couchtisch_l:
-      friendly_name: Coffee Table
-    light.esstisch:
-      friendly_name: Dinner Table
 
-# Show links to resources in log and frontend
-#introduction:
-#
 # Checks for available updates
 updater:
   reporting: False
@@ -86,62 +28,7 @@ discovery:
 # Allows you to issue voice commands from the frontend in enabled browsers
 #conversation:
 #
-notify:
-#  - name: pushbullet
-#    platform: pushbullet
-#    api_key: !secret pushbullet_api_token
 
-  - name: instapush
-    platform: instapush
-    api_key: !secret instapush_api_key
-    app_secret: !secret instapush_app_secret
-    event: general
-    tracker: message
-
-automation:
-  - alias: Bedroom Humidity
-    trigger:
-      platform: numeric_state
-      entity_id: sensor.ws500_humidity_1
-      above: 70
-    action:
-      service: notify.instapush
-      data_template:
-        title: "Bedroom"
-        message: "Humidity has reached {{ states.sensor.ws500_humidity_1.state }} %"
-
-  - alias: Living Room Humidity
-    trigger:
-      platform: numeric_state
-      entity_id: sensor.ws500_humidity_3
-      above: 70
-    action:
-      service: notify.instapush
-      data_template:
-        title: "Living Room"
-        message: "Humidity has reached {{ states.sensor.ws500_humidity_3.state }} %"
-
-  - alias: Coming Home
-    trigger:
-      platform: state
-      entity_id: group.presence
-      from: 'not_home'
-      to: 'home'
-    action:
-      - service: homeassistant.turn_on
-        entity_id: light.couchtisch_l
-
-  - alias: Leaving Home
-    trigger:
-      platform: state
-      entity_id: group.presence
-      from: 'home'
-      to: 'not_home'
-    action:
-      - service: homeassistant.turn_off
-        entity_id:
-          - group.all_lights
-          - group.all_switches
 
 # Enables support for tracking state changes over time.
 history:
@@ -193,174 +80,15 @@ pilight:
     protocol:
       - brennenstuhl
 
-switch:
-  - platform: mypilight
-    switches:
-      Color Balls:
-        on_code:
-          protocol: brennenstuhl
-          systemcode: 31
-          unitcode: 1
-          'on': 1
-        off_code:
-          protocol: brennenstuhl
-          systemcode: 31
-          unitcode: 1
-          'off': 1
-
-      Curtain Balls:
-        on_code:
-          protocol: brennenstuhl
-          systemcode: 31
-          unitcode: 2
-          'on': 1
-        off_code:
-          protocol: brennenstuhl
-          systemcode: 31
-          unitcode: 2
-          'off': 1
-
-# Weather Prediction
-sensor:
-
-  - platform: ws500
-    monitored_conditions:
-      - temperature0
-      - temperature1
-      - temperature2
-      - temperature3
-      - humidity0
-      - humidity1
-      - humidity2
-      - humidity3
-
-  - platform: yr
-    monitored_conditions:
-      - temperature
-      - humidity
-
-  - platform: speedtest
-    monitored_conditions:
-     - ping
-     - download
-     - upload
-    minute:
-      - 3
-      - 13
-      - 23
-      - 33
-      - 43
-      - 53
-
-  - platform: fastdotcom
-    minute:
-      - 0
-      - 5
-      - 10
-      - 15
-      - 20
-      - 25
-      - 30
-      - 35
-      - 40
-      - 45
-      - 50
-      - 55
-
-  - platform: command_line
-    name: Ping Google
-    command: ping -qc 3 google.de | tail -1 | cut -d '/' -f 5
-    value_template: "{{ value | float }}"
-    unit_of_measurement: ms
-
-  - platform: command_line
-    name: Ping 1und1
-    command: ping -qc 3 1und1.de | tail -1 | cut -d '/' -f 5
-    value_template: "{{ value | float }}"
-    unit_of_measurement: ms
-
-  - platform: command_line
-    name: Ping Ubnt
-    command: ping -qc 3 10.10.8.1 | tail -1 | cut -d '/' -f 5
-    value_template: "{{ value | float }}"
-    unit_of_measurement: ms
-
-
-  - platform: time_date
-    display_options:
-      - 'time'
 
 light:
   platform: hue
   host: 10.10.4.99
 
-# Run speedtests
 
-group:
-  Living room:
-    entities:
-      - sensor.ws500_temperature_3
-      - sensor.ws500_humidity_3
-      - light.couchtisch_l
-      - light.duder
-      - light.esstisch
-      - switch.color_balls
-      - switch.curtain_balls
-
-  Bedroom:
-    entities:
-      - sensor.ws500_temperature_1
-      - sensor.ws500_humidity_1
-      - light.schlazi_decke
-
-  Bathroom:
-    entities:
-      - sensor.ws500_temperature_2
-      - sensor.ws500_humidity_2
-
-  Office:
-    entities:
-      - sensor.ws500_temperature_0
-      - sensor.ws500_humidity_0
-      - light.arbeitszimmer
-
-  Weather:
-    entities:
-      - sensor.time
-      - sun.sun
-      - sensor.yr_temperature
-      - sensor.yr_humidity
-
-  Connectivity:
-    entities:
-      - sensor.fastcom_download
-      - sensor.speedtest_download
-      - sensor.speedtest_upload
-      - sensor.speedtest_ping
-      - sensor.ping_google
-      - sensor.ping_1und1
-      - sensor.ping_ubnt
-
-  Presence:
-    entities:
-      - device_tracker.b66bcbbd71454aaca21f9c0b16c9acde
-      - device_tracker.ec510faa8e6545a5aa4941eba0a0bbce
-
-# === Views ===
-
-  Home:
-    name: Home
-    icon: mdi:home
-    view: yes
-    entities:
-        - group.living_room
-        - group.bedroom
-        - group.office
-        - group.bathroom
-
-  Outside:
-    view: yes
-    entities:
-      - group.connectivity
-      - group.weather
-
+# Include other config files
+group: !include group.yaml
+switch: !include switch.yaml
+sensor: !include sensor.yaml
+notify: !include notify.yaml
+automation: !include_dir_merge_list automation

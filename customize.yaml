@@ -1,0 +1,53 @@
+# Customizations of sensor names/icons
+
+sensor.ping_google:
+  icon: mdi:google
+sensor.ping_1und1:
+  icon: mdi:web
+sensor.ping_ubnt:
+  icon: mdi:access-point-network
+sensor.yr_temperature:
+  friendly_name: Temperature Outside
+sensor.ws500_temperature_0:
+  friendly_name: Temperature Office
+sensor.ws500_temperature_1:
+  friendly_name: Temperature Bedroom
+sensor.ws500_temperature_2:
+  friendly_name: Temperature Bathroom
+sensor.ws500_temperature_3:
+  friendly_name: Temperature Living Room
+sensor.ws500_humidity_0:
+  friendly_name: Humidity Office
+  icon: mdi:water-percent
+sensor.ws500_humidity_1:
+  friendly_name: Humidity Bedroom
+  icon: mdi:water-percent
+sensor.ws500_humidity_2:
+  friendly_name: Humidity Bathroom
+  icon: mdi:water-percent
+sensor.ws500_humidity_3:
+  friendly_name: Humidity Living Room
+  icon: mdi:water-percent
+sensor.yr_humidity:
+  friendly_name: Humidity Outside
+  icon: mdi:water-percent
+sensor.fastcom_download:
+  icon: mdi:download
+  friendly_name: Fast.com Down
+sensor.speedtest_download:
+  icon: mdi:download
+  friendly_name: Speedtest Down
+sensor.speedtest_upload:
+  icon: mdi:upload
+  friendly_name: Speedtest Up
+sensor.speedtest_ping:
+  friendly_name: Ping Speedtest
+  icon: mdi:speedometer
+light.schlazi_decke:
+  friendly_name: Ceiling Bedroom
+light.arbeitszimmer:
+  friendly_name: Ceiling Office
+light.couchtisch_l:
+  friendly_name: Coffee Table
+light.esstisch:
+  friendly_name: Dinner Table

@@ -1,0 +1,70 @@
+# Rooms as groups
+
+Living room:
+  entities:
+    - sensor.ws500_temperature_3
+    - sensor.ws500_humidity_3
+    - light.couchtisch_l
+    - light.duder
+    - light.esstisch
+    - switch.color_balls
+    - switch.curtain_balls
+
+Bedroom:
+  entities:
+    - sensor.ws500_temperature_1
+    - sensor.ws500_humidity_1
+    - light.schlazi_decke
+
+Bathroom:
+  entities:
+    - sensor.ws500_temperature_2
+    - sensor.ws500_humidity_2
+
+Office:
+  entities:
+    - sensor.ws500_temperature_0
+    - sensor.ws500_humidity_0
+    - light.arbeitszimmer
+
+# Various panels or convenience collections
+
+Weather:
+  entities:
+    - sensor.time
+    - sun.sun
+    - sensor.yr_temperature
+    - sensor.yr_humidity
+
+Connectivity:
+  entities:
+    - sensor.fastcom_download
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+    - sensor.speedtest_ping
+    - sensor.ping_google
+    - sensor.ping_1und1
+    - sensor.ping_ubnt
+
+Presence:
+  entities:
+    - device_tracker.b66bcbbd71454aaca21f9c0b16c9acde
+    - device_tracker.ec510faa8e6545a5aa4941eba0a0bbce
+
+# Views
+
+Home:
+  name: Home
+  icon: mdi:home
+  view: yes
+  entities:
+      - group.living_room
+      - group.bedroom
+      - group.office
+      - group.bathroom
+
+Outside:
+  view: yes
+  entities:
+    - group.connectivity
+    - group.weather
