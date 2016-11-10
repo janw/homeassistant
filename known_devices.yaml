@@ -1,14 +1,15 @@
 
-b66bcbbd71454aaca21f9c0b16c9acde:
-  name: Jans iPhone
-  mac: null
-  track: yes
 
-miriams_iphone:
+b66bcbbd71454aaca21f9c0b16c9acde:
   hide_if_away: false
-  mac: !secret miriam_iphone_mac
-  name: Miriams iPhone
-  icon: mdi:cellphone-iphone
-  picture:
+  mac: null
+  name: Jans iPhone
+  picture: null
   track: true
 
+ec510faa8e6545a5aa4941eba0a0bbce:
+  hide_if_away: false
+  mac: null
+  name: Miriams iPhone
+  picture: null
+  track: true

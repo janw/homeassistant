@@ -121,7 +121,27 @@ automation:
         title: "Living Room"
         message: "Humidity has reached {{ states.sensor.ws500_humidity_3.state }} %"
 
+  - alias: Coming Home
+    trigger:
+      platform: state
+      entity_id: group.presence
+      from: 'not_home'
+      to: 'home'
+    action:
+      - service: homeassistant.turn_on
+        entity_id: light.couchtisch_l
 
+  - alias: Leaving Home
+    trigger:
+      platform: state
+      entity_id: group.presence
+      from: 'home'
+      to: 'not_home'
+    action:
+      - service: homeassistant.turn_off
+        entity_id:
+          - group.all_lights
+          - group.all_switches
 
 # Enables support for tracking state changes over time.
 history:
@@ -324,7 +344,7 @@ group:
   Presence:
     entities:
       - device_tracker.b66bcbbd71454aaca21f9c0b16c9acde
-      #- device_tracker.miriams_iphone
+      - device_tracker.ec510faa8e6545a5aa4941eba0a0bbce
 
 # === Views ===
 
