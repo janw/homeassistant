@@ -99,7 +99,7 @@ notify:
     tracker: message
 
 automation:
-  - alias: bedroomHumidity
+  - alias: Bedroom Humidity
     trigger:
       platform: numeric_state
       entity_id: sensor.ws500_humidity_1
@@ -110,7 +110,7 @@ automation:
         title: "Bedroom"
         message: "Humidity has reached {{ states.sensor.ws500_humidity_1.state }} %"
 
-  - alias: livingroomHumidity
+  - alias: Living Room Humidity
     trigger:
       platform: numeric_state
       entity_id: sensor.ws500_humidity_3
