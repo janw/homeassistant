@@ -10,8 +10,8 @@ homeassistant:
 
 
 # Checks for available updates
-updater:
-  reporting: False
+#updater:
+#  reporting: False
 
 # Enables the frontend
 frontend:
