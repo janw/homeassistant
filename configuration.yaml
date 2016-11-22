@@ -74,7 +74,7 @@ device_tracker:
 
 
 pilight:
-  host: 10.10.5.40
+  host: 10.10.5.132
   port: 5000
   whitelist:  # optional
     protocol:

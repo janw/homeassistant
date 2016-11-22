@@ -9,24 +9,24 @@ sensor.ping_ubnt:
 sensor.yr_temperature:
   friendly_name: Temperature Outside
 sensor.ws500_temperature_0:
-  friendly_name: Temperature Office
+  friendly_name: Temp Li
 sensor.ws500_temperature_1:
-  friendly_name: Temperature Bedroom
+  friendly_name: Temp Be
 sensor.ws500_temperature_2:
-  friendly_name: Temperature Bathroom
+  friendly_name: Temp Ba
 sensor.ws500_temperature_3:
-  friendly_name: Temperature Living Room
+  friendly_name: Temp Of
 sensor.ws500_humidity_0:
-  friendly_name: Humidity Office
+  friendly_name: Humidity Li
   icon: mdi:water-percent
 sensor.ws500_humidity_1:
-  friendly_name: Humidity Bedroom
+  friendly_name: Humidity Be
   icon: mdi:water-percent
 sensor.ws500_humidity_2:
-  friendly_name: Humidity Bathroom
+  friendly_name: Humidity Ba
   icon: mdi:water-percent
 sensor.ws500_humidity_3:
-  friendly_name: Humidity Living Room
+  friendly_name: Humidity Of
   icon: mdi:water-percent
 sensor.yr_humidity:
   friendly_name: Humidity Outside
@@ -51,3 +51,13 @@ light.couchtisch_l:
   friendly_name: Coffee Table
 light.esstisch:
   friendly_name: Dinner Table
+switch.bedroom_stereo:
+  icon: mdi:speaker
+switch.kitchen_stereo:
+  icon: mdi:speaker
+switch.living_room_stereo:
+  icon: mdi:speaker
+switch.curtain_balls:
+  icon: mdi:lightbulb-outline
+switch.color_balls:
+  icon: mdi:lightbulb-outline

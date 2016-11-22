@@ -1,5 +1,14 @@
 # Rooms as groups
 
+Living Room Scenes:
+  name: Scenes
+  entities:
+    - scene.romantic
+    - scene.bright
+    - scene.movie
+    - scene.pastel_colors
+    - scene.all_off
+
 Scenes:
   entities:
     - scene.romantic
@@ -8,32 +17,28 @@ Scenes:
     - input_select.sleep_minutes
     - script.sleep_timer
 
-Living room:
+Living room lights:
+  name: Lights
   entities:
-    - sensor.ws500_temperature_3
-    - sensor.ws500_humidity_3
     - light.couchtisch_l
-    - light.duder
+    - light.dudero
     - light.esstisch
     - switch.color_balls
     - switch.curtain_balls
 
-Bedroom:
+Living room electronics:
+  name: Electronics
   entities:
-    - sensor.ws500_temperature_1
-    - sensor.ws500_humidity_1
-    - light.schlazi_decke
+    - switch.living_room_stereo
 
 Bathroom:
   entities:
     - sensor.ws500_temperature_2
     - sensor.ws500_humidity_2
 
-Office:
+Kitchen:
   entities:
-    - sensor.ws500_temperature_0
-    - sensor.ws500_humidity_0
-    - light.arbeitszimmer
+    - switch.kitchen_stereo
 
 # Various panels or convenience collections
 
@@ -61,19 +66,38 @@ Presence:
 
 # Views
 
-Home:
-  name: Home
-  icon: mdi:home
+Living Room:
+  icon: mdi:sofa
   view: yes
   entities:
-      - group.scenes
-      - group.living_room
-      - group.bedroom
-      - group.office
-      - group.bathroom
+      - sensor.ws500_temperature_0
+      - sensor.ws500_humidity_0
+      - group.living_room_scenes
+      - group.living_room_lights
+      - group.living_room_electronics
+
+Bedroom:
+  view: yes
+  icon: mdi:hotel
+  entities:
+    - sensor.ws500_temperature_1
+    - sensor.ws500_humidity_1
+    - light.schlazi_decke
+    - switch.bedroom_stereo
+
+Office:
+  view: yes
+  icon: mdi:git
+  entities:
+    - sensor.ws500_temperature_3
+    - sensor.ws500_humidity_3
+    - light.arbeitszimmer
 
 Outside:
+  name: Outside
   view: yes
+  icon: mdi:earth
   entities:
     - group.connectivity
     - group.weather
+    - group.presence

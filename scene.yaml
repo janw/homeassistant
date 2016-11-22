@@ -3,10 +3,11 @@
 - name: Romantic
   entities:
     light.couchtisch_l: off
-    light.duder:
+    light.dudero:
       state: on
       rgb_color: [255,100,100]
       brightness: 100
+    light.esstisch: off
     switch.color_balls: on
     switch.curtain_balls: on
 
@@ -16,11 +17,38 @@
       state: on
       color_temp: 353
       brightness: 254
-    light.duder:
+    light.dudero:
       state: on
-      brightness: 200
-     light.esstisch
+      color_temp: 353
+      brightness: 254
+    light.esstisch:
+      state: on
+      brightness: 254
     switch.color_balls: off
+    switch.curtain_balls: off
+
+- name: Pastel Colors
+  entities:
+    light.couchtisch_l:
+        state: on
+        rgb_color: [253,191,249]
+        brightness: 164
+    light.dudero:
+        state: on
+        rgb_color: [255,194,212]
+        brightness: 169
+    light.esstisch: off
+    switch.curtain_balls: off
+    switch.color_balls: on
+
+
+- name: Movie
+  entities:
+    light.couchtisch_l: off
+    light.dudero: off
+    light.esstisch: off
+    switch.living_room_stereo: on
+    switch.color_balls: on
     switch.curtain_balls: off
 
 - name: All Off
