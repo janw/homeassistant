@@ -44,7 +44,6 @@ Kitchen:
 
 Weather:
   entities:
-    - sensor.time
     - sun.sun
     - sensor.yr_temperature
     - sensor.yr_humidity

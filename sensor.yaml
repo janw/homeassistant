@@ -62,7 +62,3 @@
     value_template: "{{ value | float }}"
     unit_of_measurement: ms
 
-
-  - platform: time_date
-    display_options:
-      - 'time'
