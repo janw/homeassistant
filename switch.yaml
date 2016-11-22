@@ -64,9 +64,9 @@
         unitcode: 5
         'off': 1
 
-- platform: command_line
-  switches:
-    relais11: 
-      command_on: ssh pi@relaispi1 gpio write 0 0
-      command_off: ssh pi@relaispi1 gpio write 0 1
+        #- platform: command_line
+  #  switches:
+  #  relais11:
+  #    command_on: ssh pi@relaispi1 gpio write 0 0
+  #    command_off: ssh pi@relaispi1 gpio write 0 1
 

@@ -22,27 +22,13 @@
      - download
      - upload
     minute:
-      - 3
-      - 13
-      - 23
-      - 33
-      - 43
-      - 53
+      - 15
+      - 45
 
   - platform: fastdotcom
     minute:
       - 0
-      - 5
-      - 10
-      - 15
-      - 20
-      - 25
       - 30
-      - 35
-      - 40
-      - 45
-      - 50
-      - 55
 
   - platform: command_line
     name: Ping Google
