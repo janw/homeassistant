@@ -1,0 +1,11 @@
+
+alias: "Turn on lamp timer"
+sequence:
+    # Cancel ev. old timers
+  - service: script.turn_off
+    data:
+      entity_id: script.timer_off
+    # Set new timer
+  - service: script.turn_on
+    data:
+      entity_id: script.timer_off

@@ -3,6 +3,7 @@
 sleep_minutes:
   name: Sleep Timer Minutes
   options:
+   - 1
    - 10
    - 20
    - 30

@@ -15,7 +15,7 @@ Scenes:
     - scene.bright
     - scene.all_off
     - input_select.sleep_minutes
-    - script.sleep_timer
+    - script.sleep_timer_all_off
 
 Living room lights:
   name: Lights

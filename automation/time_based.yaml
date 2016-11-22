@@ -1,0 +1,11 @@
+# Time-based automations
+
+- alias: Turn off bedroom light after a certain time
+  trigger:
+    platform: state
+    entity_id: light.schlazi_decke
+    to: 'on'
+  action:
+    service: script.turn_on
+    entity_id: script.timed_lamp
+
