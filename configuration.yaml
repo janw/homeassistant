@@ -19,8 +19,7 @@ frontend:
 http:
   # Uncomment this to add a password (recommended!)
   api_password: !secret http_password
-  ssl_certificate: /home/willhaus/.homeassistant/homeassistant.crt
-  ssl_key: /home/willhaus/.homeassistant/homeassistant.key
+  server_host: 127.0.0.1
 
 # Discover some devices automatically
 discovery:
