@@ -49,7 +49,7 @@ history:
       - persistent_notification
 
 recorder:
-
+    db_url: !secret db_url
 
 # View all events in a logbook
 logbook:
@@ -95,4 +95,3 @@ script: !include_dir_named script
 automation: !include_dir_merge_list automation
 media_player: !include media_player.yaml
 input_select: !include input_select.yaml
-input_boolean: !include input_boolean.yaml
