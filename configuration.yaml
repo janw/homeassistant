@@ -24,6 +24,7 @@ http:
 # Discover some devices automatically
 #discovery:
 
+mqtt:
 
 # Enables support for tracking state changes over time.
 history:

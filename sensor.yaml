@@ -42,6 +42,28 @@
     value_template: "{{ value | float }}"
     unit_of_measurement: ms
 
+  - platform: mqtt
+    state_topic: 'home/bedroom'
+    name: 'Temperature MQTT Be'
+    unit_of_measurement: '°C'
+    value_template: '{{ value_json.temperature }}'
+  - platform: mqtt
+    state_topic: 'home/bedroom'
+    name: 'Humidity MQTT Be'
+    unit_of_measurement: '%'
+    value_template: '{{ value_json.humidity }}'
+
+  - platform: mqtt
+    state_topic: 'home/bathroom'
+    name: 'Temperature MQTT Ba'
+    unit_of_measurement: '°C'
+    value_template: '{{ value_json.temperature }}'
+  - platform: mqtt
+    state_topic: 'home/bathroom'
+    name: 'Humidity MQTT Ba'
+    unit_of_measurement: '%'
+    value_template: '{{ value_json.humidity }}'
+
   - platform: command_line
     name: Ping Ubnt
     command: ping -qc 3 10.10.8.1 | tail -1 | cut -d '/' -f 5
