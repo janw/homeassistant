@@ -22,11 +22,7 @@ http:
   server_host: 127.0.0.1
 
 # Discover some devices automatically
-discovery:
-
-# Allows you to issue voice commands from the frontend in enabled browsers
-#conversation:
-#
+#discovery:
 
 
 # Enables support for tracking state changes over time.
