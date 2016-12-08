@@ -1,13 +1,15 @@
 # Rooms as groups
 
 Living Room Scenes:
-  name: Scenes
+  name: Living Room
   entities:
     - scene.romantic
     - scene.bright
     - scene.movie
     - scene.pastel_colors
     - scene.all_off
+    - input_select.sleep_minutes
+    - script.sleep_timer_all_off
 
 Scenes:
   entities:
@@ -27,18 +29,39 @@ Living room lights:
     - switch.curtain_balls
 
 Living room electronics:
-  name: Electronics
+  name: Entertainment
   entities:
     - switch.living_room_stereo
+    - sensor.sonarr_upcoming
 
-Bathroom:
+Living room climate:
+  name: Climate
+  entities:
+      - sensor.ws500_temperature_0
+      - sensor.ws500_humidity_0
+
+Bedroom climate:
+  name: Climate
+  entities:
+    - sensor.ws500_temperature_1
+    - sensor.ws500_humidity_1
+
+Bathroom climate:
   entities:
     - sensor.ws500_temperature_2
     - sensor.ws500_humidity_2
+    - sensor.temperature_mqtt_ba
+    - sensor.humidity_mqtt_ba
 
 Kitchen:
   entities:
     - switch.kitchen_stereo
+
+Office:
+  entities:
+    - sensor.ws500_temperature_3
+    - sensor.ws500_humidity_3
+    - light.arbeitszimmer
 
 # Various panels or convenience collections
 
@@ -64,33 +87,30 @@ Presence:
     - device_tracker.ec510faa8e6545a5aa4941eba0a0bbce
 
 # Views
-
+#
 Living Room:
-  icon: mdi:sofa
+  name: Living Room
   view: yes
   entities:
-      - sensor.ws500_temperature_0
-      - sensor.ws500_humidity_0
+      - group.living_room_climate
       - group.living_room_scenes
       - group.living_room_lights
       - group.living_room_electronics
 
 Bedroom:
   view: yes
-  icon: mdi:hotel
   entities:
-    - sensor.ws500_temperature_1
-    - sensor.ws500_humidity_1
+    - group.bedroom_climate
     - light.schlazi_decke
     - switch.bedroom_stereo
 
-Office:
+
+Other Rooms:
   view: yes
-  icon: mdi:git
   entities:
-    - sensor.ws500_temperature_3
-    - sensor.ws500_humidity_3
-    - light.arbeitszimmer
+    - group.bathroom
+    - group.kitchen
+    - group.office
 
 Outside:
   name: Outside
@@ -100,3 +120,10 @@ Outside:
     - group.connectivity
     - group.weather
     - group.presence
+
+Misc:
+  view: yes
+  icon: mdi:apple-keyboard-command
+  entities:
+    - group.all_scripts
+    - group.all_automations
