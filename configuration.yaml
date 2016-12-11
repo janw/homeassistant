@@ -30,8 +30,6 @@ mqtt:
 history:
   exclude:
     entities:
-      - sensor.yr_pressure
-      - sensor.yr_cloudiness
       - sensor.time
       - group.weather
       - group.connectivity
