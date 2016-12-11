@@ -55,3 +55,23 @@
   entities:
       group.all_lights: off
       group.all_switches: off
+
+- name: Bedroom Off
+  entities:
+      group.bedroom: off
+
+- name: Kitchen Off
+  entities:
+      group.kitchen: off
+
+- name: Living Room Off
+  entities:
+      group.living_room: off
+
+- name: Bathroom Off
+  entities:
+      group.bathroom: off
+
+
+
+

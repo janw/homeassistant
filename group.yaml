@@ -119,7 +119,7 @@ Bedroom:
 Other Rooms:
   view: yes
   entities:
-    - group.bathroom
+    - group.bathroom_climate
     - group.kitchen
     - group.office
 
