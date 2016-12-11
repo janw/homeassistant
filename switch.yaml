@@ -51,7 +51,7 @@
         systemcode: 30
         unitcode: 4
         'off': 1
-    
+
     Bedroom Stereo:
       on_code:
         protocol: brennenstuhl
