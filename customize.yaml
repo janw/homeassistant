@@ -15,7 +15,7 @@ sensor.ws500_temperature_1:
 sensor.ws500_temperature_2:
   friendly_name: Temp Ba
 sensor.ws500_temperature_3:
-  friendly_name: Temp Of
+  friendly_name: Temp Ki
 sensor.ws500_humidity_0:
   friendly_name: Humidity Li
   icon: mdi:water-percent
@@ -26,7 +26,7 @@ sensor.ws500_humidity_2:
   friendly_name: Humidity Ba
   icon: mdi:water-percent
 sensor.ws500_humidity_3:
-  friendly_name: Humidity Of
+  friendly_name: Humidity Ki
   icon: mdi:water-percent
 sensor.yr_humidity:
   friendly_name: Humidity Outside
