@@ -41,8 +41,8 @@ Living room electronics:
 Living room climate:
   name: Climate
   entities:
-      - sensor.ws500_temperature_0
-      - sensor.ws500_humidity_0
+      - sensor.living_room_temperature
+      - sensor.living_room_humidity
 
 Living room plants:
   name: Plants
@@ -57,6 +57,8 @@ Bedroom climate:
   entities:
     - sensor.ws500_temperature_1
     - sensor.ws500_humidity_1
+    - sensor.temperature_mqtt_be
+    - sensor.humidity_mqtt_be
 
 Bathroom climate:
   entities:

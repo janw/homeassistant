@@ -112,3 +112,15 @@
     unit_of_measurement: 'lx'
     value_template: '{{ value_json.light }}'
 
+  - platform: mqtt
+    state_topic: 'home/livingroom'
+    name: 'Living Room Humidity'
+    unit_of_measurement: '%'
+    value_template: '{{ value_json.humidity }}'
+
+  - platform: mqtt
+    state_topic: 'home/livingroom'
+    name: 'Living Room Temperature'
+    unit_of_measurement: '°C'
+    value_template: '{{ value_json.temperature }}'
+
