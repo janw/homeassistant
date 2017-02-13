@@ -62,6 +62,8 @@ switch.curtain_balls:
   icon: mdi:lightbulb-outline
 switch.color_balls:
   icon: mdi:lightbulb-outline
+switch.star_lights:
+  icon: mdi:lightbulb-outline
 script.sleep_timer_all_off:
   icon: mdi:alarm-snooze
 group.all_automations:

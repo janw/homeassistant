@@ -1,5 +1,21 @@
 # Scenes
 
+- name: Warmth
+  entities:
+    light.couchtisch_l:
+      state: on
+      rgb_color: [255,102,7]
+      brightness: 216
+    light.dudero:
+      state: on
+      rgb_color: [255,121,33]
+      brightness: 128
+    light.esstisch: off
+    switch.color_balls: on
+    switch.curtain_balls: on
+    switch.star_lights: on
+    switch.christmas_star: on
+
 - name: Romantic
   entities:
     light.couchtisch_l: off
@@ -9,6 +25,7 @@
       brightness: 100
     light.esstisch: off
     switch.color_balls: on
+    switch.star_lights: on
     switch.curtain_balls: on
 
 - name: Bright

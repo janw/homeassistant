@@ -5,6 +5,7 @@ Living Room Scenes:
   entities:
     - scene.romantic
     - scene.bright
+    - scene.warmth
     - scene.movie
     - scene.pastel_colors
     - scene.all_off
@@ -27,6 +28,8 @@ Living room lights:
     - light.esstisch
     - switch.color_balls
     - switch.curtain_balls
+    - switch.star_lights
+    - switch.christmas_star
 
 Living room electronics:
   name: Entertainment

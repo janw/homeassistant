@@ -1,6 +1,6 @@
 # Switches (mostly based on 433MHz/Pilight)
 
-- platform: mypilight
+- platform: pilight
   switches:
     Color Balls:
       on_code:
@@ -52,9 +52,30 @@
         unitcode: 5
         'off': 1
 
-        #- platform: command_line
-  #  switches:
-  #  relais11:
-  #    command_on: ssh pi@relaispi1 gpio write 0 0
-  #    command_off: ssh pi@relaispi1 gpio write 0 1
+    Star Lights:
+      on_code:
+          protocol: kaku_switch
+          id: 64048982
+          unit: 15
+          state: on
+          'on': 1
+      off_code:
+          protocol: kaku_switch
+          id: 64048982
+          unit: 15
+          state: off
+          'off': 1
 
+    Christmas Star:
+      on_code:
+          protocol: kaku_switch
+          id: 64048982
+          unit: 14
+          state: on
+          'on': 1
+      off_code:
+          protocol: kaku_switch
+          id: 64048982
+          unit: 14
+          state: off
+          'off': 1
