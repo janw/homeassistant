@@ -20,3 +20,25 @@
       data_template:
         title: "Living Room"
         message: "Humidity has reached {{ states.sensor.ws500_humidity_3.state }} %"
+
+  - alias: Plant Moisture Drachenbaum
+    trigger:
+      platform: numeric_state
+      entity_id: sensor.drachenbaum_moisture
+      below: 50
+    action:
+      service: notify.instapush
+      data_template:
+        title: "Living Room"
+        message: "Time to water the Drachenbaum!"
+
+  - alias: Plant Moisture Mühlenbeckia
+    trigger:
+      platform: numeric_state
+      entity_id: sensor.feinblatt_moisture
+      below: 50
+    action:
+      service: notify.instapush
+      data_template:
+        title: "Living Room"
+        message: "Time to water the Grünlilie!"

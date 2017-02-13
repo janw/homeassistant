@@ -40,6 +40,14 @@ Living room climate:
       - sensor.ws500_temperature_0
       - sensor.ws500_humidity_0
 
+Living room plants:
+  name: Plants
+  entities:
+    - sensor.drachenbaum_moisture
+    - sensor.drachenbaum_light
+    - sensor.feinblatt_moisture
+    - sensor.feinblatt_light
+
 Bedroom climate:
   name: Climate
   entities:
@@ -107,6 +115,7 @@ Living Room:
       - group.living_room_scenes
       - group.living_room_lights
       - group.living_room_electronics
+      - group.living_room_plants
 
 Bedroom:
   view: yes

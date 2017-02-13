@@ -79,3 +79,36 @@
     unit_of_measurement: '%'
     value_template: '{{ value_json.humidity }}'
 
+  - platform: mqtt
+    state_topic: 'miflora/drachenbaum'
+    name: 'Drachenbaum Moisture'
+    unit_of_measurement: '%'
+    value_template: '{{ value_json.moisture }}'
+  - platform: mqtt
+    state_topic: 'miflora/drachenbaum'
+    name: 'Drachenbaum Light'
+    unit_of_measurement: 'lx'
+    value_template: '{{ value_json.light }}'
+
+  - platform: mqtt
+    state_topic: 'miflora/arbeitszimmer_gruenlilie'
+    name: 'Grünlilie Office Moisture'
+    unit_of_measurement: '%'
+    value_template: '{{ value_json.moisture }}'
+  - platform: mqtt
+    state_topic: 'miflora/arbeitszimmer_gruenlilie'
+    name: 'Grünlilie Office Light'
+    unit_of_measurement: 'lx'
+    value_template: '{{ value_json.light }}'
+
+  - platform: mqtt
+    state_topic: 'miflora/feinblatt'
+    name: 'Feinblatt Moisture'
+    unit_of_measurement: '%'
+    value_template: '{{ value_json.moisture }}'
+  - platform: mqtt
+    state_topic: 'miflora/feinblatt'
+    name: 'Feinblatt Light'
+    unit_of_measurement: 'lx'
+    value_template: '{{ value_json.light }}'
+

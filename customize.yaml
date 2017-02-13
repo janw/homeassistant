@@ -67,3 +67,7 @@ group.all_automations:
   hidden: false
 group.all_scripts:
   hidden: false
+sensor.drachenbaum_light:
+  icon: mdi:weather-sunny
+sensor.drachenbaum_moisture:
+  icon: mdi:cup-water
