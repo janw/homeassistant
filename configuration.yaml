@@ -87,11 +87,8 @@ sun:
 
 # Include pilight for 433MHz-based lights
 pilight:
-  host: 10.10.5.132
+  host: 10.10.4.184
   port: 5000
-  whitelist:  # optional
-    protocol:
-      - brennenstuhl
 
 
 # Include hub-based light platforms
