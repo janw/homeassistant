@@ -85,6 +85,7 @@ logbook:
 sun:
 
 
+# Include pilight for 433MHz-based lights
 pilight:
   host: 10.10.5.132
   port: 5000
@@ -93,6 +94,7 @@ pilight:
       - brennenstuhl
 
 
+# Include hub-based light platforms
 light:
   platform: hue
   host: 10.10.4.99
@@ -106,5 +108,4 @@ sensor: !include sensor.yaml
 notify: !include notify.yaml
 script: !include_dir_named script
 automation: !include_dir_merge_list automation
-#media_player: !include media_player.yaml
 input_select: !include input_select.yaml
