@@ -31,7 +31,7 @@ Living room lights:
 Living room electronics:
   name: Entertainment
   entities:
-    - switch.living_room_stereo
+    - light.stereoanlage
     - sensor.sonarr_upcoming
 
 Living room climate:

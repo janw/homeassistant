@@ -55,7 +55,8 @@ switch.bedroom_stereo:
   icon: mdi:speaker
 switch.kitchen_stereo:
   icon: mdi:speaker
-switch.living_room_stereo:
+light.stereoanlage:
+  friendly_name: Stereo Set
   icon: mdi:speaker
 switch.curtain_balls:
   icon: mdi:lightbulb-outline

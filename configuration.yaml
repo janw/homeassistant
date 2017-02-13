@@ -93,8 +93,11 @@ pilight:
 
 # Include hub-based light platforms
 light:
-  platform: hue
-  host: 10.10.4.99
+  - platform: hue
+    host: 10.10.4.99
+  - platform: osramlightify
+    host: 10.10.4.40
+
 
 
 # Include other config files
