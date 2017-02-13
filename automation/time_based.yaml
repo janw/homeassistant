@@ -1,6 +1,6 @@
 # Time-based automations
 
-- alias: Turn off bedroom light after a certain time
+- alias: '15min Bedroom timer'
   trigger:
     platform: state
     entity_id: light.schlazi_decke
