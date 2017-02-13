@@ -9,24 +9,24 @@ homeassistant:
   customize: !include customize.yaml
 
 
-# Checks for available updates
-#updater:
-#  reporting: False
-
-# Enables the frontend
+# Enables the Web Frontend
 frontend:
 
+
+# Enable API password
 http:
-  # Uncomment this to add a password (recommended!)
   api_password: !secret http_password
-  server_host: 127.0.0.1
+
 
 # Discover some devices automatically
 #discovery:
 
+
+# Run MQTT for microcontroller-based IoT devices
 mqtt:
 
-# Enables support for tracking state changes over time.
+
+# Tracking state changes over time, exclude some useless entities
 history:
   exclude:
     entities:
@@ -36,23 +36,50 @@ history:
       - group.bathroom
       - group.all_automations
       - group.outside
-
+      - sensor.dark_sky_icon
+      - sensor.dark_sky_apparent_temperature
+      - sensor.dark_sky_dew_point
+      - sensor.dark_sky_precip
+      - sensor.dark_sky_precip_probability
+      - sensor.dark_sky_precip_intensity
+      - sensor.dark_sky_wind_speed
+      - sensor.dark_sky_wind_bearing
+      - sensor.dark_sky_pressure
+      - sensor.dark_sky_cloud_coverage
     domains:
+      - input_select
       - automation
       - updater
       - http
       - persistent_notification
+      - script
+      - group
+      - sonarr
 
+
+# Record all data in external database (currently MariaDB)
 recorder:
     db_url: !secret db_url
 
-# View all events in a logbook
+
+# View all events in a logbook, and exclude some useless info
 logbook:
   exclude:
     entities:
       - sensor.time
+      - sensor.dark_sky_icon
+      - sensor.dark_sky_apparent_temperature
+      - sensor.dark_sky_dew_point
+      - sensor.dark_sky_precip
+      - sensor.dark_sky_precip_probability
+      - sensor.dark_sky_precip_intensity
+      - sensor.dark_sky_wind_speed
+      - sensor.dark_sky_wind_bearing
+      - sensor.dark_sky_pressure
+      - sensor.dark_sky_cloud_coverage
     domains:
       - group
+
 
 # Track the sun
 sun:
