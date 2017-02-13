@@ -68,6 +68,22 @@
     switch.color_balls: on
     switch.curtain_balls: off
 
+- name: Dim Living Room
+  entities:
+    light.esstisch: off
+    switch.color_balls: off
+    switch.curtain_balls: off
+    light.dudero:
+        state: on
+        brightness: 128
+        color_temp: 500
+        rgb_color: [255,157,93]
+    light.couchtisch_l:
+        state: on
+        brightness: 139
+        color_temp: 500
+        rgb_color: [255,140,100]
+
 - name: All Off
   entities:
       group.all_lights: off
