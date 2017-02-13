@@ -15,15 +15,10 @@
     api_key: !secret darksky_api_key
     monitored_conditions:
       - summary
-      - icon
-      - precip_type
       - precip_intensity
-      - precip_probability
       - temperature
-      - apparent_temperature
       - dew_point
       - wind_speed
-      - wind_bearing
       - cloud_cover
       - humidity
       - pressure
@@ -123,4 +118,31 @@
     name: 'Living Room Temperature'
     unit_of_measurement: '°C'
     value_template: '{{ value_json.temperature }}'
+
+
+    ## FEINSTAUB SENSOR
+    # ==================
+  - platform: mqtt
+    state_topic: 'outside/feinstaub'
+    name: 'Feinstaub PM10'
+    unit_of_measurement: 'µg/m³'
+    value_template: '{{ value_json.sensordatavalues[0].value }}'
+
+  - platform: mqtt
+    state_topic: 'outside/feinstaub'
+    name: 'Feinstaub PM2.5'
+    unit_of_measurement: 'µg/m³'
+    value_template: '{{ value_json.sensordatavalues[1].value }}'
+
+  - platform: mqtt
+    state_topic: 'outside/feinstaub'
+    name: 'Feinstaub Temperature'
+    unit_of_measurement: '°C'
+    value_template: '{{ value_json.sensordatavalues[2].value }}'
+
+  - platform: mqtt
+    state_topic: 'outside/feinstaub'
+    name: 'Feinstaub Humidity'
+    unit_of_measurement: '%'
+    value_template: '{{ value_json.sensordatavalues[3].value }}'
 
