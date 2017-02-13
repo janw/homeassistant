@@ -84,15 +84,6 @@ logbook:
 # Track the sun
 sun:
 
-device_tracker:
-  - platform: locative
-    track_new_devices: False
-
-#  - platform: unifi
-#    username: !secret unifi_username
-#    password: !secret unifi_password
-#    host: 10.10.9.8
-
 
 pilight:
   host: 10.10.5.132
