@@ -2,19 +2,6 @@
 
 - platform: pilight
   switches:
-    Color Balls:
-      on_code:
-        protocol: brennenstuhl
-        systemcode: 31
-        unitcode: 1
-        'on': 1
-        'repeat': 4
-      off_code:
-        protocol: brennenstuhl
-        systemcode: 31
-        unitcode: 1
-        'off': 1
-        'repeat': 4
 
     Curtain Balls:
       on_code:

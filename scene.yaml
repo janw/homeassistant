@@ -11,7 +11,7 @@
       rgb_color: [255,121,33]
       brightness: 128
     light.esstisch: off
-    switch.color_balls: on
+    light.regalgirlande: on
     switch.curtain_balls: on
     switch.star_lights: on
     switch.christmas_star: on
@@ -24,7 +24,7 @@
       rgb_color: [255,100,100]
       brightness: 100
     light.esstisch: off
-    switch.color_balls: on
+    light.regalgirlande: on
     switch.star_lights: on
     switch.curtain_balls: on
 
@@ -41,7 +41,7 @@
     light.esstisch:
       state: on
       brightness: 254
-    switch.color_balls: off
+    light.regalgirlande: off
     switch.curtain_balls: off
 
 - name: Pastel Colors
@@ -56,7 +56,7 @@
         brightness: 169
     light.esstisch: off
     switch.curtain_balls: off
-    switch.color_balls: on
+    light.regalgirlande: on
 
 
 - name: Movie
@@ -65,13 +65,13 @@
     light.dudero: off
     light.esstisch: off
     switch.living_room_stereo: on
-    switch.color_balls: on
+    light.regalgirlande: on
     switch.curtain_balls: off
 
 - name: Dim Living Room
   entities:
     light.esstisch: off
-    switch.color_balls: off
+    light.regalgirlande: off
     switch.curtain_balls: off
     light.dudero:
         state: on

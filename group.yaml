@@ -26,7 +26,7 @@ Living room lights:
     - light.couchtisch_l
     - light.dudero
     - light.esstisch
-    - switch.color_balls
+    - light.regalgirlande
     - switch.curtain_balls
     - switch.star_lights
     - switch.christmas_star
