@@ -14,7 +14,6 @@
     light.regalgirlande: on
     switch.curtain_balls: on
     switch.star_lights: on
-    switch.christmas_star: on
 
 - name: Romantic
   entities:

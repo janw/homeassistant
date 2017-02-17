@@ -29,7 +29,6 @@ Living room lights:
     - light.regalgirlande
     - switch.curtain_balls
     - switch.star_lights
-    - switch.christmas_star
 
 Living room electronics:
   name: Entertainment
