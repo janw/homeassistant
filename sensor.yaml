@@ -14,6 +14,15 @@
       - humidity
       - pressure
 
+  - platform: template
+    sensors:
+      sunrise:
+        value_template: '{{ states.sun.sun.attributes.next_rising }}'
+      sunset:
+        value_template: '{{ states.sun.sun.attributes.next_setting }}'
+      current_title:
+        value_template: '{{ states.media_player.apple_tv.attributes.media_title }}'
+
   - platform: speedtest
     monitored_conditions:
      - ping
