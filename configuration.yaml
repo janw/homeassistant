@@ -87,7 +87,7 @@ sun:
 
 # Include pilight for 433MHz-based lights
 pilight:
-  host: 10.10.4.184
+  host: 10.10.5.105
   port: 5000
 
 
