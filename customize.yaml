@@ -62,3 +62,5 @@ sensor.feinstaub_pm10:
   icon: mdi:emoticon-dead
 sensor.feinstaub_pm25:
   icon: mdi:emoticon-dead
+sensor.dark_sky_icon:
+  hidden: true
