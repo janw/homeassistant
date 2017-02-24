@@ -59,8 +59,6 @@ Bedroom climate:
 
 Bathroom climate:
   entities:
-    - sensor.ws500_temperature_2
-    - sensor.ws500_humidity_2
     - sensor.temperature_mqtt_ba
     - sensor.humidity_mqtt_ba
 

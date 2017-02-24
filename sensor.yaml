@@ -1,16 +1,5 @@
 # Sensors and other inputs
 
-  - platform: ws500
-    monitored_conditions:
-      - temperature0
-      - temperature1
-      - temperature2
-      - temperature3
-      - humidity0
-      - humidity1
-      - humidity2
-      - humidity3
-
   - platform: darksky
     api_key: !secret darksky_api_key
     monitored_conditions:
