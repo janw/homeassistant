@@ -8,26 +8,6 @@ sensor.ping_ubnt:
   icon: mdi:access-point-network
 sensor.yr_temperature:
   friendly_name: Temperature Outside
-sensor.ws500_temperature_0:
-  friendly_name: Temp Li
-sensor.ws500_temperature_1:
-  friendly_name: Temp Be
-sensor.ws500_temperature_2:
-  friendly_name: Temp Ba
-sensor.ws500_temperature_3:
-  friendly_name: Temp Ki
-sensor.ws500_humidity_0:
-  friendly_name: Humidity Li
-  icon: mdi:water-percent
-sensor.ws500_humidity_1:
-  friendly_name: Humidity Be
-  icon: mdi:water-percent
-sensor.ws500_humidity_2:
-  friendly_name: Humidity Ba
-  icon: mdi:water-percent
-sensor.ws500_humidity_3:
-  friendly_name: Humidity Ki
-  icon: mdi:water-percent
 sensor.yr_humidity:
   friendly_name: Humidity Outside
   icon: mdi:water-percent
