@@ -64,3 +64,29 @@ sensor.feinstaub_pm25:
   icon: mdi:emoticon-dead
 sensor.dark_sky_icon:
   hidden: true
+sensor.sunrise:
+    hidden: true
+sensor.sunset:
+    hidden: true
+
+light.aalle_lampen:
+  hidden: true
+  homebridge_hidden: true
+light.bcouchtisch:
+  hidden: true
+  homebridge_hidden: true
+light.cesstisch:
+  hidden: true
+  homebridge_hidden: true
+light.dwohnzimmer:
+  hidden: true
+  homebridge_hidden: true
+light.huewohnzimmer:
+  hidden: true
+  homebridge_hidden: true
+light.hueschlafzimmer:
+  hidden: true
+  homebridge_hidden: true
+
+
+

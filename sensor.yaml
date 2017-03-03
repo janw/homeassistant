@@ -21,6 +21,7 @@
       sunset:
         value_template: '{{ states.sun.sun.attributes.next_setting }}'
       current_title:
+        friendly_name: 'Current Title'
         value_template: '{{ states.media_player.apple_tv.attributes.media_title }}'
 
   - platform: speedtest
@@ -86,17 +87,6 @@
     value_template: '{{ value_json.light }}'
 
   - platform: mqtt
-    state_topic: 'miflora/arbeitszimmer_gruenlilie'
-    name: 'Grünlilie Office Moisture'
-    unit_of_measurement: '%'
-    value_template: '{{ value_json.moisture }}'
-  - platform: mqtt
-    state_topic: 'miflora/arbeitszimmer_gruenlilie'
-    name: 'Grünlilie Office Light'
-    unit_of_measurement: 'lx'
-    value_template: '{{ value_json.light }}'
-
-  - platform: mqtt
     state_topic: 'miflora/feinblatt'
     name: 'Feinblatt Moisture'
     unit_of_measurement: '%'
@@ -145,4 +135,12 @@
     name: 'Feinstaub Humidity'
     unit_of_measurement: '%'
     value_template: '{{ value_json.sensordatavalues[3].value }}'
+
+    ## FRITZBOX
+    # ==========
+  # - platform: fritzbox_callmonitor
+  #   host: 10.10.0.1
+  # - platform: fritzbox_netmonitor
+  #   host: 10.10.0.1
+
 
