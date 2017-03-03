@@ -17,6 +17,8 @@ frontend:
 http:
   api_password: !secret http_password
 
+config:
+
 
 # Discover some devices automatically
 #discovery:
