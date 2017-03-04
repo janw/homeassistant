@@ -31,6 +31,7 @@ config:
 mqtt:
 
 zwave:
+  device_config: !include zwave_device_config.yaml
   usb_path: /dev/ttyUSB0
 
 
@@ -132,7 +133,7 @@ media_player:
 
 
 # Include other config files
-group: !include group.yaml
+group: !include groups.yaml
 scene: !include scene.yaml
 switch: !include switch.yaml
 sensor: !include sensor.yaml
