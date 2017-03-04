@@ -45,14 +45,6 @@
     value_template: "{{ value | float }}"
     unit_of_measurement: ms
 
-  - platform: mysonarr
-    api_key: d2273149b4d74f5e8eab6819dcaf5f7e
-    host: "sonarr"
-    port: 8989
-    monitored_conditions:
-      - upcoming
-    days: 3
-
   - platform: mqtt
     state_topic: 'home/bedroom'
     name: 'Bedroom Temperature'

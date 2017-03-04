@@ -63,7 +63,6 @@ history:
       - persistent_notification
       - script
       - group
-      - sonarr
 
 
 # Record all data in external database (currently MariaDB)

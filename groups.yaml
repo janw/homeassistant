@@ -32,7 +32,6 @@ Living room electronics:
     - light.stereoanlage
     - media_player.apple_tv
     - sensor.current_title
-    - sensor.sonarr_upcoming
 
 Living room climate:
   name: Climate
