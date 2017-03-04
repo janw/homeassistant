@@ -134,6 +134,7 @@ Bedroom:
     - group.bedroom_climate
     - light.schlazi_decke
     - switch.bedroom_stereo
+    - automation.15min_bedroom_timer
 
 
 Other Rooms:
