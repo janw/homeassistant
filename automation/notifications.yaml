@@ -2,43 +2,58 @@
   - alias: Bedroom Humidity
     trigger:
       platform: numeric_state
-      entity_id: sensor.ws500_humidity_1
+      entity_id: sensor.bedroom_humidity
       above: 70
     action:
-      service: notify.instapush
-      data_template:
-        title: "Bedroom"
-        message: "Humidity has reached {{ states.sensor.ws500_humidity_1.state }} %"
+      - service: notify.matrix_local
+        data_template:
+          message: "Schlafzimmer: Die Luftfeuchtigkeit ist bei {{ states.sensor.bedroom_humidity.state }} %."
+      - service: notify.instapush
+        data_template:
+          title: "Schlafzimmer"
+          message: "Schlafzimmer: Die Luftfeuchtigkeit ist bei {{ states.sensor.bedroom_humidity.state }} %."
 
   - alias: Living Room Humidity
     trigger:
       platform: numeric_state
-      entity_id: sensor.ws500_humidity_3
+      entity_id: sensor.living_room_humidity
       above: 70
     action:
-      service: notify.instapush
-      data_template:
-        title: "Living Room"
-        message: "Humidity has reached {{ states.sensor.ws500_humidity_3.state }} %"
+      - service: notify.matrix_local
+        data_template:
+          message: "Wohnzimmer: Die Luftfeuchtigkeit ist bei {{ states.sensor.living_room_humidity.state }} %."
+
+      - service: notify.instapush
+        data_template:
+          title: "Wohnzimmer"
+          message: "Die Luftfeuchtigkeit ist bei {{ states.sensor.living_room_humidity.state }} %"
 
   - alias: Plant Moisture Drachenbaum
     trigger:
       platform: numeric_state
       entity_id: sensor.drachenbaum_moisture
-      below: 50
+      below: 15
     action:
-      service: notify.instapush
-      data_template:
-        title: "Living Room"
-        message: "Time to water the Drachenbaum!"
+      - service: notify.matrix_local
+        data_template:
+          message: "Wohnzimmer: Bitte gießt den Drachenbaum!"
 
-  - alias: Plant Moisture Mühlenbeckia
+      - service: notify.instapush
+        data_template:
+          title: "Wohnzimmer"
+          message: "Bitte gieß den Drachenbaum!"
+
+  - alias: Plant Moisture Grünlilie
     trigger:
       platform: numeric_state
       entity_id: sensor.feinblatt_moisture
-      below: 50
+      below: 40
     action:
-      service: notify.instapush
-      data_template:
-        title: "Living Room"
-        message: "Time to water the Grünlilie!"
+      - service: notify.matrix_local
+        data_template:
+          message: "Wohnzimmer: Bitte gießt den Grünlilie! Die Erde hat eine Feuchtigkeit von {{ states.sensor.feinblatt_moisture.state }} %."
+
+      - service: notify.instapush
+        data_template:
+          title: "Wohnzimmer"
+          message: "Bitte gieß die Grünlilie!"
