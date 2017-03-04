@@ -69,8 +69,8 @@ Kitchen:
 
 Office:
   entities:
-    - sensor.ws500_temperature_3
-    - sensor.ws500_humidity_3
+    - sensor.office_temperature
+    - sensor.office_humidity
     - light.arbeitszimmer
 
 Hallway:

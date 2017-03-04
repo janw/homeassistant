@@ -47,7 +47,7 @@
 
   - platform: mysonarr
     api_key: d2273149b4d74f5e8eab6819dcaf5f7e
-    host: 10.10.9.4
+    host: "sonarr"
     port: 8989
     monitored_conditions:
       - upcoming
@@ -108,6 +108,15 @@
     name: 'Living Room Temperature'
     unit_of_measurement: '°C'
     value_template: '{{ value_json.temperature }}'
+
+  - platform: dht
+    name: 'Office'
+    sensor: DHT22
+    pin: 10
+    monitored_conditions:
+      - temperature
+      - humidity
+
 
 
     ## FEINSTAUB SENSOR

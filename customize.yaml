@@ -50,6 +50,8 @@ group.all_automations:
   hidden: false
 group.all_scripts:
   hidden: false
+sensor.office_humidity:
+  icon: mdi:water-percent
 sensor.drachenbaum_light:
   icon: mdi:weather-sunny
 sensor.drachenbaum_moisture:
