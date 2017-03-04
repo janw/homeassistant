@@ -139,4 +139,3 @@ sensor: !include sensor.yaml
 notify: !include notify.yaml
 script: !include_dir_named script
 automation: !include_dir_merge_list automation
-input_select: !include input_select.yaml

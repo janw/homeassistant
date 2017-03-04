@@ -9,16 +9,12 @@ Living Room Scenes:
     - scene.movie
     - scene.pastel_colors
     - scene.all_off
-    - input_select.sleep_minutes
-    - script.sleep_timer_all_off
 
 Scenes:
   entities:
     - scene.romantic
     - scene.bright
     - scene.all_off
-    - input_select.sleep_minutes
-    - script.sleep_timer_all_off
 
 Living room lights:
   name: Lights
