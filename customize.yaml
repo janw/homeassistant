@@ -48,8 +48,6 @@ script.sleep_timer_all_off:
   icon: mdi:alarm-snooze
 group.all_automations:
   hidden: false
-group.all_scripts:
-  hidden: false
 sensor.office_humidity:
   icon: mdi:water-percent
 sensor.drachenbaum_light:
@@ -109,4 +107,7 @@ binary_sensor.aeotec_zw074_multisensor_gen5_sensor_2_0:
   friendly_name: 'Hallway Sensor'
 
 media_player.apple_tv:
+  hidden: true
+
+group.all_scripts:
   hidden: true

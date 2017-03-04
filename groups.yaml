@@ -1,19 +1,13 @@
 # Rooms as groups
 
 Living Room Scenes:
-  name: Living Room
+  name: Scenes
   entities:
     - scene.romantic
     - scene.bright
     - scene.warmth
     - scene.movie
     - scene.pastel_colors
-    - scene.all_off
-
-Scenes:
-  entities:
-    - scene.romantic
-    - scene.bright
     - scene.all_off
 
 Living room lights:
@@ -34,14 +28,10 @@ Living room electronics:
     - sensor.current_title
 
 Living room climate:
-  name: Climate
+  name: Plants and Climate
   entities:
-      - sensor.living_room_temperature
-      - sensor.living_room_humidity
-
-Living room plants:
-  name: Plants
-  entities:
+    - sensor.living_room_temperature
+    - sensor.living_room_humidity
     - sensor.drachenbaum_moisture
     - sensor.drachenbaum_light
     - sensor.feinblatt_moisture
@@ -114,14 +104,13 @@ Presence:
 # Views
 #
 Living Room:
-  name: Living Room
+  name: Living
   view: yes
   entities:
       - group.living_room_climate
       - group.living_room_scenes
       - group.living_room_lights
       - group.living_room_electronics
-      - group.living_room_plants
 
 Bedroom:
   view: yes
@@ -131,8 +120,7 @@ Bedroom:
     - switch.bedroom_stereo
     - automation.15min_bedroom_timer
 
-
-Other Rooms:
+Others:
   view: yes
   entities:
     - group.bathroom_climate
@@ -143,7 +131,6 @@ Other Rooms:
 Outside:
   name: Outside
   view: yes
-  icon: mdi:earth
   entities:
     - group.connectivity
     - group.weather
