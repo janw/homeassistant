@@ -130,6 +130,14 @@ media_player:
     host: 10.10.4.216
     login_id: !secret appletv_loginid
 
+# Device tracking
+device_tracker:
+  - platform: unifi
+    host: unifi
+    site_id: default
+    username: !secret unifi_username
+    password: !secret unifi_password
+
 
 # Include other config files
 group: !include groups.yaml

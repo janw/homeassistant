@@ -2,14 +2,15 @@
 
 b66bcbbd71454aaca21f9c0b16c9acde:
   hide_if_away: false
-  mac: null
+  mac: !secret jan_iphone_mac
   name: Jans iPhone
   picture: null
+  gravatar: "mail@janwillhaus.de"
   track: true
 
 ec510faa8e6545a5aa4941eba0a0bbce:
   hide_if_away: false
-  mac: null
+  mac: !secret miriam_iphone_mac
   name: Miriams iPhone
-  picture: null
+  picture: /local/miri.jpg
   track: true
