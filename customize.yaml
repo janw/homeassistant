@@ -108,4 +108,5 @@ sensor.aeotec_zw074_multisensor_gen5_temperature_2_1:
 binary_sensor.aeotec_zw074_multisensor_gen5_sensor_2_0:
   friendly_name: 'Hallway Sensor'
 
-
+media_player.apple_tv:
+  hidden: true
