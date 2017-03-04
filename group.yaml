@@ -73,6 +73,15 @@ Office:
     - sensor.ws500_humidity_3
     - light.arbeitszimmer
 
+Hallway:
+  entities:
+    - binary_sensor.aeotec_zw074_multisensor_gen5_sensor_2_0
+    - sensor.aeotec_zw074_multisensor_gen5_luminance_2_3
+    - sensor.aeotec_zw074_multisensor_gen5_relative_humidity_2_5
+    - sensor.aeotec_zw074_multisensor_gen5_temperature_2_1
+    - light.flur_hinten
+    - light.flur_vorne
+
 # Various panels or convenience collections
 
 Weather:
@@ -132,6 +141,7 @@ Other Rooms:
   entities:
     - group.bathroom_climate
     - group.kitchen
+    - group.hallway
     - group.office
 
 Outside:

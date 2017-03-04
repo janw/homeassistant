@@ -21,3 +21,55 @@
         entity_id:
           - group.all_lights
           - group.all_switches
+
+  - alias: Turn hallway lights on at night
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.aeotec_zw074_multisensor_gen5_sensor_2_0
+        to: 'on'
+    condition:
+      - condition: time
+        before: '07:00'
+        after: '00:00'
+    action:
+      - service: homeassistant.turn_on
+        entity_id: scene.hallway_nightlight
+
+  - alias: Turn hallway lights on at twilight
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.aeotec_zw074_multisensor_gen5_sensor_2_0
+        to: 'on'
+    condition:
+      - condition: sun
+        after: sunset
+      - condition: time
+        before: '23:59'
+    action:
+      - service: homeassistant.turn_on
+        entity_id: scene.hallway_twilight
+
+  - alias: Turn hallway lights on at day
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.aeotec_zw074_multisensor_gen5_sensor_2_0
+        to: 'on'
+    condition:
+      - condition: sun
+        before: sunset
+        before_offset: "-00:30:00"
+    action:
+      - service: homeassistant.turn_on
+        entity_id: scene.hallway_daylight
+
+  - alias: Turn hallway lights off
+    trigger:
+      platform: state
+      entity_id: binary_sensor.aeotec_zw074_multisensor_gen5_sensor_2_0
+      to: 'off'
+      for:
+        minutes: 1
+    action:
+      - service: homeassistant.turn_off
+        entity_id: group.hallway
+

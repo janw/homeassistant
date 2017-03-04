@@ -88,5 +88,22 @@ light.hueschlafzimmer:
   hidden: true
   homebridge_hidden: true
 
+sensor.aeotec_zw074_multisensor_gen5_alarm_level_2_1:
+  hidden: true
+sensor.aeotec_zw074_multisensor_gen5_alarm_type_2_0:
+  hidden: true
+sensor.aeotec_zw074_multisensor_gen5_burglar_2_10:
+  hidden: true
+sensor.aeotec_zw074_multisensor_gen5_sourcenodeid_2_2:
+  hidden: true
+sensor.aeotec_zw074_multisensor_gen5_luminance_2_3:
+  friendly_name: 'Hallway Luminance'
+sensor.aeotec_zw074_multisensor_gen5_relative_humidity_2_5:
+  friendly_name: 'Hallway Humidity'
+  icon: mdi:water-percent
+sensor.aeotec_zw074_multisensor_gen5_temperature_2_1:
+  friendly_name: 'Hallway Temperature'
+binary_sensor.aeotec_zw074_multisensor_gen5_sensor_2_0:
+  friendly_name: 'Hallway Sensor'
 
 

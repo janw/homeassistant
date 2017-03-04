@@ -27,6 +27,9 @@ config:
 # Run MQTT for microcontroller-based IoT devices
 mqtt:
 
+zwave:
+  usb_path: /dev/ttyUSB0
+
 
 # Tracking state changes over time, exclude some useless entities
 history:

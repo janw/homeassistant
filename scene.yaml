@@ -104,6 +104,38 @@
   entities:
       group.bathroom: off
 
+- name: Hallway nightlight
+  entities: 
+    light.flur_vorne:
+      state: on
+      brightness: 10
+      color_temp: 230
+    light.flur_hinten:
+      state: on
+      brightness: 10
+      color_temp: 230
+
+- name: Hallway twilight
+  entities: 
+    light.flur_vorne:
+      state: on
+      brightness: 75
+      color_temp: 159
+    light.flur_hinten:
+      state: on
+      brightness: 75
+      color_temp: 159
+
+- name: Hallway daylight
+  entities: 
+    light.flur_vorne:
+      state: on
+      brightness: 254
+      color_temp: 386
+    light.flur_hinten:
+      state: on
+      brightness: 254
+      color_temp: 386
 
 
 
