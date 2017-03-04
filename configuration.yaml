@@ -127,7 +127,7 @@ light:
 # Include network media platforms
 media_player:
   - platform: apple_tv
-    host: 10.10.5.39
+    host: 10.10.4.216
     login_id: !secret appletv_loginid
 
 
