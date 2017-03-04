@@ -71,5 +71,7 @@
         minutes: 1
     action:
       - service: homeassistant.turn_off
-        entity_id: group.hallway
+        entity_id:
+          - light.flur_hinten
+          - light.flur_vorne
 
