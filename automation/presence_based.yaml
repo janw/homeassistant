@@ -29,6 +29,8 @@
         to: 'on'
     condition:
       - condition: time
+        after: '22:59'
+      - condition: time
         before: '07:00'
         after: '00:00'
     action:
@@ -44,7 +46,7 @@
       - condition: sun
         after: sunset
       - condition: time
-        before: '23:59'
+        before: '22:59'
     action:
       - service: homeassistant.turn_on
         entity_id: scene.hallway_twilight
