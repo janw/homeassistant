@@ -45,8 +45,8 @@ Bedroom climate:
 
 Bathroom climate:
   entities:
-    - sensor.temperature_mqtt_ba
-    - sensor.humidity_mqtt_ba
+    - sensor.bathroom_temperature
+    - sensor.bathroom_humidity
 
 Kitchen:
   entities:
