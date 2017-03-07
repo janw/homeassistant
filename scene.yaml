@@ -106,36 +106,24 @@
 
 - name: Hallway nightlight
   entities: 
-    light.flur_vorne:
+    light.hueflur:
       state: on
       brightness: 10
-      color_temp: 230
-    light.flur_hinten:
-      state: on
-      brightness: 10
-      color_temp: 230
+      color_temp: 370
 
 - name: Hallway twilight
   entities: 
-    light.flur_vorne:
+    light.hueflur:
       state: on
-      brightness: 75
-      color_temp: 159
-    light.flur_hinten:
-      state: on
-      brightness: 75
-      color_temp: 159
+      brightness: 224
+      color_temp: 334
 
 - name: Hallway daylight
   entities: 
-    light.flur_vorne:
+    light.hueflur:
       state: on
       brightness: 254
-      color_temp: 386
-    light.flur_hinten:
-      state: on
-      brightness: 254
-      color_temp: 386
+      color_temp: 285
 
 
 

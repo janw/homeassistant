@@ -82,6 +82,5 @@
     action:
       - service: homeassistant.turn_off
         entity_id:
-          - light.flur_hinten
-          - light.flur_vorne
+          - light.hueflur
 
