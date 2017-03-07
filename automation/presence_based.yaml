@@ -28,11 +28,15 @@
         entity_id: binary_sensor.aeotec_zw074_multisensor_gen5_sensor_2_0
         to: 'on'
     condition:
-      - condition: time
-        after: '22:59'
-      - condition: time
-        before: '07:00'
-        after: '00:00'
+      - condition: or
+        conditions:
+          - condition: time
+            after: '00:00'
+          - condition: time
+            after: '22:59'
+      - condition: sun
+        before: sunrise
+        before_offset: "-00:30:00"
     action:
       - service: homeassistant.turn_on
         entity_id: scene.hallway_nightlight
@@ -45,6 +49,7 @@
     condition:
       - condition: sun
         after: sunset
+        after_offset: "-00:30:00"
       - condition: time
         before: '22:59'
     action:
@@ -57,6 +62,9 @@
         entity_id: binary_sensor.aeotec_zw074_multisensor_gen5_sensor_2_0
         to: 'on'
     condition:
+      - condition: sun
+        after: sunrise
+        before_offset: "-00:30:00"
       - condition: sun
         before: sunset
         before_offset: "-00:30:00"
