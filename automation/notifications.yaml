@@ -1,5 +1,5 @@
 # Automations that mainly send user-directed notifications
-  - alias: Bedroom Humidity
+  - alias: Bedroom High Humidity
     trigger:
       platform: numeric_state
       entity_id: sensor.bedroom_humidity
@@ -13,7 +13,7 @@
           title: "Schlafzimmer"
           message: "Schlafzimmer: Die Luftfeuchtigkeit ist bei {{ states.sensor.bedroom_humidity.state }} %."
 
-  - alias: Living Room Humidity
+  - alias: Living Room High Humidity
     trigger:
       platform: numeric_state
       entity_id: sensor.living_room_humidity
