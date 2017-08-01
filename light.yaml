@@ -1,0 +1,32 @@
+
+  - platform: hue
+    host: philips-hue.whaus.xyz
+
+  - platform: mqtt
+    name: "Vitrinen"
+    state_topic: "living_room/vitrinen/light/status"
+    command_topic: "living_room/vitrinen/light/switch"
+    brightness_state_topic: "living_room/vitrinen/brightness/status"
+    brightness_command_topic: "living_room/vitrinen/brightness/set"
+    qos: 0
+    payload_on: "ON"
+    payload_off: "OFF"
+    optimistic: false
+
+  - platform: mqtt
+    name: "Office Light RGB"
+    state_topic: "office/rgb1/light/status"
+    command_topic: "office/rgb1/light/switch"
+    brightness_state_topic: "office/rgb1/brightness/status"
+    brightness_command_topic: "office/rgb1/brightness/set"
+    rgb_state_topic: "office/rgb1/rgb/status"
+    rgb_command_topic: "office/rgb1/rgb/set"
+    state_value_template: "{{ value_json.state }}"
+    brightness_value_template: "{{ value_json.brightness }}"
+    rgb_value_template: "{{ value_json.rgb | join(',') }}"
+    qos: 0
+    brightness_scale: 100
+    payload_on: "ON"
+    payload_off: "OFF"
+    optimistic: false
+

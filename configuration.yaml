@@ -95,51 +95,42 @@ sun:
 
 # Include pilight for 433MHz-based lights
 pilight:
-  host: 127.0.0.1
+  host: 10.10.4.184
   port: 5000
 
+binary_sensor: !include sensor_binary.yml
+
+tradfri:
+  host: 10.10.4.36
+  api_key: !secret tradfri_apikey 
 
 # Include hub-based light platforms
-light:
-  - platform: hue
-    host: 10.10.4.99
-  - platform: osramlightify
-    host: 10.10.4.40
-
-  - platform: mqtt
-    name: "Office Light RGB"
-    state_topic: "office/rgb1/light/status"
-    command_topic: "office/rgb1/light/switch"
-    brightness_state_topic: "office/rgb1/brightness/status"
-    brightness_command_topic: "office/rgb1/brightness/set"
-    rgb_state_topic: "office/rgb1/rgb/status"
-    rgb_command_topic: "office/rgb1/rgb/set"
-    state_value_template: "{{ value_json.state }}"
-    brightness_value_template: "{{ value_json.brightness }}"
-    rgb_value_template: "{{ value_json.rgb | join(',') }}"
-    qos: 0
-    payload_on: "ON"
-    payload_off: "OFF"
-    optimistic: false
-
-
+  # - platform: osramlightify
+  #   host: 10.10.4.40
 
 # Include network media platforms
-media_player:
-  - platform: apple_tv
-    host: 10.10.5.39
+apple_tv:
+  - name: Apple TV
+    host: 10.10.4.7
     login_id: !secret appletv_loginid
+    start_off: on
 
 # Device tracking
 device_tracker:
   - platform: unifi
-    host: unifi
+    host: 10.10.9.8
     site_id: default
     username: !secret unifi_username
     password: !secret unifi_password
+    track_new_devices: false
+    verify_ssl: false
+
+ios:
+
 
 
 # Include other config files
+light: !include light.yaml
 group: !include groups.yaml
 scene: !include scene.yaml
 switch: !include switch.yaml

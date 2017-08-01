@@ -1,0 +1,15 @@
+
+  - platform: flic
+    host: 10.10.4.184
+  - platform: template
+    sensors:
+      living_room_stereo_in_standby:
+        friendly_name: "Im Standby"
+        value_template: >-
+          {%- if states.sensor.living_room_stereo_watts.state | float < 5 
+              and states.sensor.living_room_stereo_watts.state | float > 0 -%}
+          True
+          {%- else -%}
+          False
+          {%- endif %}
+

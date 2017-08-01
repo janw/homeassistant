@@ -1,0 +1,23 @@
+  - alias: "Turn printer on for waiting documents"
+    trigger:
+      platform: state
+      entity_id: sensor.hl2030
+      to: 'printing'
+    condition:
+      condition: template
+      value_template: '{{ states.sensor.hl2030.printer_state_message == "Waiting for printer to become available." }}'
+    action:
+      service: homeassistant.turn_on
+      entity_id: switch.printer
+
+  - alias: "Turn printer off when idleing"
+    trigger:
+      platform: state
+      entity_id: sensor.hl2030
+      to: 'idle'
+      for:
+        minutes: 2
+    action:
+      service: homeassistant.turn_off
+      entity_id: switch.printer
+
