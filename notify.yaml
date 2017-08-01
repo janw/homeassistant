@@ -8,10 +8,3 @@
     app_secret: !secret instapush_app_secret
     event: general
     tracker: message
-
-  - platform: matrix
-    name: matrix_local
-    homeserver: !secret matrix_homeserver
-    username: !secret matrix_username
-    password: !secret matrix_password
-    default_room: !secret matrix_room
