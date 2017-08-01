@@ -7,3 +7,8 @@ homeassistant.crt
 *.log
 phue.conf
 plex.conf
+.ios.conf
+.python-version
+tradfri.conf
+.uuid
+www/miri.jpg
