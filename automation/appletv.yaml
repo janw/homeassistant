@@ -24,3 +24,18 @@
       - service: homeassistant.turn_on
         entity_id: scene.dim_living_room
 
+  - alias: "Multimedia standby switch-off"
+    trigger:
+      platform: state
+      entity_id: binary_sensor.living_room_stereo_in_standby
+      to: 'on'
+      for:
+        minutes: 2
+    condition:
+      condition: state
+      entity_id: switch.living_room_stereo
+      state: 'on'
+    action:
+      - service: switch.turn_off
+        entity_id: switch.living_room_stereo
+
