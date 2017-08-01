@@ -1,6 +1,6 @@
 
-
-b66bcbbd71454aaca21f9c0b16c9acde:
+## PERSONAL DEVICES: JAN
+jans_iphone:
   hide_if_away: false
   mac: !secret jan_iphone_mac
   name: Jans iPhone

@@ -8,9 +8,30 @@ homeassistant:
   # Include customizations
   customize: !include customize.yaml
 
+  customize_glob:
+    "device_tracker.esp_*":
+      icon: mdi:bug
+    "device_tracker.rpi_*":
+      icon: mdi:raspberrypi
+    "*.*_battery_state":
+      hidden: true
+    "light.hue*":
+      hidden: true
+
+
+zone 2:
+  name: Work
+  latitude: !secret work_lat
+  longitude: !secret work_lon
+  radius: 250
+
 
 # Enables the Web Frontend
 frontend:
+
+updater:
+  include_used_components: true
+
 
 
 # Enable API password
@@ -24,15 +45,15 @@ config:
 
 
 # Discover some devices automatically
-#discovery:
+# discovery:
 
 
 # Run MQTT for microcontroller-based IoT devices
 mqtt:
-
-zwave:
-  device_config: !include zwave_device_config.yaml
-  usb_path: /dev/ttyUSB0
+  broker: 127.0.0.1
+  port: 1883
+  username: homeassistant
+  password: !secret http_password
 
 
 # Tracking state changes over time, exclude some useless entities
@@ -55,6 +76,19 @@ history:
       - sensor.dark_sky_wind_bearing
       - sensor.dark_sky_pressure
       - sensor.dark_sky_cloud_coverage
+      - switch.hallway_fluxing
+      - light.huekueche
+      - light.hueflur
+      - light.huearbeitszimmer
+      - light.hueaquarium
+      - light.cesstisch
+      - light.bcouchtisch
+      - light.aalle_lampen
+      - light.dwohnzimmer
+      - binary_sensor.living_room_stereo_in_standby
+      - binary_sensor.flic_80e4da700a82
+      - device_tracker.jans_macbook
+
     domains:
       - input_select
       - automation
@@ -63,6 +97,7 @@ history:
       - persistent_notification
       - script
       - group
+      - scene
 
 
 # Record all data in external database (currently MariaDB)

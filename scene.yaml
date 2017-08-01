@@ -1,92 +1,100 @@
 # Scenes
 
-- name: Warmth
+- name: Warmth 
   entities:
-    light.couchtisch_l:
+    light.trad_couchtisch:
       state: on
-      rgb_color: [255,102,7]
-      brightness: 216
+      color_temp: 454
+      brightness: 210
     light.dudero:
       state: on
       rgb_color: [255,121,33]
       brightness: 128
-    light.esstisch: off
+    light.trad_esstisch:
+      state: on
+      color_temp: 454
+      brightness: 100
+    light.vitrinen:
+      state: on
+      brightness: 40
     light.regalgirlande: on
     switch.curtain_balls: on
     switch.star_lights: on
 
 - name: Romantic
   entities:
-    light.couchtisch_l: off
+    light.trad_couchtisch: off
     light.dudero:
       state: on
       rgb_color: [255,100,100]
       brightness: 100
-    light.esstisch: off
+    light.trad_esstisch: off
     light.regalgirlande: on
     switch.star_lights: on
     switch.curtain_balls: on
 
 - name: Bright
   entities:
-    light.couchtisch_l:
+    light.trad_couchtisch:
       state: on
-      color_temp: 353
+      color_temp: 370
       brightness: 254
     light.dudero:
       state: on
-      color_temp: 353
+      color_temp: 370
       brightness: 254
-    light.esstisch:
+    light.trad_esstisch:
+      state: on
+      color_temp: 370
+      brightness: 254
+    light.vitrinen:
       state: on
       brightness: 254
     light.regalgirlande: off
     switch.curtain_balls: off
 
-- name: Pastel Colors
+- name: Focus
   entities:
-    light.couchtisch_l:
-        state: on
-        rgb_color: [253,191,249]
-        brightness: 164
+    light.trad_couchtisch:
+      state: on
+      color_temp: 250
+      brightness: 200
     light.dudero:
-        state: on
-        rgb_color: [255,194,212]
-        brightness: 169
-    light.esstisch: off
+      state: on
+      color_temp: 250
+      brightness: 169
+    light.trad_esstisch:
+      state: on
+      color_temp: 250
+      brightness: 200
     switch.curtain_balls: off
-    light.regalgirlande: on
+    light.regalgirlande: off
 
 
 - name: Movie
   entities:
-    light.couchtisch_l: off
+    light.trad_couchtisch: off
     light.dudero: off
-    light.esstisch: off
+    light.trad_esstisch: off
     switch.living_room_stereo: on
+    light.projector: on
     light.regalgirlande: on
+    light.vitrinen: off
     switch.curtain_balls: off
-
-- name: Dim Living Room
-  entities:
-    light.esstisch: off
-    light.regalgirlande: off
-    switch.curtain_balls: off
-    light.dudero:
-        state: on
-        brightness: 128
-        color_temp: 500
-        rgb_color: [255,157,93]
-    light.couchtisch_l:
-        state: on
-        brightness: 139
-        color_temp: 500
-        rgb_color: [255,140,100]
 
 - name: All Off
   entities:
-      group.all_lights: off
-      group.all_switches: off
+      group.living_room_lights: off
+      group.kitchen: off
+      light.arbeitszimmer: off
+      light.office_light_rgb: off
+      light.schlafradio: off
+      light.schlazi_decke: off
+      light.projector: off
+      switch.bedroom_stereo: off
+      switch.christmas_star: off
+      switch.kitchen_stereo: off
+      switch.living_room_stereo: off
 
 - name: Bedroom Off
   entities:
@@ -106,24 +114,24 @@
 
 - name: Hallway nightlight
   entities: 
-    light.hueflur:
+    group.hallway_lights:
       state: on
       brightness: 10
-      color_temp: 370
+      color_temp: 454
 
 - name: Hallway twilight
   entities: 
-    light.hueflur:
+    group.hallway_lights:
       state: on
-      brightness: 224
-      color_temp: 334
+      brightness: 144
+      color_temp: 370
 
 - name: Hallway daylight
   entities: 
-    light.hueflur:
+    group.hallway_lights:
       state: on
       brightness: 254
-      color_temp: 285
+      color_temp: 250
 
 
 

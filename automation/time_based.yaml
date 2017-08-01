@@ -3,7 +3,7 @@
 - alias: '15min Bedroom timer'
   trigger:
     platform: state
-    entity_id: light.schlazi_decke
+    entity_id: light.trad_bedroom_ceiling
     to: 'on'
   action:
     service: script.turn_on

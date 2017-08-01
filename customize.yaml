@@ -1,120 +1,144 @@
-# Customizations of sensor names/icons
+  # Customizations of sensor names/icons
 
-sensor.ping_google:
-  icon: mdi:google
-sensor.ping_1und1:
-  icon: mdi:web
-sensor.ping_ubnt:
-  icon: mdi:access-point-network
-sensor.yr_temperature:
-  friendly_name: Temperature Outside
-sensor.yr_humidity:
-  friendly_name: Humidity Outside
-  icon: mdi:water-percent
-sensor.fastcom_download:
-  icon: mdi:download
-  friendly_name: Fast.com Down
-sensor.speedtest_download:
-  icon: mdi:download
-  friendly_name: Speedtest Down
-sensor.speedtest_upload:
-  icon: mdi:upload
-  friendly_name: Speedtest Up
-sensor.speedtest_ping:
-  friendly_name: Ping Speedtest
-  icon: mdi:speedometer
-light.schlazi_decke:
-  friendly_name: Ceiling Bedroom
-light.arbeitszimmer:
-  friendly_name: Ceiling Office
-light.couchtisch_l:
-  friendly_name: Coffee Table
-light.esstisch:
-  friendly_name: Dinner Table
-switch.bedroom_stereo:
-  icon: mdi:speaker
-switch.kitchen_stereo:
-  icon: mdi:speaker
-light.stereoanlage:
-  friendly_name: Stereo Set
-  icon: mdi:speaker
-switch.curtain_balls:
-  icon: mdi:lightbulb-outline
-switch.color_balls:
-  icon: mdi:lightbulb-outline
-switch.star_lights:
-  icon: mdi:lightbulb-outline
-script.sleep_timer_all_off:
-  icon: mdi:alarm-snooze
-group.all_automations:
-  hidden: false
-sensor.office_humidity:
-  icon: mdi:water-percent
-sensor.drachenbaum_light:
-  icon: mdi:weather-sunny
-sensor.drachenbaum_moisture:
-  icon: mdi:cup-water
-sensor.feinblatt_light:
-  icon: mdi:weather-sunny
-sensor.feinblatt_moisture:
-  icon: mdi:cup-water
-sensor.feinstaub_pm10:
-  icon: mdi:emoticon-dead
-sensor.feinstaub_pm25:
-  icon: mdi:emoticon-dead
-sensor.dark_sky_icon:
-  hidden: true
-sensor.sunrise:
+  sensor.ping_google:
+    icon: mdi:google
+  sensor.ping_1und1:
+    icon: mdi:web
+  sensor.ping_ubnt:
+    icon: mdi:access-point-network
+  sensor.yr_temperature:
+    friendly_name: 'Temperature Außen'
+  sensor.yr_humidity:
+    friendly_name: 'Luftfeuchte Außen'
+    icon: mdi:water-percent
+  light.schlazi_decke:
+    friendly_name: Ceiling Bedroom
+  light.arbeitszimmer:
+    friendly_name: Ceiling Office
+  light.trad_couchtisch:
+    friendly_name: Couchtisch
+    icon: mdi:lamp
+  light.trad_esstisch:
+    friendly_name: Esstisch
+    icon: mdi:lamp
+  light.dudero:
+    friendly_name: 'Stehlampe Düdero'
+  light.projector:
+    friendly_name: 'Beamer'
+    icon: mdi:projector
+  switch.bedroom_stereo:
+    friendly_name: 'Schlafzimmer Radio'
+    icon: mdi:speaker
+  switch.kitchen_stereo:
+    friendly_name: 'Küche Radio'
+    icon: mdi:speaker
+  switch.living_room_stereo:
+    friendly_name: Stereoanlage
+    icon: mdi:radio
+  sensor.living_room_stereo_watts:
+    icon: mdi:flash
+    friendly_name: Stromverbrauch Stereoanlage
+  switch.curtain_balls:
+    icon: mdi:lightbulb-outline
+    friendly_name: Vorhanggirlande
+  switch.color_balls:
+    icon: mdi:lightbulb-outline
+  switch.star_lights:
+    icon: mdi:lightbulb-outline
+    friendly_name: Sternengirlande
+  script.sleep_timer_all_off:
+    icon: mdi:alarm-snooze
+  group.all_automations:
+    hidden: false
+  sensor.office_humidity:
+    icon: mdi:water-percent
+  sensor.drachenbaum_light:
+    icon: mdi:weather-sunny
+  sensor.drachenbaum_moisture:
+    icon: mdi:cup-water
+  sensor.grunlilie_light:
+    icon: mdi:weather-sunny
+  sensor.grunlilie_moisture:
+    icon: mdi:cup-water
+  sensor.grunlilie_temperature:
+    friendly_name: 'Grünlilie Temperatur'
     hidden: true
-sensor.sunset:
+  sensor.feinstaub_pm10:
+    icon: mdi:emoticon-dead
+  sensor.feinstaub_pm25:
+    icon: mdi:emoticon-dead
+
+  sensor.dark_sky_icon:
+    hidden: true
+  sensor.dark_sky_pressure:
+    hidden: true
+  sensor.dark_sky_dew_point:
     hidden: true
 
-light.aalle_lampen:
-  hidden: true
-  homebridge_hidden: true
-light.bcouchtisch:
-  hidden: true
-  homebridge_hidden: true
-light.cesstisch:
-  hidden: true
-  homebridge_hidden: true
-light.dwohnzimmer:
-  hidden: true
-  homebridge_hidden: true
-light.huewohnzimmer:
-  hidden: true
-  homebridge_hidden: true
-light.hueschlafzimmer:
-  hidden: true
-  homebridge_hidden: true
+  sensor.sunrise:
+      hidden: true
+  sensor.sunset:
+      hidden: true
 
-sensor.aeotec_zw074_multisensor_gen5_alarm_level_2_1:
-  hidden: true
-sensor.aeotec_zw074_multisensor_gen5_alarm_type_2_0:
-  hidden: true
-sensor.aeotec_zw074_multisensor_gen5_burglar_2_10:
-  hidden: true
-sensor.aeotec_zw074_multisensor_gen5_sourcenodeid_2_2:
-  hidden: true
-sensor.aeotec_zw074_multisensor_gen5_luminance_2_3:
-  friendly_name: 'Hallway Luminance'
-sensor.aeotec_zw074_multisensor_gen5_relative_humidity_2_5:
-  friendly_name: 'Hallway Humidity'
-  icon: mdi:water-percent
-sensor.aeotec_zw074_multisensor_gen5_temperature_2_1:
-  friendly_name: 'Hallway Temperature'
-binary_sensor.aeotec_zw074_multisensor_gen5_sensor_2_0:
-  friendly_name: 'Hallway Sensor'
+  light.aalle_lampen:
+    hidden: true
+  light.bcouchtisch:
+    hidden: true
+  light.cesstisch:
+    hidden: true
+  light.dwohnzimmer:
+    hidden: true
 
-sensor.living_room_humidity:
-  icon: mdi:water-percent
-sensor.bedroom_humidity:
-  icon: mdi:water-percent
-sensor.bathroom_humidity:
-  icon: mdi:water-percent
 
-media_player.apple_tv:
-  hidden: true
+  binary_sensor.flic_80e4da700a82:
+    friendly_name: 'Küche Schrank-Knopf'
+  light.trad_bedroom_ceiling:
+    friendly_name: 'Schlafzimmer Decke'
+  light.trad_hall_back:
+    friendly_name: 'Flurlicht vorn'
+  light.trad_hall_front:
+    friendly_name: 'Flurlicht hinten'
+  light.trad_kitchen_1:
+    friendly_name: 'Küche Decke'
 
-group.all_scripts:
-  hidden: true
+
+  sensor.living_room_humidity:
+    friendly_name: Wohnzimmer Luftfeuchte
+    icon: mdi:water-percent
+  sensor.bedroom_humidity:
+    friendly_name: Schlafzimmer Luftfeuchte
+    icon: mdi:water-percent
+  sensor.bathroom_humidity:
+    friendly_name: Badezimmer Luftfeuchte
+    icon: mdi:water-percent
+
+  sensor.living_room_temperature:
+    friendly_name: Wohnzimmer Temperatur
+  sensor.bedroom_temperature:
+    friendly_name: Schlafzimmer Temperatur
+  sensor.bathroom_temperature:
+    friendly_name: Badezimmer Temperatur
+
+  sensor.living_room_temperature_2:
+    hidden: true
+  sensor.living_room_humidity_2:
+    hidden: true
+
+  media_player.apple_tv:
+    hidden: false
+
+  group.all_scripts:
+    hidden: true
+
+  scene.romatic:
+    icon: mdi:heart-outline
+  scene.bright:
+    icon: mdi:weather-sunny
+  scene.warmth:
+    icon: mdi:fire
+  scene.movie:
+    icon: mdi:movie
+  scene.pastel_colors:
+    icon: mdi:auto-fix
+  scene.all_off:
+    icon: mdi:power

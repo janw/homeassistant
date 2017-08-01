@@ -14,6 +14,7 @@
       - humidity
       - pressure
 
+
   - platform: template
     sensors:
       sunrise:
@@ -24,91 +25,85 @@
         friendly_name: 'Current Title'
         value_template: '{{ states.media_player.apple_tv.attributes.media_title }}'
 
-  - platform: speedtest
-    monitored_conditions:
-     - ping
-     - download
-     - upload
-    minute:
-      - 15
-      - 45
+      living_room_temperature:
+        friendly_name: 'Living Room Temperature'
+        value_template: '{{ states.sensor.grunlilie_temperature.state | float }}'
+      living_room_stereo_watts:
+        value_template: '{{ states.switch.living_room_stereo.attributes["Current consumption"] | replace(" W", "") | default(0) | float }}'
+        unit_of_measurement: 'W'
 
-  - platform: fastdotcom
-    minute:
-      - 0
-      - 30
-
-  - platform: command_line
-    scan_interval: 360
-    name: Ping 1und1
-    command: ping -qc 3 1und1.de | tail -1 | cut -d '/' -f 5
-    value_template: "{{ value | float }}"
-    unit_of_measurement: ms
 
   - platform: mqtt
     state_topic: 'home/bedroom'
     name: 'Bedroom Temperature'
     unit_of_measurement: '°C'
     value_template: '{{ value_json.temperature }}'
+
   - platform: mqtt
     state_topic: 'home/bedroom'
     name: 'Bedroom Humidity'
     unit_of_measurement: '%'
     value_template: '{{ value_json.humidity }}'
 
+
+
   - platform: mqtt
     state_topic: 'home/bathroom'
     name: 'Bathroom Temperature'
     unit_of_measurement: '°C'
     value_template: '{{ value_json.temperature }}'
+    
   - platform: mqtt
     state_topic: 'home/bathroom'
     name: 'Bathroom Humidity'
     unit_of_measurement: '%'
     value_template: '{{ value_json.humidity }}'
 
+
+    
   - platform: mqtt
     state_topic: 'miflora/drachenbaum'
     name: 'Drachenbaum Moisture'
     unit_of_measurement: '%'
     value_template: '{{ value_json.moisture }}'
+
   - platform: mqtt
     state_topic: 'miflora/drachenbaum'
     name: 'Drachenbaum Light'
     unit_of_measurement: 'lx'
     value_template: '{{ value_json.light }}'
 
+
+    
   - platform: mqtt
-    state_topic: 'miflora/feinblatt'
-    name: 'Feinblatt Moisture'
+    state_topic: 'miflora/gruenlilie'
+    name: 'Grünlilie Moisture'
     unit_of_measurement: '%'
     value_template: '{{ value_json.moisture }}'
-  - platform: mqtt
-    state_topic: 'miflora/feinblatt'
-    name: 'Feinblatt Light'
-    unit_of_measurement: 'lx'
-    value_template: '{{ value_json.light }}'
 
   - platform: mqtt
-    state_topic: 'home/livingroom'
-    name: 'Living Room Humidity'
-    unit_of_measurement: '%'
-    value_template: '{{ value_json.humidity }}'
-
-  - platform: mqtt
-    state_topic: 'home/livingroom'
-    name: 'Living Room Temperature'
+    state_topic: 'miflora/gruenlilie'
+    name: 'Grünlilie Temperature'
     unit_of_measurement: '°C'
     value_template: '{{ value_json.temperature }}'
 
-  - platform: dht
-    name: 'Office'
-    sensor: DHT22
-    pin: 10
-    monitored_conditions:
-      - temperature
-      - humidity
+  - platform: mqtt
+    state_topic: 'miflora/gruenlilie'
+    name: 'Grünlilie Light'
+    unit_of_measurement: 'lx'
+    value_template: '{{ value_json.light }}'
 
+  # - platform: mqtt
+  #   state_topic: 'home/livingroom'
+  #   name: 'Living Room Humidity'
+  #   unit_of_measurement: '%'
+  #   value_template: '{{ value_json.humidity }}'
+  # 
+  # - platform: mqtt
+  #   state_topic: 'home/livingroom'
+  #   name: 'Living Room Temperature'
+  #   unit_of_measurement: '°C'
+  #   value_template: '{{ value_json.temperature }}'
 
 
     ## FEINSTAUB SENSOR
@@ -136,12 +131,4 @@
     name: 'Feinstaub Humidity'
     unit_of_measurement: '%'
     value_template: '{{ value_json.sensordatavalues[3].value }}'
-
-    ## FRITZBOX
-    # ==========
-  # - platform: fritzbox_callmonitor
-  #   host: 10.10.0.1
-  # - platform: fritzbox_netmonitor
-  #   host: 10.10.0.1
-
 

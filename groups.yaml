@@ -1,71 +1,134 @@
 # Rooms as groups
+#
+# default_view:
+#   view: yes
+#   name: Home
+#   icon: mdi:home
+#   entities:
+#     - group.living_room_scenes
+#     - group.presence
+# 
 
-Living Room Scenes:
-  name: Scenes
+Living_room:
+  name: Living
+  view: yes
+  icon: mdi:sofa
+  entities:
+      - group.living_room_climate
+      - group.living_room_plans
+      - group.living_room_scenes
+      - group.living_room_lights
+      - group.living_room_electronics
+
+Living_Room_Scenes:
+  name: Szenen
   entities:
     - scene.romantic
     - scene.bright
     - scene.warmth
     - scene.movie
-    - scene.pastel_colors
+    - scene.focus
     - scene.all_off
 
-Living room lights:
-  name: Lights
+Living_room_lights:
+  name: Wohnzimmerbeleuchtung
   entities:
-    - light.couchtisch_l
+    - light.trad_couchtisch
     - light.dudero
-    - light.esstisch
+    - light.trad_esstisch
+    - light.vitrinen
     - light.regalgirlande
     - switch.curtain_balls
     - switch.star_lights
 
-Living room electronics:
+Living_room_electronics:
   name: Entertainment
   entities:
-    - light.stereoanlage
-    - media_player.apple_tv
+    - switch.living_room_stereo
+    - light.projector
+    - sensor.living_room_stereo_watts
+    - binary_sensor.living_room_stereo_in_standby
     - sensor.current_title
 
-Living room climate:
-  name: Plants and Climate
+living_room_climate:
+  name: Wohnzimmer Klima
   entities:
     - sensor.living_room_temperature
     - sensor.living_room_humidity
+
+living_room_plants:
+  name: Wohnzimmerpflanzen
+  entities:
     - sensor.drachenbaum_moisture
     - sensor.drachenbaum_light
-    - sensor.feinblatt_moisture
-    - sensor.feinblatt_light
+    - sensor.grunlilie_moisture
+    - sensor.grunlilie_light
 
-Bedroom climate:
-  name: Climate
+Bedroom:
+  view: yes
+  icon: mdi:hotel
+  entities:
+    - group.bedroom_climate
+    - light.trad_bedroom_ceiling
+    - switch.bedroom_stereo
+    - automation.15min_bedroom_timer
+
+bedroom_climate:
+  name: Schlafzimmer Klima
   entities:
     - sensor.bedroom_temperature
     - sensor.bedroom_humidity
 
-Bathroom climate:
+Bathroom:
+  name: Bathroom
+  view: yes
+  icon: mdi:water-pump
+  entities:
+    - group.bathroom_climate
+
+bathroom_climate:
+  name: Bathroom Climate
   entities:
     - sensor.bathroom_temperature
     - sensor.bathroom_humidity
 
 Kitchen:
+  name: Kitchen
+  view: yes
+  icon: mdi:food-fork-drink
   entities:
+    - binary_sensor.flic_80e4da700a82
     - switch.kitchen_stereo
+    - light.kuche_arbeitslicht
 
+
+Hallway:
+  view: yes
+  icon: mdi:vibrate
+  entities:
+    - group.hallway_lights
+    - switch.hallway_fluxing  
+
+hallway_lights:
+  name: Flur Beleuchtung
+  entities:
+    - light.trad_hall_back
+    - light.trad_hall_front
+
+
+      
 Office:
+  view: yes
+  icon: mdi:factory
+  entities:
+    - light.arbeitszimmer
+
+office_climate:
+  name: Office Climate
   entities:
     - sensor.office_temperature
     - sensor.office_humidity
-    - light.arbeitszimmer
 
-Hallway:
-  entities:
-    - binary_sensor.aeotec_zw074_multisensor_gen5_sensor_2_0
-    - sensor.aeotec_zw074_multisensor_gen5_luminance_2_3
-    - sensor.aeotec_zw074_multisensor_gen5_relative_humidity_2_5
-    - sensor.aeotec_zw074_multisensor_gen5_temperature_2_1
-    - light.flur_hinten
-    - light.flur_vorne
 
 # Various panels or convenience collections
 
@@ -86,51 +149,38 @@ Weather:
     - sensor.feinstaub_temperature
     - sensor.feinstaub_humidity
 
-Connectivity:
-  entities:
-    - sensor.fastcom_download
-    - sensor.speedtest_download
-    - sensor.speedtest_upload
-    - sensor.speedtest_ping
-    - sensor.ping_google
-    - sensor.ping_1und1
-    - sensor.ping_ubnt
 
 Presence:
   entities:
-    - device_tracker.b66bcbbd71454aaca21f9c0b16c9acde
-    - device_tracker.ec510faa8e6545a5aa4941eba0a0bbce
+    - device_tracker.jans_iphone
+    - sensor.jans_iphone_battery_level
+    - device_tracker.miriams_iphone
+    - sensor.miriams_iphone_battery_level
+
+
+
 
 # Views
 #
-Living Room:
-  name: Living
-  view: yes
-  entities:
-      - group.living_room_climate
-      - group.living_room_scenes
-      - group.living_room_lights
-      - group.living_room_electronics
 
-Bedroom:
+Climate:
   view: yes
+  icon: mdi:gauge
   entities:
     - group.bedroom_climate
-    - light.schlazi_decke
-    - switch.bedroom_stereo
-    - automation.15min_bedroom_timer
-
-Others:
-  view: yes
-  entities:
     - group.bathroom_climate
-    - group.kitchen
-    - group.hallway
-    - group.office
+    - group.office_climate
+    - group.living_room_climate
+
+Power_consumption:
+  name: Stromverbrauch
+  entities:
+    - sensor.living_room_stereo_watts
 
 Outside:
   name: Outside
   view: yes
+  icon: mdi:earth
   entities:
     - group.connectivity
     - group.weather
@@ -142,3 +192,6 @@ Misc:
   entities:
     - group.all_scripts
     - group.all_automations
+    - group.all_lights
+    - group.all_switches
+    - group.power_consumption

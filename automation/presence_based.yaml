@@ -7,70 +7,27 @@
       from: 'home'
       to: 'not_home'
     action:
-      - service: homeassistant.turn_off
+      - service: homeassistant.turn_on
         entity_id:
-          - group.all_lights
-          - group.all_switches
+          - scene.all_off
 
-  - alias: Turn hallway lights on at night
-    trigger:
-      - platform: state
-        entity_id: binary_sensor.aeotec_zw074_multisensor_gen5_sensor_2_0
-        to: 'on'
-    condition:
-      - condition: or
-        conditions:
-          - condition: time
-            after: '00:00'
-          - condition: time
-            after: '22:59'
-      - condition: sun
-        before: sunrise
-        before_offset: "-00:30:00"
-    action:
-      - service: homeassistant.turn_on
-        entity_id: scene.hallway_nightlight
 
-  - alias: Turn hallway lights on at twilight
-    trigger:
-      - platform: state
-        entity_id: binary_sensor.aeotec_zw074_multisensor_gen5_sensor_2_0
-        to: 'on'
-    condition:
-      - condition: sun
-        after: sunset
-        after_offset: "-00:30:00"
-      - condition: time
-        before: '22:59'
-    action:
-      - service: homeassistant.turn_on
-        entity_id: scene.hallway_twilight
-
-  - alias: Turn hallway lights on at day
-    trigger:
-      - platform: state
-        entity_id: binary_sensor.aeotec_zw074_multisensor_gen5_sensor_2_0
-        to: 'on'
-    condition:
-      - condition: sun
-        after: sunrise
-        before_offset: "-00:30:00"
-      - condition: sun
-        before: sunset
-        before_offset: "-00:30:00"
-    action:
-      - service: homeassistant.turn_on
-        entity_id: scene.hallway_daylight
-
-  - alias: Turn hallway lights off
+  - alias: Turn on desk electronics
     trigger:
       platform: state
-      entity_id: binary_sensor.aeotec_zw074_multisensor_gen5_sensor_2_0
-      to: 'off'
-      for:
-        minutes: 1
+      entity_id: device_tracker.jans_macbook
+      to: 'home'
     action:
-      - service: homeassistant.turn_off
-        entity_id:
-          - light.hueflur
+      - service: switch.turn_on
+        entity_id: switch.desk_electronics
+
+
+  - alias: Turn off desk electronics
+    trigger:
+      platform: state
+      entity_id: device_tracker.jans_macbook
+      to: 'not home'
+    action:
+      - service: switch.turn_off
+        entity_id: switch.desk_electronics
 

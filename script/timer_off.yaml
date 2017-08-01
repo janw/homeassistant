@@ -6,4 +6,4 @@ sequence:
   - service: light.turn_off
     data:
       entity_id:
-        - light.schlazi_decke
+        - light.trad_bedroom_ceiling
