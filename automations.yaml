@@ -1,0 +1,77 @@
+
+# Automations that mainly send user-directed notifications
+- id: notifylivingroomhumid
+  alias: "[Notify] Living Room Humidity"
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.living_room_humidity
+    above: 70
+  action:
+    - service: notify.ios_jans_iphone
+      data:
+        title: "Wohnzimmer"
+        message: "Luftfeuchtigkeit: {{ states.sensor.living_room_humidity.state }} %"
+
+- id: notifykitchenhumid
+  alias: "[Notify] Kitchen Humidity"
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.kitchen_humidity
+    above: 70
+  action:
+    - service: notify.ios_jans_iphone
+      data:
+        title: "Küche"
+        message: "Luftfeuchtigkeit: {{ states.sensor.kitchen_humidity.state }} %"
+
+- id: notifybedroomhumid
+  alias: "[Notify] Bedroom Humidity"
+  trigger:
+    platform: numeric_state
+    entity_id: states.sensor.bedroom_humi_stats_mean
+    above: 70
+  action:
+    - service: notify.ios_jans_iphone
+      data:
+        title: "Schlafzimmer"
+        message: "Luftfeuchtigkeit: {{ states.sensor.bedroom_humidity.state }} %"
+
+- id: notifybathroomhumid
+  alias: "[Notify] Bathroom Humidity"
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.bathroom_humidity
+    above: 70
+  action:
+    - service: notify.ios_jans_iphone
+      data:
+        title: "Badezimmer"
+        message: "Luftfeuchtigkeit: {{ states.sensor.bathroom_humidity.state }} %"
+
+- id: leavinghome
+  alias: Leaving Home
+  trigger:
+    platform: state
+    entity_id: group.presence
+    from: 'home'
+    to: 'not_home'
+  action:
+    - service: homeassistant.turn_on
+      entity_id:
+        - scene.all_off
+
+
+- id: bedroomtimer
+  alias: '15min Bedroom timer'
+  trigger:
+    platform: state
+    entity_id: light.trad_bedroom_ceiling
+    to: 'on'
+  condition:
+    condition: time
+    after: '08:00:00'
+  action:
+    service: script.turn_on
+    entity_id: script.timed_lamp
+
+
