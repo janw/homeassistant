@@ -13,10 +13,19 @@ homeassistant:
       icon: mdi:bug
     "device_tracker.rpi_*":
       icon: mdi:raspberrypi
-    "*.*_battery_state":
+    "light.Hue*":
       hidden: true
-    "light.hue*":
-      hidden: true
+      homebridge_hidden: true
+    "sensor.*_moisture":
+      icon: mdi:cup-water
+    "light.trad_*":
+      homebridge_hidden: true
+    "device_tracker.*":
+      homebridge_hidden: true
+    "sensor.dark_sky*":
+      homebridge_hidden: true
+    "sensor.feinstaub*":
+      homebridge_hidden: true
 
 
 zone 2:
@@ -45,7 +54,7 @@ config:
 
 
 # Discover some devices automatically
-# discovery:
+#discovery:
 
 
 # Run MQTT for microcontroller-based IoT devices
@@ -85,9 +94,6 @@ history:
       - light.bcouchtisch
       - light.aalle_lampen
       - light.dwohnzimmer
-      - binary_sensor.living_room_stereo_in_standby
-      - binary_sensor.flic_80e4da700a82
-      - device_tracker.jans_macbook
 
     domains:
       - input_select
@@ -128,27 +134,10 @@ logbook:
 sun:
 
 
-# Include pilight for 433MHz-based lights
-pilight:
-  host: 10.10.4.184
-  port: 5000
-
-binary_sensor: !include sensor_binary.yml
-
 tradfri:
   host: 10.10.4.36
-  api_key: !secret tradfri_apikey 
 
-# Include hub-based light platforms
-  # - platform: osramlightify
-  #   host: 10.10.4.40
-
-# Include network media platforms
-apple_tv:
-  - name: Apple TV
-    host: 10.10.4.7
-    login_id: !secret appletv_loginid
-    start_off: on
+# alexa:
 
 # Device tracking
 device_tracker:
@@ -161,7 +150,14 @@ device_tracker:
     verify_ssl: false
 
 ios:
-
+  push:
+    categories:
+      - name: Notification
+        identifier: 'notification'
+        actions:
+          - identifier: 'dismiss'
+            title: 'Okay'
+            behavior: 'default'
 
 
 # Include other config files

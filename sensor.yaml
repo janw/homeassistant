@@ -15,22 +15,15 @@
       - pressure
 
 
-  - platform: template
-    sensors:
-      sunrise:
-        value_template: '{{ states.sun.sun.attributes.next_rising }}'
-      sunset:
-        value_template: '{{ states.sun.sun.attributes.next_setting }}'
-      current_title:
-        friendly_name: 'Current Title'
-        value_template: '{{ states.media_player.apple_tv.attributes.media_title }}'
+  - platform: mqtt
+    state_topic: 'rx868probes/1/temperature'
+    name: 'Kitchen Temperature'
+    unit_of_measurement: '°C'
 
-      living_room_temperature:
-        friendly_name: 'Living Room Temperature'
-        value_template: '{{ states.sensor.grunlilie_temperature.state | float }}'
-      living_room_stereo_watts:
-        value_template: '{{ states.switch.living_room_stereo.attributes["Current consumption"] | replace(" W", "") | default(0) | float }}'
-        unit_of_measurement: 'W'
+  - platform: mqtt
+    state_topic: 'rx868probes/1/humidity'
+    name: 'Kitchen Humidity'
+    unit_of_measurement: '%'
 
 
   - platform: mqtt
@@ -46,65 +39,29 @@
     value_template: '{{ value_json.humidity }}'
 
 
-
   - platform: mqtt
-    state_topic: 'home/bathroom'
+    state_topic: 'rx868probes/0/temperature'
     name: 'Bathroom Temperature'
     unit_of_measurement: '°C'
-    value_template: '{{ value_json.temperature }}'
     
   - platform: mqtt
-    state_topic: 'home/bathroom'
+    state_topic: 'rx868probes/0/humidity'
     name: 'Bathroom Humidity'
     unit_of_measurement: '%'
-    value_template: '{{ value_json.humidity }}'
-
 
     
+    ## LIVING ROOM
+    # =============
   - platform: mqtt
-    state_topic: 'miflora/drachenbaum'
-    name: 'Drachenbaum Moisture'
-    unit_of_measurement: '%'
-    value_template: '{{ value_json.moisture }}'
-
-  - platform: mqtt
-    state_topic: 'miflora/drachenbaum'
-    name: 'Drachenbaum Light'
-    unit_of_measurement: 'lx'
-    value_template: '{{ value_json.light }}'
-
-
-    
-  - platform: mqtt
-    state_topic: 'miflora/gruenlilie'
-    name: 'Grünlilie Moisture'
-    unit_of_measurement: '%'
-    value_template: '{{ value_json.moisture }}'
-
-  - platform: mqtt
-    state_topic: 'miflora/gruenlilie'
-    name: 'Grünlilie Temperature'
+    state_topic: 'rx868probes/2/temperature'
+    name: 'Living Room Temperature'
     unit_of_measurement: '°C'
-    value_template: '{{ value_json.temperature }}'
 
   - platform: mqtt
-    state_topic: 'miflora/gruenlilie'
-    name: 'Grünlilie Light'
-    unit_of_measurement: 'lx'
-    value_template: '{{ value_json.light }}'
-
-  # - platform: mqtt
-  #   state_topic: 'home/livingroom'
-  #   name: 'Living Room Humidity'
-  #   unit_of_measurement: '%'
-  #   value_template: '{{ value_json.humidity }}'
-  # 
-  # - platform: mqtt
-  #   state_topic: 'home/livingroom'
-  #   name: 'Living Room Temperature'
-  #   unit_of_measurement: '°C'
-  #   value_template: '{{ value_json.temperature }}'
-
+    state_topic: 'rx868probes/2/humidity'
+    name: 'Living Room Humidity'
+    unit_of_measurement: '%'
+  
 
     ## FEINSTAUB SENSOR
     # ==================
@@ -131,4 +88,11 @@
     name: 'Feinstaub Humidity'
     unit_of_measurement: '%'
     value_template: '{{ value_json.sensordatavalues[3].value }}'
+
+  - platform: statistics
+    entity_id: sensor.bedroom_humidity
+    name: 'Bedroom Humi Stats'
+    sampling_size: 10
+    max_age:
+      minutes: 30
 

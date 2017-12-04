@@ -10,6 +10,10 @@
       state: on
       rgb_color: [255,121,33]
       brightness: 128
+    light.sideboardlampe:
+      state: on
+      rgb_color: [255,121,33]
+      brightness: 64
     light.trad_esstisch:
       state: on
       color_temp: 454
@@ -28,6 +32,10 @@
       state: on
       rgb_color: [255,100,100]
       brightness: 100
+    light.sideboardlampe:
+      state: on
+      rgb_color: [255,100,100]
+      brightness: 80
     light.trad_esstisch: off
     light.regalgirlande: on
     switch.star_lights: on
@@ -36,6 +44,10 @@
 - name: Bright
   entities:
     light.trad_couchtisch:
+      state: on
+      color_temp: 370
+      brightness: 254
+    light.sideboardlampe:
       state: on
       color_temp: 370
       brightness: 254
@@ -59,6 +71,10 @@
       state: on
       color_temp: 250
       brightness: 200
+    light.sideboardlampe:
+      state: on
+      color_temp: 250
+      brightness: 169
     light.dudero:
       state: on
       color_temp: 250
@@ -75,6 +91,7 @@
   entities:
     light.trad_couchtisch: off
     light.dudero: off
+    light.sideboardlampe: off
     light.trad_esstisch: off
     switch.living_room_stereo: on
     light.projector: on
@@ -114,24 +131,36 @@
 
 - name: Hallway nightlight
   entities: 
-    group.hallway_lights:
+    light.trad_hall_front:
       state: on
       brightness: 10
-      color_temp: 454
+      color_temp: 458.0
+    light.trad_hall_back:
+      state: on
+      brightness: 10
+      color_temp: 458.0
 
 - name: Hallway twilight
   entities: 
-    group.hallway_lights:
+    light.trad_hall_front:
       state: on
-      brightness: 144
-      color_temp: 370
+      brightness: 50
+      color_temp: 458.0
+    light.trad_hall_back:
+      state: on
+      brightness: 50
+      color_temp: 458.0
 
 - name: Hallway daylight
   entities: 
-    group.hallway_lights:
+    light.trad_hall_front:
       state: on
       brightness: 254
-      color_temp: 250
-
+      color_temp: 249.0
+    light.trad_hall_back:
+      state: on
+      brightness: 254
+      color_temp: 249.0
+      
 
 

@@ -8,9 +8,593 @@ jans_iphone:
   gravatar: "mail@janwillhaus.de"
   track: true
 
-ec510faa8e6545a5aa4941eba0a0bbce:
+## PERSONAL DEVICES: MIRI
+miriams_iphone:
   hide_if_away: false
   mac: !secret miriam_iphone_mac
   name: Miriams iPhone
   picture: /local/miri.jpg
   track: true
+
+
+pizeroalpha:
+  hide_if_away: false
+  mac: B8:27:EB:AF:B1:78
+  name: pizero-alpha
+  picture:
+  track: false
+  vendor: Raspberry Pi Foundation
+
+miriams_ipad:
+  hide_if_away: false
+  mac: AC:FD:EC:E8:B4:FA
+  name: Miriams iPad
+  picture:
+  track: false
+  vendor: Apple, Inc.
+
+jans_macbook:
+  hide_if_away: false
+  mac: B8:8D:12:34:F0:EC
+  name: Jans MacBook
+  picture:
+  track: false
+  vendor: Apple, Inc.
+  consider_home: 15
+
+apfelnas:
+  hide_if_away: false
+  mac: 02:FF:70:00:07:0B
+  name: ApfelNas
+  picture:
+  track: false
+  vendor: unknown
+
+apfelnas_2:
+  hide_if_away: false
+  mac: 00:25:90:47:63:E9
+  name: ApfelNas
+  picture:
+  track: false
+  vendor: Super Micro Computer, Inc.
+
+apfelubnt:
+  hide_if_away: false
+  mac: 04:18:D6:20:4D:63
+  name: ApfelUbnt
+  picture:
+  track: false
+  vendor: Ubiquiti Networks Inc.
+
+appletv:
+  hide_if_away: false
+  mac: 08:66:98:9A:B7:42
+  name: Apple-TV
+  picture:
+  track: false
+  vendor: Apple, Inc.
+
+dnsserver:
+  hide_if_away: false
+  mac: B8:27:EB:29:DE:46
+  name: DNS-Server
+  picture:
+  track: false
+  vendor: Raspberry Pi Foundation
+
+philipshue:
+  hide_if_away: false
+  mac: 00:17:88:1C:8E:A6
+  name: Philips-hue
+  picture:
+  track: false
+  vendor: Philips Lighting BV
+
+plex:
+  hide_if_away: false
+  mac: 02:A0:98:08:C7:DE
+  name: Plex
+  picture:
+  track: false
+  vendor: unknown
+
+apfelbuntu:
+  hide_if_away: false
+  mac: 02:A0:98:25:E8:A1
+  name: apfelbuntu
+  picture:
+  track: false
+  vendor: unknown
+
+apfelfritz:
+  hide_if_away: false
+  mac: E0:28:6D:00:AC:44
+  name: apfelfritz
+  picture:
+  track: false
+  vendor: AVM Audiovisuelles Marketing und Computersysteme GmbH
+
+atlasprobe:
+  hide_if_away: false
+  mac: A4:2B:B0:DF:FE:DC
+  name: atlas-probe
+  picture:
+  track: false
+  vendor: TP-LINK TECHNOLOGIES CO.,LTD.
+
+box:
+  hide_if_away: false
+  mac: 02:A0:98:16:76:B3
+  name: box
+  picture:
+  track: false
+  vendor: unknown
+
+appletv_2:
+  hide_if_away: false
+  mac: 08:66:98:9A:B7:40
+  name: Apple-TV
+  picture:
+  track: false
+  vendor: Apple, Inc.
+
+miriams_macbook:
+  hide_if_away: false
+  mac: 60:03:08:9C:44:A0
+  name: Miriams MacBook
+  picture:
+  track: false
+  vendor: Apple, Inc.
+
+hadashboard:
+  hide_if_away: false
+  mac: 12:8F:BD:85:CA:22
+  name: hadashboard
+  picture:
+  track: false
+  vendor: unknown
+
+jansmacbook2:
+  hide_if_away: false
+  mac: 3C:07:54:46:16:98
+  name: Jans-MacBook-2
+  picture:
+  track: false
+  vendor: Apple, Inc.
+
+printserver:
+  hide_if_away: false
+  mac: 7C:62:79:D3:5F:B6
+  name: Print-Server
+  picture:
+  track: false
+  vendor: unknown
+
+pc968a35f69309:
+  hide_if_away: false
+  mac: 96:8A:35:F6:93:09
+  name: PC-96-8A-35-F6-93-09
+  picture:
+  track: false
+  vendor: unknown
+
+jansmacbook2_2:
+  hide_if_away: false
+  mac: B4:75:0E:E4:BB:A7
+  name: Jans-MacBook-2
+  picture:
+  track: false
+  vendor: Belkin International Inc.
+
+
+gwb072bf27c3d3:
+  hide_if_away: false
+  mac: B0:72:BF:27:C3:D3
+  name: Ikea Tradfri
+  picture:
+  track: false
+  vendor: Murata Manufacturing Co., Ltd.
+
+appletv_3:
+  hide_if_away: false
+  mac: D0:4F:7E:1F:38:C7
+  name: Apple-TV
+  picture:
+  track: false
+  vendor: Apple, Inc.
+
+susannestablet:
+  hide_if_away: false
+  icon:
+  mac: C0:33:5E:1B:2C:D7
+  name: Susannes-Tablet
+  picture:
+  track: false
+  vendor: Microsoft
+
+ubnt:
+  hide_if_away: false
+  icon:
+  mac: F0:9F:C2:1D:88:5E
+  name: Unifi Security Gateway
+  picture:
+  track: false
+  vendor: Ubiquiti Networks Inc.
+
+rancheros:
+  hide_if_away: false
+  icon:
+  mac: 00:A0:98:DF:16:3A
+  name: RancherOS
+  picture:
+  track: false
+  vendor: NetApp
+
+dashbutton_schwarzkopf:
+  hide_if_away: false
+  icon:
+  mac: 50:F5:DA:E4:99:BC
+  name: Dashbutton Schwarzkopf
+  picture:
+  track: false
+  vendor: Amazon Technologies Inc.
+
+home_assistant_2:
+  hide_if_away: false
+  icon:
+  mac: 02:FF:30:00:15:0B
+  name: Home Assistant 2
+  picture:
+  track: false
+  vendor: unknown
+
+pilight:
+  hide_if_away: false
+  icon:
+  mac: B8:27:EB:5C:16:F2
+  name: pilight
+  picture:
+  track: false
+  vendor: Raspberry Pi Foundation
+
+tor_relay:
+  hide_if_away: false
+  icon:
+  mac: 7A:05:BD:5B:97:6E
+  name: Tor Relay
+  picture:
+  track: false
+  vendor: unknown
+
+sonarr:
+  hide_if_away: false
+  icon:
+  mac: 72:4C:19:2B:18:68
+  name: Sonarr
+  picture:
+  track: false
+  vendor: unknown
+
+unifi_controller:
+  hide_if_away: false
+  icon:
+  mac: 3A:74:92:85:07:A8
+  name: Unifi Controller
+  picture:
+  track: false
+  vendor: unknown
+
+feinstaubsensor:
+  hide_if_away: false
+  icon:
+  mac: A0:20:A6:06:7B:DD
+  name: Feinstaubsensor
+  picture:
+  track: false
+  vendor: Espressif Inc.
+
+radarr:
+  hide_if_away: false
+  icon:
+  mac: 26:DD:55:43:30:32
+  name: Radarr
+  picture:
+  track: false
+  vendor: unknown
+
+plex_2:
+  hide_if_away: false
+  icon:
+  mac: BA:75:5F:5B:FD:D5
+  name: Plex
+  picture:
+  track: false
+  vendor: unknown
+
+resilio_sync:
+  hide_if_away: false
+  icon:
+  mac: 02:FF:90:00:12:0B
+  name: Resilio Sync
+  picture:
+  track: false
+  vendor: unknown
+
+headphones:
+  hide_if_away: false
+  icon:
+  mac: 02:FF:70:00:0C:0B
+  name: Headphones
+  picture:
+  track: false
+  vendor: unknown
+
+mysql_db:
+  hide_if_away: false
+  icon:
+  mac: E2:09:A0:21:3A:92
+  name: MySQL DB
+  picture:
+  track: false
+  vendor: unknown
+
+nzbhydra:
+  hide_if_away: false
+  icon:
+  mac: 02:FF:70:00:12:0B
+  name: NzbHydra
+  picture:
+  track: false
+  vendor: unknown
+
+toolshed:
+  hide_if_away: false
+  icon:
+  mac: BE:5E:E6:33:CC:80
+  name: Toolshed
+  picture:
+  track: false
+  vendor: unknown
+
+transmission:
+  hide_if_away: false
+  icon:
+  mac: 1A:E2:79:A9:7D:2A
+  name: Transmission
+  picture:
+  track: false
+  vendor: unknown
+
+sabnzbd:
+  hide_if_away: false
+  icon:
+  mac: 4A:A9:25:BB:63:82
+  name: SabNZBd
+  picture:
+  track: false
+  vendor: unknown
+
+rclone:
+  hide_if_away: false
+  icon:
+  mac: 4A:9C:19:F5:26:71
+  name: Rclone
+  picture:
+  track: false
+  vendor: unknown
+
+02420a0a0b00:
+  hide_if_away: false
+  icon:
+  mac: 02:42:0A:0A:0B:00
+  name: 02420a0a0b00
+  picture:
+  track: false
+  vendor: unknown
+
+02420a0a0b01:
+  hide_if_away: false
+  icon:
+  mac: 02:42:0A:0A:0B:01
+  name: 02420a0a0b01
+  picture:
+  track: false
+  vendor: unknown
+
+02420a0a0908:
+  hide_if_away: false
+  icon:
+  mac: 02:42:0A:0A:09:08
+  name: 02420a0a0908
+  picture:
+  track: false
+  vendor: unknown
+
+704f5710eca7:
+  hide_if_away: false
+  icon:
+  mac: 70:4F:57:10:EC:A7
+  name: 704f5710eca7
+  picture:
+  track: false
+  vendor: unknown
+
+esp_16f67f:
+  hide_if_away: false
+  icon:
+  mac: A0:20:A6:16:F6:7F
+  name: ESP 16F67F
+  picture:
+  track: false
+  vendor: Espressif Inc.
+
+esp_06300d:
+  hide_if_away: false
+  icon:
+  mac: A0:20:A6:06:30:0D
+  name: ESP 06300D
+  picture:
+  track: false
+  vendor: Espressif Inc.
+
+esp_c5963f:
+  hide_if_away: false
+  icon:
+  mac: 5C:CF:7F:C5:96:3F
+  name: ESP C5963F
+  picture:
+  track: false
+  vendor: Espressif Inc.
+
+esp_c6cf2a:
+  hide_if_away: false
+  icon:
+  mac: 5C:CF:7F:C6:CF:2A
+  name: ESP C6CF2A
+  picture:
+  track: false
+  vendor: unknown
+
+esp_154dc1:
+  hide_if_away: false
+  icon:
+  mac: A0:20:A6:15:4D:C1
+  name: ESP 154DC1
+  picture:
+  track: false
+  vendor: Espressif Inc.
+
+b827eb2876da:
+  hide_if_away: false
+  icon:
+  mac: B8:27:EB:28:76:DA
+  name: b827eb2876da
+  picture:
+  track: false
+  vendor: Raspberry Pi Foundation
+
+44650d2d5bdd:
+  hide_if_away: false
+  icon:
+  mac: 44:65:0D:2D:5B:DD
+  name: 44650d2d5bdd
+  picture:
+  track: false
+  vendor: Amazon Technologies Inc.
+
+esp_1852dd:
+  hide_if_away: false
+  icon:
+  mac: A0:20:A6:18:52:DD
+  name: ESP 1852DD
+  picture:
+  track: false
+  vendor: unknown
+
+home_assistant_other:
+  hide_if_away: false
+  icon:
+  mac: 02:FF:30:00:09:0B
+  name: Home Assistant Other
+  picture:
+  track: false
+  vendor: unknown
+
+00a098a3f747:
+  hide_if_away: false
+  icon:
+  mac: 00:A0:98:A3:F7:47
+  name: 00a098a3f747
+  picture:
+  track: false
+  vendor: NetApp
+
+54e43a306875:
+  hide_if_away: false
+  icon:
+  mac: 54:E4:3A:30:68:75
+  name: 54e43a306875
+  picture:
+  track: false
+  vendor: Apple, Inc.
+
+joachimsiphone:
+  hide_if_away: false
+  icon:
+  mac: 44:00:10:40:BD:F8
+  name: Joachims-iPhone
+  picture:
+  track: false
+  vendor: Apple, Inc.
+
+androidfd325919776d50c0:
+  hide_if_away: false
+  icon:
+  mac: 24:DA:9B:8E:31:A9
+  name: android-fd325919776d50c0
+  picture:
+  track: false
+  vendor: Motorola Mobility LLC, a Lenovo Company
+
+00a098bf8a14:
+  hide_if_away: false
+  icon:
+  mac: 00:A0:98:BF:8A:14
+  name: 00a098bf8a14
+  picture:
+  track: false
+  vendor: NetApp
+
+iphone:
+  hide_if_away: false
+  icon:
+  mac: 90:84:0D:40:33:99
+  name: iPhone
+  picture:
+  track: false
+  vendor: Apple, Inc.
+
+d8a25e8cb7b8:
+  hide_if_away: false
+  icon:
+  mac: D8:A2:5E:8C:B7:B8
+  name: d8a25e8cb7b8
+  picture:
+  track: false
+  vendor: Apple, Inc.
+
+viktoriasiphone:
+  hide_if_away: false
+  icon:
+  mac: 38:CA:DA:B4:53:ED
+  name: ViktoriasiPhone
+  picture:
+  track: false
+  vendor: Apple, Inc.
+
+00234e21eba4:
+  hide_if_away: false
+  icon:
+  mac: 00:23:4E:21:EB:A4
+  name: 00234e21eba4
+  picture:
+  track: false
+  vendor: unknown
+
+marionsiphone:
+  hide_if_away: false
+  icon:
+  mac: A4:E9:75:25:CE:43
+  name: Marions-iPhone
+  picture:
+  track: false
+  vendor: Apple, Inc.
+
+amazonc91218152:
+  hide_if_away: false
+  icon:
+  mac: 50:DC:E7:44:90:6D
+  name: amazon-c91218152
+  picture:
+  track: false
+  vendor: unknown

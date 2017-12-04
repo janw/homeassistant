@@ -1,39 +1,34 @@
 # Rooms as groups
-#
-# default_view:
-#   view: yes
-#   name: Home
-#   icon: mdi:home
-#   entities:
-#     - group.living_room_scenes
-#     - group.presence
-# 
 
-Living_room:
-  name: Living
+Wohnen:
+  name: Wohnen
   view: yes
-  icon: mdi:sofa
   entities:
+      - group.global_scenes
       - group.living_room_climate
-      - group.living_room_plans
       - group.living_room_scenes
       - group.living_room_lights
       - group.living_room_electronics
 
+global_scenes:
+  name: Globale Szenen
+  entities:
+    - scene.all_off
+
 Living_Room_Scenes:
-  name: Szenen
+  name: Wohnen Szenen
   entities:
     - scene.romantic
     - scene.bright
     - scene.warmth
     - scene.movie
     - scene.focus
-    - scene.all_off
 
 Living_room_lights:
-  name: Wohnzimmerbeleuchtung
+  name: Wohnen Beleuchtung
   entities:
     - light.trad_couchtisch
+    - light.sideboardlampe
     - light.dudero
     - light.trad_esstisch
     - light.vitrinen
@@ -44,70 +39,67 @@ Living_room_lights:
 Living_room_electronics:
   name: Entertainment
   entities:
-    - switch.living_room_stereo
     - light.projector
-    - sensor.living_room_stereo_watts
-    - binary_sensor.living_room_stereo_in_standby
-    - sensor.current_title
 
 living_room_climate:
-  name: Wohnzimmer Klima
+  name: Wohnen Klima
   entities:
     - sensor.living_room_temperature
     - sensor.living_room_humidity
 
-living_room_plants:
-  name: Wohnzimmerpflanzen
-  entities:
-    - sensor.drachenbaum_moisture
-    - sensor.drachenbaum_light
-    - sensor.grunlilie_moisture
-    - sensor.grunlilie_light
-
-Bedroom:
+bedroom:
+  name: Schlafen
   view: yes
-  icon: mdi:hotel
   entities:
+    - group.global_scenes
     - group.bedroom_climate
     - light.trad_bedroom_ceiling
-    - switch.bedroom_stereo
     - automation.15min_bedroom_timer
 
+kitchen_climate:
+  name: Küche Klima
+  entities:
+    - sensor.kitchen_temperature
+    - sensor.kitchen_humidity
+
 bedroom_climate:
-  name: Schlafzimmer Klima
+  name: Schlafen Klima
   entities:
     - sensor.bedroom_temperature
     - sensor.bedroom_humidity
+    - sensor.bedroom_humi_stats_mean
 
-Bathroom:
-  name: Bathroom
+bathroom:
+  name: Baden
   view: yes
-  icon: mdi:water-pump
   entities:
+    - group.global_scenes
+    - light.hue_bathroom_moodlight
     - group.bathroom_climate
 
 bathroom_climate:
-  name: Bathroom Climate
+  name: Baden Klima
   entities:
     - sensor.bathroom_temperature
     - sensor.bathroom_humidity
 
-Kitchen:
-  name: Kitchen
+kitchen:
+  name: Kochen
   view: yes
-  icon: mdi:food-fork-drink
   entities:
-    - binary_sensor.flic_80e4da700a82
+    - group.global_scenes
     - switch.kitchen_stereo
     - light.kuche_arbeitslicht
+    - group.kitchen_climate
 
 
-Hallway:
+hallway:
+  name: Flur
   view: yes
-  icon: mdi:vibrate
   entities:
+    - group.global_scenes
+    - group.hallway_scenes
     - group.hallway_lights
-    - switch.hallway_fluxing  
 
 hallway_lights:
   name: Flur Beleuchtung
@@ -115,33 +107,28 @@ hallway_lights:
     - light.trad_hall_back
     - light.trad_hall_front
 
-
+hallway_scenes:
+  name: Flur Szenen
+  entities:
+    - scene.hallway_nightlight
+    - scene.hallway_twilight
+    - scene.hallway_daylight
       
-Office:
+office:
+  name: Arbeiten
   view: yes
-  icon: mdi:factory
   entities:
+    - group.global_scenes
     - light.arbeitszimmer
-
-office_climate:
-  name: Office Climate
-  entities:
-    - sensor.office_temperature
-    - sensor.office_humidity
-
 
 # Various panels or convenience collections
 
-Weather:
+weather:
   entities:
     - sun.sun
     - sensor.dark_sky_summary
     - sensor.dark_sky_temperature
-    - sensor.dark_sky_dew_point
     - sensor.dark_sky_humidity
-    - sensor.dark_sky_wind_speed
-    - sensor.dark_sky_pressure
-    - sensor.dark_sky_cloud_coverage
     - sensor.dark_sky_precip_intensity
     - sensor.dark_sky_precip_probability
     - sensor.feinstaub_pm10
@@ -150,43 +137,41 @@ Weather:
     - sensor.feinstaub_humidity
 
 
-Presence:
+presence:
   entities:
     - device_tracker.jans_iphone
-    - sensor.jans_iphone_battery_level
     - device_tracker.miriams_iphone
-    - sensor.miriams_iphone_battery_level
 
-
-
-
-# Views
-#
-
-Climate:
+climate:
+  name: Klima
   view: yes
   icon: mdi:gauge
   entities:
+    - group.kitchen_climate
     - group.bedroom_climate
     - group.bathroom_climate
-    - group.office_climate
     - group.living_room_climate
 
-Power_consumption:
-  name: Stromverbrauch
-  entities:
-    - sensor.living_room_stereo_watts
-
-Outside:
+outside:
   name: Outside
   view: yes
   icon: mdi:earth
   entities:
-    - group.connectivity
     - group.weather
     - group.presence
 
-Misc:
+battery_state:
+  name: 'Batteriestände'
+  entities:
+    - sensor.trad_hall_sense
+    - sensor.trad_remote_coffeetable
+    - sensor.trad_remote_livingroom
+    - sensor.jans_iphone_battery_level
+    - sensor.jans_iphone_battery_state
+    - sensor.miriams_iphone_battery_level
+    - sensor.miriams_iphone_battery_state
+
+misc:
   view: yes
   icon: mdi:apple-keyboard-command
   entities:
@@ -194,4 +179,4 @@ Misc:
     - group.all_automations
     - group.all_lights
     - group.all_switches
-    - group.power_consumption
+    - group.battery_state

@@ -1,5 +1,4 @@
 
-# Automations that mainly send user-directed notifications
 - id: notifylivingroomhumid
   alias: "[Notify] Living Room Humidity"
   trigger:
@@ -28,7 +27,7 @@
   alias: "[Notify] Bedroom Humidity"
   trigger:
     platform: numeric_state
-    entity_id: states.sensor.bedroom_humi_stats_mean
+    entity_id: sensor.bedroom_humi_stats_mean
     above: 70
   action:
     - service: notify.ios_jans_iphone
@@ -57,9 +56,7 @@
     to: 'not_home'
   action:
     - service: homeassistant.turn_on
-      entity_id:
-        - scene.all_off
-
+      entity_id: scene.all_off
 
 - id: bedroomtimer
   alias: '15min Bedroom timer'

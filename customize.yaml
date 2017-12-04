@@ -1,144 +1,141 @@
-  # Customizations of sensor names/icons
-
-  sensor.ping_google:
-    icon: mdi:google
-  sensor.ping_1und1:
-    icon: mdi:web
-  sensor.ping_ubnt:
-    icon: mdi:access-point-network
-  sensor.yr_temperature:
-    friendly_name: 'Temperature Außen'
-  sensor.yr_humidity:
-    friendly_name: 'Luftfeuchte Außen'
-    icon: mdi:water-percent
-  light.schlazi_decke:
-    friendly_name: Ceiling Bedroom
-  light.arbeitszimmer:
-    friendly_name: Ceiling Office
-  light.trad_couchtisch:
-    friendly_name: Couchtisch
-    icon: mdi:lamp
-  light.trad_esstisch:
-    friendly_name: Esstisch
-    icon: mdi:lamp
-  light.dudero:
-    friendly_name: 'Stehlampe Düdero'
-  light.projector:
-    friendly_name: 'Beamer'
-    icon: mdi:projector
-  switch.bedroom_stereo:
-    friendly_name: 'Schlafzimmer Radio'
-    icon: mdi:speaker
-  switch.kitchen_stereo:
-    friendly_name: 'Küche Radio'
-    icon: mdi:speaker
-  switch.living_room_stereo:
-    friendly_name: Stereoanlage
-    icon: mdi:radio
-  sensor.living_room_stereo_watts:
-    icon: mdi:flash
-    friendly_name: Stromverbrauch Stereoanlage
-  switch.curtain_balls:
-    icon: mdi:lightbulb-outline
-    friendly_name: Vorhanggirlande
-  switch.color_balls:
-    icon: mdi:lightbulb-outline
-  switch.star_lights:
-    icon: mdi:lightbulb-outline
-    friendly_name: Sternengirlande
-  script.sleep_timer_all_off:
-    icon: mdi:alarm-snooze
-  group.all_automations:
-    hidden: false
-  sensor.office_humidity:
-    icon: mdi:water-percent
-  sensor.drachenbaum_light:
-    icon: mdi:weather-sunny
-  sensor.drachenbaum_moisture:
-    icon: mdi:cup-water
-  sensor.grunlilie_light:
-    icon: mdi:weather-sunny
-  sensor.grunlilie_moisture:
-    icon: mdi:cup-water
-  sensor.grunlilie_temperature:
-    friendly_name: 'Grünlilie Temperatur'
-    hidden: true
-  sensor.feinstaub_pm10:
-    icon: mdi:emoticon-dead
-  sensor.feinstaub_pm25:
-    icon: mdi:emoticon-dead
-
-  sensor.dark_sky_icon:
-    hidden: true
-  sensor.dark_sky_pressure:
-    hidden: true
-  sensor.dark_sky_dew_point:
-    hidden: true
-
-  sensor.sunrise:
-      hidden: true
-  sensor.sunset:
-      hidden: true
-
-  light.aalle_lampen:
-    hidden: true
-  light.bcouchtisch:
-    hidden: true
-  light.cesstisch:
-    hidden: true
-  light.dwohnzimmer:
-    hidden: true
-
-
-  binary_sensor.flic_80e4da700a82:
-    friendly_name: 'Küche Schrank-Knopf'
-  light.trad_bedroom_ceiling:
-    friendly_name: 'Schlafzimmer Decke'
-  light.trad_hall_back:
-    friendly_name: 'Flurlicht vorn'
-  light.trad_hall_front:
-    friendly_name: 'Flurlicht hinten'
-  light.trad_kitchen_1:
-    friendly_name: 'Küche Decke'
-
-
-  sensor.living_room_humidity:
-    friendly_name: Wohnzimmer Luftfeuchte
-    icon: mdi:water-percent
-  sensor.bedroom_humidity:
-    friendly_name: Schlafzimmer Luftfeuchte
-    icon: mdi:water-percent
-  sensor.bathroom_humidity:
-    friendly_name: Badezimmer Luftfeuchte
-    icon: mdi:water-percent
-
-  sensor.living_room_temperature:
-    friendly_name: Wohnzimmer Temperatur
-  sensor.bedroom_temperature:
-    friendly_name: Schlafzimmer Temperatur
-  sensor.bathroom_temperature:
-    friendly_name: Badezimmer Temperatur
-
-  sensor.living_room_temperature_2:
-    hidden: true
-  sensor.living_room_humidity_2:
-    hidden: true
-
-  media_player.apple_tv:
-    hidden: false
-
-  group.all_scripts:
-    hidden: true
-
-  scene.romatic:
-    icon: mdi:heart-outline
-  scene.bright:
-    icon: mdi:weather-sunny
-  scene.warmth:
-    icon: mdi:fire
-  scene.movie:
-    icon: mdi:movie
-  scene.pastel_colors:
-    icon: mdi:auto-fix
-  scene.all_off:
-    icon: mdi:power
+light.arbeitszimmer:
+  friendly_name: Ceiling Office
+light.trad_couchtisch:
+  friendly_name: Couchtisch
+  icon: mdi:lamp
+light.trad_esstisch:
+  friendly_name: Esstisch
+  icon: mdi:lamp
+light.dudero:
+  friendly_name: Stehlampe Düdero
+light.sideboardlampe:
+  icon: mdi:pokeball
+light.projector:
+  friendly_name: Beamer
+  icon: mdi:projector
+switch.bedroom_stereo:
+  friendly_name: Schlafzimmer Radio
+  icon: mdi:speaker
+switch.kitchen_stereo:
+  friendly_name: Küche Radio
+  icon: mdi:speaker
+switch.curtain_balls:
+  icon: mdi:lightbulb-outline
+  friendly_name: Vorhanggirlande
+switch.color_balls:
+  icon: mdi:lightbulb-outline
+switch.star_lights:
+  icon: mdi:lightbulb-outline
+  friendly_name: Sternengirlande
+sensor.feinstaub_pm10:
+  icon: mdi:emoticon-dead
+sensor.feinstaub_pm25:
+  icon: mdi:emoticon-dead
+sensor.dark_sky_icon:
+  hidden: true
+sensor.dark_sky_pressure:
+  hidden: true
+sensor.dark_sky_dew_point:
+  hidden: true
+sensor.sunrise:
+  hidden: true
+sensor.sunset:
+  hidden: true
+light.aalle_lampen:
+  hidden: true
+  homebridge_hidden: true
+light.bcouchtisch:
+  hidden: true
+  homebridge_hidden: true
+light.cesstisch:
+  hidden: true
+  homebridge_hidden: true
+light.dwohnzimmer:
+  hidden: true
+  homebridge_hidden: true
+light.hueaquarium:
+  homebridge_hidden: true
+light.huebadezimmer:
+  homebridge_hidden: true
+light.huearbeitszimmer:
+  homebridge_hidden: true
+light.huewohnzimmer:
+  homebridge_hidden: true
+light.huekueche:
+  homebridge_hidden: true
+light.hueschlafzimmer:
+  homebridge_hidden: true
+light.hueflur:
+  homebridge_hidden: true
+light.hll_hue_lights:
+  homebridge_hidden: true
+switch.hallway_fluxing:
+  homebridge_hidden: true
+binary_sensor.flic_80e4da700a82:
+  friendly_name: Küche Schrank-Knopf
+light.trad_bedroom_ceiling:
+  friendly_name: Schlafzimmer Decke
+light.trad_hall_back:
+  friendly_name: Flurlicht vorn
+light.trad_hall_front:
+  friendly_name: Flurlicht hinten
+light.trad_kitchen_1:
+  friendly_name: Küche Decke
+sensor.living_room_humidity:
+  friendly_name: Wohnzimmer Luftfeuchte
+  icon: mdi:water-percent
+sensor.bedroom_humidity:
+  friendly_name: Schlafzimmer Luftfeuchte (Raw)
+  hidden: true
+  icon: mdi:water-percent
+sensor.bathroom_humidity:
+  friendly_name: Badezimmer Luftfeuchte
+  icon: mdi:water-percent
+sensor.kitchen_humidity:
+  friendly_name: Küche Luftfeuchte
+  icon: mdi:water-percent
+sensor.living_room_temperature:
+  friendly_name: Wohnzimmer Temperatur
+sensor.bedroom_temperature:
+  friendly_name: Schlafzimmer Temperatur
+sensor.bathroom_temperature:
+  friendly_name: Badezimmer Temperatur
+sensor.kitchen_temperature:
+  friendly_name: Küche Temperatur
+sensor.living_room_temperature_2:
+  hidden: true
+sensor.living_room_humidity_2:
+  hidden: true
+group.all_scripts:
+  hidden: true
+scene.romatic:
+  icon: mdi:heart-outline
+scene.bright:
+  icon: mdi:weather-sunny
+scene.warmth:
+  icon: mdi:fire
+scene.movie:
+  icon: mdi:movie
+scene.pastel_colors:
+  icon: mdi:auto-fix
+scene.all_off:
+  icon: mdi:power
+sensor.dark_sky_cloud_coverage:
+  hidden: true
+sensor.dark_sky_wind_speed:
+  hidden: true
+group.presence:
+  friendly_name: Anwesenheit
+sensor.bedroom_humi_stats_mean:
+  friendly_name: Schlafzimmer Luftfeuchte Ø
+  icon: mdi:water-percent
+sensor.trad_hall_sense:
+  friendly_name: Bewegungsmelder Flur
+sensor.trad_remote_coffeetable:
+  friendly_name: Schalter Esstisch
+  icon: mdi:toggle-switch
+sensor.trad_remote_livingroom:
+  friendly_name: Schalter Couchtisch
+  icon: mdi:toggle-switch
+light.all_hue_lights:
+  hidden: true
