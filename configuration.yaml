@@ -172,4 +172,6 @@ switch: !include switch.yaml
 sensor: !include sensor.yaml
 notify: !include notify.yaml
 script: !include_dir_named script
-automation: !include_dir_merge_list automation
+intent_script: !include alexa_intents.yaml
+automation: !include automations.yaml
+

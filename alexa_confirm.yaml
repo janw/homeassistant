@@ -1,0 +1,9 @@
+  >
+  {{[
+  "OK",
+  "Gerne",
+  "Wird gemacht",
+  "Aber klar",
+  "Sofort",
+  "No Problemo"
+  ] | random }}
