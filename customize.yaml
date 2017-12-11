@@ -2,14 +2,15 @@ light.arbeitszimmer:
   friendly_name: Ceiling Office
 light.trad_couchtisch:
   friendly_name: Couchtisch
-  icon: mdi:lamp
+  icon: mdi:ceiling-light
 light.trad_esstisch:
   friendly_name: Esstisch
-  icon: mdi:lamp
+  icon: mdi:ceiling-light
 light.dudero:
-  friendly_name: Stehlampe Düdero
+  friendly_name: Stehlampe
+  icon: mdi:lamp
 light.sideboardlampe:
-  icon: mdi:pokeball
+  icon: mdi:lava-lamp
 light.projector:
   friendly_name: Beamer
   icon: mdi:projector
@@ -139,3 +140,14 @@ sensor.trad_remote_livingroom:
   icon: mdi:toggle-switch
 light.all_hue_lights:
   hidden: true
+group.kitchen_lights:
+  friendly_name: Küche Beleuchtung
+light.weihnachtsstern:
+  icon: mdi:star
+light.sternengirlande:
+  icon: mdi:weather-night
+light.vitrinen:
+  icon: mdi:spotlight-beam
+light.esstisch:
+  friendly_name: Esstisch
+  icon: mdi:ceiling-light
