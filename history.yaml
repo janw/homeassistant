@@ -1,0 +1,38 @@
+exclude:
+  entities:
+    - sensor.time
+    - group.weather
+    - group.connectivity
+    - group.bathroom
+    - group.all_automations
+    - group.outside
+    - sensor.dark_sky_icon
+    - sensor.dark_sky_apparent_temperature
+    - sensor.dark_sky_dew_point
+    - sensor.dark_sky_precip
+    - sensor.dark_sky_precip_probability
+    - sensor.dark_sky_precip_intensity
+    - sensor.dark_sky_wind_speed
+    - sensor.dark_sky_wind_bearing
+    - sensor.dark_sky_pressure
+    - sensor.dark_sky_cloud_coverage
+    - switch.hallway_fluxing
+    - light.huekueche
+    - light.hueflur
+    - light.huearbeitszimmer
+    - light.hueaquarium
+    - light.cesstisch
+    - light.bcouchtisch
+    - light.aalle_lampen
+    - light.dwohnzimmer
+
+  domains:
+    - input_select
+    - automation
+    - updater
+    - http
+    - persistent_notification
+    - script
+    - group
+    - scene
+
