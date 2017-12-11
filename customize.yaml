@@ -151,3 +151,11 @@ light.vitrinen:
 light.esstisch:
   friendly_name: Esstisch
   icon: mdi:ceiling-light
+light.kuechendecke1:
+  friendly_name: Küchendecke 1
+  icon: mdi:ceiling-light
+light.kuechendecke2:
+  friendly_name: Küchendecke 2
+  icon: mdi:ceiling-light
+light.kuche_arbeitslicht:
+  icon: mdi:spotlight-beam

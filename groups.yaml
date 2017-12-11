@@ -89,6 +89,7 @@ kitchen_lights:
     - light.kuechendecke1
     - light.kuechendecke2
 
+
 kitchen:
   name: Kochen
   view: yes
