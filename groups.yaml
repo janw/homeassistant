@@ -27,14 +27,14 @@ Living_Room_Scenes:
 Living_room_lights:
   name: Wohnen Beleuchtung
   entities:
-    - light.trad_couchtisch
-    - light.sideboardlampe
-    - light.dudero
     - light.trad_esstisch
+    - light.trad_couchtisch
     - light.vitrinen
+    - light.dudero
+    - light.sideboardlampe
     - light.regalgirlande
-    - switch.curtain_balls
-    - switch.star_lights
+    - light.sternengirlande
+    - light.weihnachtsstern
 
 Living_room_electronics:
   name: Entertainment
@@ -83,13 +83,19 @@ bathroom_climate:
     - sensor.bathroom_temperature
     - sensor.bathroom_humidity
 
+kitchen_lights:
+  entities:
+    - light.kuche_arbeitslicht
+    - light.kuechendecke1
+    - light.kuechendecke2
+
 kitchen:
   name: Kochen
   view: yes
   entities:
     - group.global_scenes
     - switch.kitchen_stereo
-    - light.kuche_arbeitslicht
+    - group.kitchen_lights
     - group.kitchen_climate
 
 

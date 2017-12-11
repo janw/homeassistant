@@ -1,6 +1,6 @@
 
   - platform: hue
-    host: philips-hue.whaus.xyz
+    host: philips-hue.fritz.box
 
   - platform: mqtt
     name: "Vitrinen"
