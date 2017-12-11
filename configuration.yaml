@@ -38,24 +38,18 @@ zone 2:
 # Enables the Web Frontend
 frontend:
 
-updater:
-  include_used_components: true
-
-
-
 # Enable API password
 http:
   api_password: !secret http_password
-  server_host: 127.0.0.1
   use_x_forwarded_for: true
-  base_url: homeassistant
+  base_url: homeassistant.whaus.xyz
 
+# Notify about pending updates
+updater:
+  include_used_components: true
+
+# Enable the web-UI config editor
 config:
-
-
-# Discover some devices automatically
-#discovery:
-
 
 # Run MQTT for microcontroller-based IoT devices
 mqtt:
