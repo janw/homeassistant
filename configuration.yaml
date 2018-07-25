@@ -111,7 +111,6 @@ scene: !include scene.yaml
 switch: !include switch.yaml
 sensor: !include sensor.yaml
 script: !include_dir_named script
-intent_script: !include alexa_intents.yaml
 automation: !include automations.yaml
 
 # Discover some devices automatically (normally disabled)

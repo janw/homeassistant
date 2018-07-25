@@ -1,9 +1,0 @@
-ActivateSceneIntent:
-  action:
-    service: scene.turn_on
-    data_template:
-      entity_id: scene.{{ scene | replace(" ", "_") }}
-  speech:
-    type: plain
-    text: !include alexa_confirm.yaml
-

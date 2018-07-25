@@ -60,6 +60,7 @@
 
 - id: bedroomtimer
   alias: '15min Bedroom timer'
+  initial_state: 'off'
   trigger:
     platform: state
     entity_id: light.trad_bedroom_ceiling
