@@ -22,17 +22,15 @@ frontend:
     darkblue:
       primary-color: '#05668D'
 
-# Enable API password
 http:
   api_password: !secret http_password
   use_x_forwarded_for: true
-  base_url: homeassistant.whaus.xyz
+  base_url: !secret http_base_url
 
 # Notify about pending updates
 updater:
   include_used_components: true
 
-# Enable the web-UI config editor
 config:
 
 # Run MQTT for microcontroller-based IoT devices
@@ -48,7 +46,8 @@ history: !include history.yaml
 
 # Record all data in external database (currently MariaDB)
 recorder:
-    db_url: !secret db_url
+  db_url: !secret db_url
+  purge_interval: 0
 
 
 # View all events in a logbook, and exclude some useless info
