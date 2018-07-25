@@ -1,5 +1,7 @@
 light.arbeitszimmer:
-  friendly_name: Ceiling Office
+  friendly_name: GrpArbeitszimmer
+  hidden: true
+  icon: mdi:lamp
 light.trad_couchtisch:
   friendly_name: Couchtisch
   icon: mdi:ceiling-light
@@ -76,6 +78,7 @@ binary_sensor.flic_80e4da700a82:
   friendly_name: Küche Schrank-Knopf
 light.trad_bedroom_ceiling:
   friendly_name: Schlafzimmer Decke
+  icon: mdi:ceiling-light
 light.trad_hall_back:
   friendly_name: Flurlicht vorn
 light.trad_hall_front:
@@ -98,7 +101,7 @@ sensor.kitchen_humidity:
 sensor.living_room_temperature:
   friendly_name: Wohnzimmer Temperatur
 sensor.bedroom_temperature:
-  friendly_name: Schlafzimmer Temperatur
+  friendly_name: Fleischtemperatur
 sensor.bathroom_temperature:
   friendly_name: Badezimmer Temperatur
 sensor.kitchen_temperature:
@@ -159,3 +162,61 @@ light.kuechendecke2:
   icon: mdi:ceiling-light
 light.kuche_arbeitslicht:
   icon: mdi:spotlight-beam
+light.hue_bathroom_moodlight:
+  friendly_name: Badezimmer Stimmungslicht
+  icon: mdi:lava-lamp
+group.climate:
+  icon: mdi:thermometer-lines
+light.trad_office_ceiling:
+  friendly_name: Arbeitszimmer Decke
+  icon: mdi:ceiling-light
+switch.printer_plug:
+  friendly_name: Drucker Stromzufuhr
+  icon: mdi:printer
+switch.schreibtisch_elektronik:
+  icon: mdi:flash-circle
+light.aquarium:
+  icon: mdi:heart-box-outline
+light.badezimmer_stimmung:
+  icon: mdi:emoticon
+light.bloblampe:
+  icon: mdi:flask-empty
+light.regalgirlande:
+  friendly_name: Lichterketten
+  icon: mdi:source-fork
+scene.dinner_time:
+  icon: mdi:glass-tulip
+scene.romantic:
+  icon: mdi:home-heart
+switch.office_stereo:
+  friendly_name: Arbeitszimmer Hifi
+  icon: mdi:radio
+script.beamer_on:
+  icon: mdi:filmstrip
+script.beamer_off:
+  icon: mdi:filmstrip-off
+sensor.esstisch_o:
+  hidden: true
+light.huebedroomceiling:
+  friendly_name: Schlafzimmer Decke
+light.huebedroomjan:
+  friendly_name: Nachtlicht Jan
+light.huebedroommiri:
+  friendly_name: Nachtlicht Miri
+sensor.illumination_7811dcb90864:
+  hidden: true
+sensor.indoors_temp_mean:
+  friendly_name: Temperaturmittel Innen
+  icon: mdi:temperature-celsius
+sensor.pressure_158d00022c6ae4:
+  hidden: true
+sensor.pressure_158d00022c9aef:
+  hidden: true
+sensor.temp_in_out_delta:
+  friendly_name: Temperaturdelta Innen-Außen
+sensor.temp_statistics_indoors_mean:
+  hidden: true
+sensor.temp_statistics_outdoors_mean:
+  hidden: true
+sensor.ups_nominal_output_power:
+  hidden: true
