@@ -1,65 +1,59 @@
-
 - id: notifylivingroomhumid
-  alias: "[Notify] Living Room Humidity"
+  alias: '[Notify] Living Room Humidity'
   trigger:
     platform: numeric_state
     entity_id: sensor.living_room_humidity
     above: 70
   action:
-    - service: notify.ios_jans_iphone
-      data:
-        title: "Wohnzimmer"
-        message: "Luftfeuchtigkeit: {{ states.sensor.living_room_humidity.state }} %"
-
+  - service: notify.ios_jans_iphone
+    data:
+      title: Wohnzimmer
+      message: 'Luftfeuchtigkeit: {{ states.sensor.living_room_humidity.state }} %'
 - id: notifykitchenhumid
-  alias: "[Notify] Kitchen Humidity"
+  alias: '[Notify] Kitchen Humidity'
   trigger:
     platform: numeric_state
     entity_id: sensor.kitchen_humidity
     above: 70
   action:
-    - service: notify.ios_jans_iphone
-      data:
-        title: "Küche"
-        message: "Luftfeuchtigkeit: {{ states.sensor.kitchen_humidity.state }} %"
-
+  - service: notify.ios_jans_iphone
+    data:
+      title: Küche
+      message: 'Luftfeuchtigkeit: {{ states.sensor.kitchen_humidity.state }} %'
 - id: notifybedroomhumid
-  alias: "[Notify] Bedroom Humidity"
+  alias: '[Notify] Bedroom Humidity'
   trigger:
     platform: numeric_state
     entity_id: sensor.bedroom_humi_stats_mean
     above: 70
   action:
-    - service: notify.ios_jans_iphone
-      data:
-        title: "Schlafzimmer"
-        message: "Luftfeuchtigkeit: {{ states.sensor.bedroom_humidity.state }} %"
-
+  - service: notify.ios_jans_iphone
+    data:
+      title: Schlafzimmer
+      message: 'Luftfeuchtigkeit: {{ states.sensor.bedroom_humidity.state }} %'
 - id: notifybathroomhumid
-  alias: "[Notify] Bathroom Humidity"
+  alias: '[Notify] Bathroom Humidity'
   trigger:
     platform: numeric_state
     entity_id: sensor.bathroom_humidity
     above: 70
   action:
-    - service: notify.ios_jans_iphone
-      data:
-        title: "Badezimmer"
-        message: "Luftfeuchtigkeit: {{ states.sensor.bathroom_humidity.state }} %"
-
+  - service: notify.ios_jans_iphone
+    data:
+      title: Badezimmer
+      message: 'Luftfeuchtigkeit: {{ states.sensor.bathroom_humidity.state }} %'
 - id: leavinghome
   alias: Leaving Home
   trigger:
     platform: state
     entity_id: group.presence
-    from: 'home'
-    to: 'not_home'
+    from: home
+    to: not_home
   action:
-    - service: homeassistant.turn_on
-      entity_id: scene.all_off
-
+  - service: homeassistant.turn_on
+    entity_id: scene.all_off
 - id: bedroomtimer
-  alias: '15min Bedroom timer'
+  alias: 15min Bedroom timer
   initial_state: 'off'
   trigger:
     platform: state
@@ -67,9 +61,198 @@
     to: 'on'
   condition:
     condition: time
-    after: '08:00:00'
+    after: 08:00:00
   action:
     service: script.turn_on
     entity_id: script.timed_lamp
+- id: aquariumoff
+  alias: Aquarium off
+  trigger:
+    platform: time
+    at: '20:15:00'
+  action:
+    service: light.turn_off
+    entity_id: light.aquarium_sunlight
+    data:
+      transition: 10
+- id: aquariumon
+  alias: Aquarium on
+  trigger:
+    platform: time
+    at: 08:15:00
+  action:
+    service: light.turn_on
+    entity_id: light.aquarium_sunlight
+    data:
+      transition: 600
+- id: disable_beamer_protection
+  alias: Turn off beamer protection flag after 30 minutes
+  trigger:
+    platform: state
+    entity_id: input_boolean.disable_beamer_shutdown
+    to: 'on'
+  action:
+  - delay:
+      minutes: 30
+  - service: input_boolean.turn_off
+    data:
+      entity_id: input_boolean.disable_beamer_shutdown
+- id: toggle_girlanden_light
+  alias: Taster-Einzelklick für Girlanden
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_158d0001bc8edc
+      click_type: single
+  action:
+    service: light.toggle
+    data:
+      entity_id: light.regalgirlande
+- id: toggle_vitrinen_light
+  alias: Taster-Doppelklick für Vitrinenlicht
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_158d0001bc8edc
+      click_type: double
+  action:
+    service: light.toggle
+    data:
+      entity_id: light.vitrinen
+- id: toggle_balcony_light
+  alias: Taster-Halteklick für Balkongirlande
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_158d0001bc8edc
+      click_type: hold
+  action:
+    service: light.toggle
+    data:
+      entity_id: light.onoff_plug_1
+- id: toggle_bedroom_light
+  alias: Taster-Halteklick für Schlafzimmerlicht
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_158d0001f35477
+      click_type: hold
+  action:
+    service: light.toggle
+    data:
+      entity_id: light.huebedroomceiling
+- id: toggle_bedroom_nightlight
+  alias: Taster-Singleclick für Nachttischlampen
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_158d0001f35477
+      click_type: single
+  action:
+    service: light.toggle
+    data:
+      entity_id: light.nachttischlampen
+- id: toggle_bedroom_switch_all_off
+  alias: Taster-Halteklick für Schlaftaster AllOff
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_158d0001f35477
+      click_type: double
+  action:
+  - service: scene.turn_on
+    data:
+      entity_id: scene.all_off
+  - service: light.turn_off
+    data:
+      entity_id: light.bedroom_group
+- id: 'notify_ups_offline'
+  alias: '[Notify] UPS Status not online'
+  trigger:
+  - entity_id: binary_sensor.ups_online_status
+    from: 'on'
+    platform: state
+  condition: []
+  action:
+  - data:
+      message: UPS lost power
+      title: '*Power Failure Alert*'
+    service: notify.jan
+- id: 'notify_ups_online'
+  alias: '[Notify] UPS Status back online'
+  trigger:
+  - entity_id: binary_sensor.ups_online_status
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - data:
+      message: UPS is back online
+      title: '*Power Restored*'
+    service: notify.jan
 
 
+- id: 'notify_open_windows'
+  alias: '[Notify] Open windows in summer'
+
+  trigger:
+    # Trigger by indoors soon becoming warmer than outdoors
+    - above: -0.5
+      entity_id: sensor.temp_in_out_delta
+      platform: numeric_state
+
+  condition:
+    # Ensure the outdoor temperature is falling by our 10-min statistics
+    - condition: numeric_state
+      entity_id: sensor.temp_statistics_outdoors_mean
+      below: 0
+      value_template: '{{ float(state.attributes.average_change) }}'
+
+    # Ensure it's warm enough to suggest opening windows
+    - condition: numeric_state
+      entity_id: sensor.temp_statistics_outdoors_mean
+      above: 18
+
+  action:
+  - data:
+      message: >
+        Es ist draußen nun kühler als in der Wohnung
+        ({{ states.sensor.temp_statistics_indoors_mean.state | float }} °C).
+      title: 'Öffnet die Fenster!'
+    service: notify.all_ios_devices
+
+
+- id: 'notify_close_windows'
+  alias: '[Notify] Close windows in summer'
+
+  trigger:
+    # Trigger by indoors soon becoming *colder* than outdoors
+    - below: -0.5
+      entity_id: sensor.temp_in_out_delta
+      platform: numeric_state
+
+  condition:
+    # Ensure the outdoor temperature is *rising* by our 10-min statistics
+    - condition: numeric_state
+      entity_id: sensor.temp_statistics_outdoors_mean
+      above: 0
+      value_template: '{{ float(state.attributes.average_change) }}'
+
+    # Ensure it's warm enough to suggest this
+    - condition: numeric_state
+      entity_id: sensor.temp_statistics_outdoors_mean
+      above: 10
+
+  action:
+  - data:
+      message: >
+        Es wird draußen nun wärmer als in der Wohnung
+        ({{ states.sensor.temp_statistics_indoors_mean.state | float }} °C).
+      title: 'Schließt die Fenster!'
+    service: notify.all_ios_devices
