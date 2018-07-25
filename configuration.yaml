@@ -15,9 +15,12 @@ zone 2:
   longitude: !secret work_lon
   radius: 250
 
-
-# Enables the Web Frontend
 frontend:
+  themes:
+    bluegrey:
+      primary-color: '#7397A7'
+    darkblue:
+      primary-color: '#05668D'
 
 # Enable API password
 http:
