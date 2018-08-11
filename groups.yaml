@@ -3,12 +3,15 @@
 Wohnen:
   name: Wohnen
   view: yes
+  icon: mdi:home-assistant
   entities:
       - group.global_scenes
-      - group.living_room_climate
       - group.living_room_scenes
       - group.living_room_lights
       - group.living_room_electronics
+      - group.kitchen_lights
+      - group.hallway_lights
+      - group.office_lights
 
 global_scenes:
   name: Globale Szenen
@@ -18,6 +21,7 @@ global_scenes:
 Living_Room_Scenes:
   name: Wohnen Szenen
   entities:
+    - scene.dinner_time
     - scene.romantic
     - scene.bright
     - scene.warmth
@@ -27,34 +31,37 @@ Living_Room_Scenes:
 Living_room_lights:
   name: Wohnen Beleuchtung
   entities:
-    - light.trad_esstisch
+    - light.esstisch_w
+    - light.esstisch_o
     - light.trad_couchtisch
     - light.vitrinen
     - light.dudero
     - light.sideboardlampe
+    - light.bloblampe
     - light.regalgirlande
-    - light.sternengirlande
-    - light.weihnachtsstern
 
 Living_room_electronics:
   name: Entertainment
   entities:
-    - light.projector
+    - script.beamer_on
+    - script.beamer_off
 
 living_room_climate:
   name: Wohnen Klima
   entities:
-    - sensor.living_room_temperature
-    - sensor.living_room_humidity
+    - sensor.temperature_158d00022c9aef
+    - sensor.humidity_158d00022c9aef
 
 bedroom:
   name: Schlafen
   view: yes
+  icon: mdi:sleep
   entities:
-    - group.global_scenes
-    - group.bedroom_climate
-    - light.trad_bedroom_ceiling
+    - group.alarmclock
     - automation.15min_bedroom_timer
+    - light.huebedroomceiling
+    - light.huebedroommiri
+    - light.huebedroomjan
 
 kitchen_climate:
   name: Küche Klima
@@ -65,17 +72,8 @@ kitchen_climate:
 bedroom_climate:
   name: Schlafen Klima
   entities:
-    - sensor.bedroom_temperature
-    - sensor.bedroom_humidity
-    - sensor.bedroom_humi_stats_mean
-
-bathroom:
-  name: Baden
-  view: yes
-  entities:
-    - group.global_scenes
-    - light.hue_bathroom_moodlight
-    - group.bathroom_climate
+    - sensor.temperature_158d00022c6ae4
+    - sensor.humidity_158d00022c6ae4
 
 bathroom_climate:
   name: Baden Klima
@@ -88,25 +86,8 @@ kitchen_lights:
     - light.kuche_arbeitslicht
     - light.kuechendecke1
     - light.kuechendecke2
-
-
-kitchen:
-  name: Kochen
-  view: yes
-  entities:
-    - group.global_scenes
     - switch.kitchen_stereo
-    - group.kitchen_lights
-    - group.kitchen_climate
 
-
-hallway:
-  name: Flur
-  view: yes
-  entities:
-    - group.global_scenes
-    - group.hallway_scenes
-    - group.hallway_lights
 
 hallway_lights:
   name: Flur Beleuchtung
@@ -114,19 +95,11 @@ hallway_lights:
     - light.trad_hall_back
     - light.trad_hall_front
 
-hallway_scenes:
-  name: Flur Szenen
+office_lights:
+  name: Arbeitszimmer
   entities:
-    - scene.hallway_nightlight
-    - scene.hallway_twilight
-    - scene.hallway_daylight
-      
-office:
-  name: Arbeiten
-  view: yes
-  entities:
-    - group.global_scenes
-    - light.arbeitszimmer
+    - light.trad_office
+    - light.onoff_plug_1_2
 
 # Various panels or convenience collections
 
@@ -138,16 +111,29 @@ weather:
     - sensor.dark_sky_humidity
     - sensor.dark_sky_precip_intensity
     - sensor.dark_sky_precip_probability
-    - sensor.feinstaub_pm10
-    - sensor.feinstaub_pm25
-    - sensor.feinstaub_temperature
-    - sensor.feinstaub_humidity
+    - sensor.luftdaten_pm10
+    - sensor.luftdaten_pm25
+    - sensor.luftdaten_temperature
+    - sensor.luftdaten_humidity
 
 
 presence:
   entities:
     - device_tracker.jans_iphone
     - device_tracker.miriams_iphone
+
+climate_stats:
+  name: Klimastatistiken
+  entities:
+    - sensor.temp_in_out_delta
+    - sensor.indoors_temp_mean
+    - sensor.temp_statistics_outdoors_mean
+
+outdoor_climate:
+  name: Außenklima
+  entities:
+    - sensor.dark_sky_temperature
+    - sensor.dark_sky_humidity
 
 climate:
   name: Klima
@@ -158,6 +144,10 @@ climate:
     - group.bedroom_climate
     - group.bathroom_climate
     - group.living_room_climate
+    - group.outdoor_climate
+    - history_graph.temperaturen
+    - group.climate_stats
+    - history_graph.luftfeuchtigkeit
 
 outside:
   name: Outside
@@ -172,11 +162,27 @@ battery_state:
   entities:
     - sensor.trad_hall_sense
     - sensor.trad_remote_coffeetable
-    - sensor.trad_remote_livingroom
+    - sensor.trad_remote_dinnertable
+    - sensor.trad_remote_office
     - sensor.jans_iphone_battery_level
     - sensor.jans_iphone_battery_state
     - sensor.miriams_iphone_battery_level
     - sensor.miriams_iphone_battery_state
+    - sensor.miriams_ipad_battery_level
+    - sensor.miriams_ipad_battery_state
+
+ups_state:
+  name: "USV-Status"
+  entities:
+    - binary_sensor.ups_online_status
+    - sensor.ups_status
+    - sensor.ups_load
+    - sensor.ups_approx_load
+    - sensor.ups_battery
+    - sensor.ups_time_left
+    - sensor.ups_time_on_battery
+    - sensor.ups_transfer_count
+    - sensor.ups_input_voltage
 
 misc:
   view: yes
@@ -187,3 +193,27 @@ misc:
     - group.all_lights
     - group.all_switches
     - group.battery_state
+    - group.ups_state
+    - group.buttons
+    - group.certificate_expiry
+
+alarmclock:
+    name: Wecker
+    entities:
+      - sensor.alarm_time
+      - input_number.alarmhour
+      - input_number.alarmminutes
+      - input_boolean.alarmweekday
+      - input_boolean.alarmweekon
+
+buttons:
+  name: Schalter und Taster
+  entities:
+    - binary_sensor.switch_158d0001bc8edc
+    - binary_sensor.switch_158d0001f35477
+
+certificate_expiry:
+  name: "Let's Encrypt Expiry"
+  entities:
+    - sensor.certificate_expiry_box
+    - sensor.certificate_expiry_www

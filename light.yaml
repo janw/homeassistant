@@ -1,7 +1,4 @@
 
-  - platform: hue
-    host: philips-hue.fritz.box
-
   - platform: mqtt
     name: "Vitrinen"
     state_topic: "living_room/vitrinen/light/status"
