@@ -24,6 +24,8 @@ frontend:
 
 http:
   api_password: !secret http_password
+  server_host: 10.10.9.7
+  server_port: 8123
   use_x_forwarded_for: true
   base_url: !secret http_base_url
 
@@ -35,11 +37,10 @@ config:
 
 # Run MQTT for microcontroller-based IoT devices
 mqtt:
-  broker: 127.0.0.1
+  broker: 10.10.9.7
   port: 1883
   username: homeassistant
   password: !secret http_password
-
 
 # Tracking state changes over time, exclude some useless entities
 history: !include history.yaml
@@ -48,7 +49,6 @@ history: !include history.yaml
 recorder:
   db_url: !secret db_url
   purge_interval: 0
-
 
 # View all events in a logbook, and exclude some useless info
 logbook:
@@ -68,13 +68,25 @@ logbook:
     domains:
       - group
 
+logger:
+  default: warn
 
-# Track the sun
 sun:
-
 
 tradfri:
   host: 10.10.4.36
+  allow_tradfri_groups: false
+
+hue:
+  bridges:
+    - host: 10.10.4.37
+      allow_hue_groups: false
+
+xiaomi_aqara:
+  discovery_retry: 5
+  gateways:
+    - mac: !secret xiaomi_gateway_mac
+      key: !secret xiaomi_gateway_key
 
 ios:
   push:
