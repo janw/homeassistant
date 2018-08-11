@@ -16,85 +16,68 @@
       - humidity
       - pressure
 
+  - platform: luftdaten
+    sensorid: 593
+    monitored_conditions:
+      - P1
+      - P2
+  - platform: luftdaten
+    sensorid: 594
+    monitored_conditions:
+      - temperature
+      - humidity
 
-  - platform: mqtt
-    state_topic: 'rx868probes/1/temperature'
-    name: 'Kitchen Temperature'
-    unit_of_measurement: '°C'
-
-  - platform: mqtt
-    state_topic: 'rx868probes/1/humidity'
-    name: 'Kitchen Humidity'
-    unit_of_measurement: '%'
-
-
-  - platform: mqtt
-    state_topic: 'home/bedroom'
-    name: 'Bedroom Temperature'
-    unit_of_measurement: '°C'
-    value_template: '{{ value_json.temperature }}'
-
-  - platform: mqtt
-    state_topic: 'home/bedroom'
-    name: 'Bedroom Humidity'
-    unit_of_measurement: '%'
-    value_template: '{{ value_json.humidity }}'
-
-
-  - platform: mqtt
-    state_topic: 'rx868probes/0/temperature'
-    name: 'Bathroom Temperature'
-    unit_of_measurement: '°C'
-    
-  - platform: mqtt
-    state_topic: 'rx868probes/0/humidity'
-    name: 'Bathroom Humidity'
-    unit_of_measurement: '%'
-
-    
-    ## LIVING ROOM
-    # =============
-  - platform: mqtt
-    state_topic: 'rx868probes/2/temperature'
-    name: 'Living Room Temperature'
-    unit_of_measurement: '°C'
-
-  - platform: mqtt
-    state_topic: 'rx868probes/2/humidity'
-    name: 'Living Room Humidity'
-    unit_of_measurement: '%'
-  
-
-    ## FEINSTAUB SENSOR
-    # ==================
-  - platform: mqtt
-    state_topic: 'outside/feinstaub'
-    name: 'Feinstaub PM10'
-    unit_of_measurement: 'µg/m³'
-    value_template: '{{ value_json.sensordatavalues[0].value }}'
-
-  - platform: mqtt
-    state_topic: 'outside/feinstaub'
-    name: 'Feinstaub PM2.5'
-    unit_of_measurement: 'µg/m³'
-    value_template: '{{ value_json.sensordatavalues[1].value }}'
-
-  - platform: mqtt
-    state_topic: 'outside/feinstaub'
-    name: 'Feinstaub Temperature'
-    unit_of_measurement: '°C'
-    value_template: '{{ value_json.sensordatavalues[2].value }}'
-
-  - platform: mqtt
-    state_topic: 'outside/feinstaub'
-    name: 'Feinstaub Humidity'
-    unit_of_measurement: '%'
-    value_template: '{{ value_json.sensordatavalues[3].value }}'
+  - platform: min_max
+    name: indoors_temp_mean
+    entity_ids:
+      - sensor.temperature_158d00022c6ae4 # Bedroom
+      - sensor.temperature_158d00022c9aef # Living room
 
   - platform: statistics
-    entity_id: sensor.bedroom_humidity
-    name: 'Bedroom Humi Stats'
-    sampling_size: 10
+    name: "temp_statistics_outdoors"
+    entity_id: sensor.dark_sky_temperature
     max_age:
-      minutes: 30
+      minutes: 10
 
+  - platform: template
+    sensors:
+      alarm_time:
+        friendly_name: 'Weckzeit'
+        value_template: '{{ "%0.02d:%0.02d" | format(states("input_number.alarmhour") | int, states("input_number.alarmminutes") | int) }}'
+
+      temp_in_out_delta:
+        friendly_name: "Temperature Delta Indoors-Outdoors"
+        unit_of_measurement: '°C'
+        value_template: '{{ (state_attr("sensor.indoors_temp_mean", "mean") - state_attr("sensor.temp_statistics_outdoors_mean", "median")) | round(1) }}'
+
+      ups_approx_load:
+        friendly_name: "UPS Approximate Load"
+        unit_of_measurement: 'W'
+        value_template: '{{ (states.sensor.ups_nominal_output_power.state|float * (states.sensor.ups_load.state|float/100)) | round (1) }}'
+
+  - platform: apcupsd
+    resources:
+      - bcharge
+      - linev
+      - loadpct
+      - nompower
+      - numxfers
+      - status
+      - timeleft
+      - tonbatt
+
+  - platform: cert_expiry
+    name: Cert Expiry box.janw.xyz
+    host: box.janw.xyz
+
+  - platform: cert_expiry
+    name: Cert Expiry www.janw.xyz
+    host: www.janw.xyz
+
+  - platform: cert_expiry
+    name: Cert Expiry home.whaus.xyz
+    host: home.whaus.xyz
+
+  - platform: dnsip
+    hostname: home.whaus.xyz
+    resolver: 1.1.1.1
