@@ -1,0 +1,36 @@
+
+# Turn on the projector via power plug and IR, pull the AV receiver from
+# standby, and activate a safety input_boolean to prevent accidental shutdowns
+# for the next 30 minutes (the projector should actually run even longer to
+# protect the lamp).
+
+alias: "Beamer einschalten"
+sequence:
+    # Cancel ev. old timers
+  - service: script.turn_off
+    data:
+      entity_id: script.beamer_off
+    # Turn plug switch on and wait for the beamer to receive power
+  - service: light.turn_on
+    data:
+      entity_id: light.projector
+  - delay:
+      seconds: 5
+    # IR-switch the beamer from standby
+  - service: input_boolean.turn_on
+    data:
+      entity_id: input_boolean.beamer_shutdown_disabled
+  - service: switch.turn_on
+    data:
+      entity_id: switch.beamer_ir
+  - delay:
+      seconds: 5
+    # Turn on the receiver for the ATV scene
+  - service: switch.turn_on
+    data:
+      entity_id: switch.receiver_to_atv
+  - delay:
+      minutes: 30
+  - service: input_boolean.turn_off
+    data:
+      entity_id: input_boolean.beamer_shutdown_disabled

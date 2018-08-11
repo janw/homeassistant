@@ -1,0 +1,14 @@
+temperatures:
+  name: Temperaturen
+  entities:
+    - sensor.temperature_158d00022c9aef # wohnzimmer
+    - sensor.temperature_158d00022c6ae4 # schlafzimmer
+    - sensor.dark_sky_temperature
+    - sensor.temp_in_out_delta
+humidities:
+  name: Luftfeuchtigkeit
+  entities:
+    - sensor.humidity_158d00022c9aef # wohnzimmer
+    - sensor.humidity_158d00022c6ae4 # schlafzimmer
+    - sensor.dark_sky_humidity
+

@@ -1,0 +1,9 @@
+  alarmweekday:
+    name: Nur unter der Woche
+    initial: on
+    icon: mdi:calendar
+  alarmweekon:
+    name: Aktiv
+    initial: on
+  beamer_shutdown_disabled:
+    initial: off

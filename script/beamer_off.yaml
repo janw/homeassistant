@@ -1,0 +1,33 @@
+
+alias: "Beamer ausschalten"
+sequence:
+  - condition: state
+    entity_id: 'input_boolean.beamer_shutdown_disabled'
+    state: 'off'
+  - service: script.turn_off
+    data:
+      entity_id: script.beamer_on
+  - service: switch.turn_off
+    data:
+      entity_id: switch.beamer_ir
+  - delay:
+      seconds: 2
+  - service: switch.turn_off
+    data:
+      entity_id: switch.beamer_ir
+  - delay:
+      seconds: 2
+    # Switch receiver into ATV scene to make sure it's currently on
+  - service: switch.turn_on
+    data:
+      entity_id: switch.receiver_to_atv
+  - delay:
+      seconds: 2
+  - service: switch.turn_on
+    data:
+      entity_id: switch.receiver_standby
+  - delay:
+      minutes: 2
+  - service: light.turn_off
+    data:
+      entity_id: 'light.projector'
