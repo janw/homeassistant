@@ -104,6 +104,7 @@ office_lights:
 # Various panels or convenience collections
 
 weather:
+  name: Wetter
   entities:
     - sun.sun
     - sensor.dark_sky_summary
@@ -215,5 +216,6 @@ buttons:
 certificate_expiry:
   name: "Let's Encrypt Expiry"
   entities:
-    - sensor.certificate_expiry_box
-    - sensor.certificate_expiry_www
+    - sensor.cert_expiry_boxjanwxyz
+    - sensor.cert_expiry_homewhausxyz
+    - sensor.cert_expiry_wwwjanwxyz

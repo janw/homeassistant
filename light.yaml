@@ -10,3 +10,25 @@
     payload_off: "OFF"
     optimistic: false
 
+  - platform: mqtt_json
+    name: "Aquarium Sunlight"
+    state_topic: "living_room/aquarium"
+    command_topic: "living_room/aquarium/set" 
+    brightness: true
+    effect: true
+    effect_list: [flash]
+    optimistic: false
+    qos: 0
+
+  - platform: group
+    name: Nachttischlampen
+    entities:
+      - light.huebedroommiri
+      - light.huebedroomjan
+  - platform: group
+    name: Bedroom Group
+    entities:
+      - light.huebedroommiri
+      - light.huebedroomjan
+      - light.huebedroomceiling
+

@@ -1,6 +1,6 @@
 # Scenes
 
-- name: Warmth 
+- name: Wärme
   entities:
     light.trad_couchtisch:
       state: on
@@ -22,69 +22,112 @@
       state: on
       brightness: 40
     light.regalgirlande: on
-    switch.curtain_balls: on
-    switch.star_lights: on
+    light.sternengirlande: on
+    light.weihnachtsstern: on
 
 - name: Romantic
   entities:
-    light.trad_couchtisch: off
+    light.vitrinen:
+      state: on
+      brightness: 17
+    light.bloblampe:
+      state: on
+      brightness: 81
+      color_temp: 153
+    light.regalgirlande:
+      state: on
     light.dudero:
       state: on
-      rgb_color: [255,100,100]
       brightness: 100
+      color_temp: 500
     light.sideboardlampe:
       state: on
-      rgb_color: [255,100,100]
-      brightness: 80
-    light.trad_esstisch: off
-    light.regalgirlande: on
-    switch.star_lights: on
-    switch.curtain_balls: on
+      rgb_color: [252, 142, 0]
+      brightness: 83
+    light.trad_couchtisch:
+      state: on
+      brightness: 14
+      color_temp: 457
+    light.trad_esstisch:
+      state: off
 
 - name: Bright
   entities:
-    light.trad_couchtisch:
-      state: on
-      color_temp: 370
-      brightness: 254
-    light.sideboardlampe:
-      state: on
-      color_temp: 370
-      brightness: 254
-    light.dudero:
-      state: on
-      color_temp: 370
-      brightness: 254
-    light.trad_esstisch:
-      state: on
-      color_temp: 370
-      brightness: 254
     light.vitrinen:
       state: on
       brightness: 254
-    light.regalgirlande: off
-    switch.curtain_balls: off
+    light.bloblampe:
+      state: on
+      brightness: 254
+      color_temp: 405
+    light.regalgirlande:
+      state: on
+    light.dudero:
+      state: on
+      brightness: 254
+      color_temp: 436
+    light.sideboardlampe:
+      state: on
+      brightness: 254
+    light.trad_couchtisch:
+      state: on
+      brightness: 254
+      color_temp: 369
+    light.trad_esstisch:
+      state: off
 
 - name: Focus
   entities:
-    light.trad_couchtisch:
+    light.vitrinen:
+      state: off
+    light.bloblampe:
       state: on
-      color_temp: 250
-      brightness: 200
-    light.sideboardlampe:
-      state: on
-      color_temp: 250
-      brightness: 169
+      brightness: 69
+      color_temp: 159
+    light.regalgirlande:
+      state: off
     light.dudero:
       state: on
-      color_temp: 250
-      brightness: 169
+      brightness: 254
+      color_temp: 154
+    light.sideboardlampe:
+      state: on
+      brightness: 254
+    light.trad_couchtisch:
+      state: on
+      brightness: 245
+      color_temp: 249
     light.trad_esstisch:
       state: on
-      color_temp: 250
-      brightness: 200
-    switch.curtain_balls: off
-    light.regalgirlande: off
+      brightness: 248
+      color_temp: 249
+
+- name: Dinner Time
+  entities:
+    light.vitrinen:
+      state: on
+      brightness: 42
+    light.trad_esstisch:
+      state: on
+      brightness: 215
+      color_temp: 369
+    light.trad_couchtisch:
+      state: on
+      brightness: 48
+      color_temp: 369
+    light.regalgirlande:
+      state: on
+    light.sideboardlampe:
+      state: on
+      brightness: 58
+    light.bloblampe:
+      state: on
+      brightness: 69
+      color_temp: 369
+    light.dudero:
+      state: on
+      brightness: 54
+      color_temp: 369
 
 
 - name: Movie
@@ -97,21 +140,15 @@
     light.projector: on
     light.regalgirlande: on
     light.vitrinen: off
-    switch.curtain_balls: off
 
 - name: All Off
   entities:
       group.living_room_lights: off
+      group.living_room_electronics: off
       group.kitchen: off
-      light.arbeitszimmer: off
-      light.office_light_rgb: off
-      light.schlafradio: off
-      light.schlazi_decke: off
-      light.projector: off
-      switch.bedroom_stereo: off
-      switch.christmas_star: off
-      switch.kitchen_stereo: off
-      switch.living_room_stereo: off
+      switch.schreibtisch_elektronik: off
+      light.trad_office_ceiling: off
+      light.trad_bedroom_ceiling: off
 
 - name: Bedroom Off
   entities:
