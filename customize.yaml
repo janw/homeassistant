@@ -217,6 +217,18 @@ sensor.temp_in_out_delta:
 sensor.temp_statistics_indoors_mean:
   hidden: true
 sensor.temp_statistics_outdoors_mean:
-  hidden: true
+  friendly_name: Temperaturstatistik Außen
+  icon: mdi:temperature-celsius
 sensor.ups_nominal_output_power:
   hidden: true
+light.gateway_light_7811dcb90864:
+  hidden: true
+group.outdoor_climate:
+  friendly_name: "\U0001F30D Außenklima"
+group.bedroom_climate:
+  friendly_name: "\U0001F6CC Klima"
+group.living_room_climate:
+  friendly_name: "\U0001F6CB Klima"
+light.onoff_plug_1_2:
+  effect_list: []
+  icon: mdi:radio
