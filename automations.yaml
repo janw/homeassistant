@@ -172,87 +172,61 @@
   - service: light.turn_off
     data:
       entity_id: light.bedroom_group
-- id: 'notify_ups_offline'
-  alias: '[Notify] UPS Status not online'
+- id: notify_ups_offline
+  alias: '[Notify] UPS Status changed'
   trigger:
-  - entity_id: binary_sensor.ups_online_status
-    from: 'on'
+  - entity_id: sensor.ups_status
     platform: state
   condition: []
   action:
-  - data:
-      message: UPS lost power
-      title: '*Power Failure Alert*'
-    service: notify.jan
-- id: 'notify_ups_online'
-  alias: '[Notify] UPS Status back online'
-  trigger:
-  - entity_id: binary_sensor.ups_online_status
-    platform: state
-    to: 'on'
-  condition: []
-  action:
-  - data:
-      message: UPS is back online
-      title: '*Power Restored*'
-    service: notify.jan
+  - service: notify.jan
+    data_template:
+      message: >
+        UPS status changed from {{ trigger.from_state.state }} to {{ trigger.to_state.state }}
 
+      title: "\U0001F50C⚡️ *Uninterruptable Power Alert*"
 
-- id: 'notify_open_windows'
+- id: notify_open_windows
   alias: '[Notify] Open windows in summer'
-
   trigger:
-    # Trigger by indoors soon becoming warmer than outdoors
-    - above: -0.5
-      entity_id: sensor.temp_in_out_delta
-      platform: numeric_state
-
+  - above: -0.5
+    entity_id: sensor.temp_in_out_delta
+    platform: numeric_state
   condition:
-    # Ensure the outdoor temperature is falling by our 10-min statistics
-    - condition: numeric_state
-      entity_id: sensor.temp_statistics_outdoors_mean
-      below: 0
-      value_template: '{{ float(state.attributes.average_change) }}'
-
-    # Ensure it's warm enough to suggest opening windows
-    - condition: numeric_state
-      entity_id: sensor.temp_statistics_outdoors_mean
-      above: 18
-
+  - below: '0'
+    condition: numeric_state
+    entity_id: sensor.temp_statistics_outdoors_mean
+    value_template: '{{ float(state.attributes.average_change) }}'
+  - above: '18'
+    condition: numeric_state
+    entity_id: sensor.temp_statistics_outdoors_mean
   action:
   - data:
-      message: >
-        Es ist draußen nun kühler als in der Wohnung
-        ({{ states.sensor.temp_statistics_indoors_mean.state | float }} °C).
-      title: 'Öffnet die Fenster!'
-    service: notify.all_ios_devices
+      message: 'Es ist draußen nun kühler als in der Wohnung ({{ states.sensor.temp_statistics_indoors_mean.state
+        | float }} °C).
 
-
-- id: 'notify_close_windows'
+        '
+      title: "\U0001F3E0\U0001F646 *Öffnet die Fenster!*"
+    service: notify.homegroup
+- id: notify_close_windows
   alias: '[Notify] Close windows in summer'
-
   trigger:
-    # Trigger by indoors soon becoming *colder* than outdoors
-    - below: -0.5
-      entity_id: sensor.temp_in_out_delta
-      platform: numeric_state
-
+  - below: '0.5'
+    entity_id: sensor.temp_in_out_delta
+    platform: numeric_state
   condition:
-    # Ensure the outdoor temperature is *rising* by our 10-min statistics
-    - condition: numeric_state
-      entity_id: sensor.temp_statistics_outdoors_mean
-      above: 0
-      value_template: '{{ float(state.attributes.average_change) }}'
-
-    # Ensure it's warm enough to suggest this
-    - condition: numeric_state
-      entity_id: sensor.temp_statistics_outdoors_mean
-      above: 10
-
+  - above: '0'
+    condition: numeric_state
+    entity_id: sensor.temp_statistics_outdoors_mean
+    value_template: '{{ float(state.attributes.average_change) }}'
+  - above: '10'
+    condition: numeric_state
+    entity_id: sensor.temp_statistics_outdoors_mean
   action:
   - data:
-      message: >
-        Es wird draußen nun wärmer als in der Wohnung
-        ({{ states.sensor.temp_statistics_indoors_mean.state | float }} °C).
-      title: 'Schließt die Fenster!'
-    service: notify.all_ios_devices
+      message: 'Es wird draußen nun wärmer als in der Wohnung ({{ states.sensor.temp_statistics_indoors_mean.state
+        | float }} °C).
+
+        '
+      title: "\U0001F3E0\U0001F645 *Schließt die Fenster!*"
+    service: notify.homegroup
