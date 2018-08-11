@@ -1,42 +1,18 @@
-# Switches (mostly based on 433MHz/Pilight)
 
-# - platform: pilight
+# - platform: broadlink
+#   host: 10.10.4.11
+#   mac: '34:EA:34:58:C4:88'
+#   type: rm_mini
+#   friendly_name: 'IR switcher'
 #   switches:
-# 
-#     Curtain Balls:
-#       on_code:
-#         protocol: brennenstuhl
-#         systemcode: 31
-#         unitcode: 2
-#         'on': 1
-#       off_code:
-#         protocol: brennenstuhl
-#         systemcode: 31
-#         unitcode: 2
-#         'off': 1
-# 
-#     kitchen_stereo:
-#       on_code:
-#         protocol: brennenstuhl
-#         systemcode: 30
-#         unitcode: 4
-#         'on': 1
-#       off_code:
-#         protocol: brennenstuhl
-#         systemcode: 30
-#         unitcode: 4
-#         'off': 1
-# 
-#     Star Lights:
-#       on_code:
-#           protocol: kaku_switch
-#           id: 64048982
-#           unit: 15
-#           'on': 1
-#       off_code:
-#           protocol: kaku_switch
-#           id: 64048982
-#           unit: 15
-#           state: off
-#           'off': 1
+#     projector_ir:
+#       friendly_name: 'Beamer IR'
+#       command_on: 'JgD4AQABKpMVERQRFBEVEBURFBEVEBURFBEUERURFBEUNhU2FBEVERQ2FTYUNhU2FBEVEBU2FRAVERQRFRAVERQ2FTYUERU1FQAH8gABK5MVEBURFBEVEBURFBEUERURFBEUERUQFREUNhU2FBEVERQ2FDYVNhU2FBEUERU2FBEVEBURFBEVEBU2FDYVERQ2FQAF5wABK5MVEBURFBEVEBURFBEUERURFBEUERURFBEUNhU2FBEVERQ2FTYUNhU2FBEVEBU2FBEVERQRFBEVERQ2FTYUERQ2FQAF5wABLJIVERQRFRAVERQRFBEVERQRFBEVEBURFBEVNRU2FRAVERQ2FTYUNhU2FRAVERQ2FRAVERQRFRAVERQ2FTYVEBU1FQAF5wABLJIVERQRFBEVEBURFBEVEBURFBEVEBURFBEVNRU2FRAVERQ2FTYUNhU2FRAVERQ2FREUERQRFREUERQ2FTYVEBU2FAAF6AABK5MUERUQFREUERUQFREUERUQFREUERUQFREUNhU2FBEVEBU2FDYVNhU1FREVEBU2FBEVEBURFBEVEBU2FDYVERQ2FQAF5wABLJIVERQRFRAVERQRFBEVERQRFBEVEBURFBEVNhQ2FRAVERU1FTYVNRU2FRAVERQ2FRAVERQRFRAVERQ2FTYUERU1FQANBQ=='
+#       command_off: 'JgAgAQABK5MUERUQFREUERQRFREUERQRFRAVERQRFBEUNxM3FRETEhQRFDcUNhQ3FBEUEhM3FBITNxQRFBITEhM4EzcUERQ3EwAF6QABKZQTExITEhMTExITEhMTExITEhMTEhMTEhMTOBI4ExITExITEzgSOBM4EhMTEhM4EhMTOBITEhMTExI4EzgSExI4EwAF6gABKJUTExITEhMTEhMTEhMTEhMTEhMSExMTEhMSORI4EhMTExITEjkSOBM4EhMSExM4EhMTOBITEhMTExI4EzgSExI4EwAF6gABKJUTEhMTEhMSExMTEhMSExMTEhMSExMTEhMSOBM4EhMTEhMTEjgTOBI4ExMSExI5EhMSOBMTEhMSExM4EjgTExI4EgANBQAAAAAAAAAA'
 
+#     yamaha_atv:
+#       friendly_name: 'Receiver to ATV'
+#       command_on: 'JgBoAAABJZMSEhI3EhMSNxI3EjcTNxISEjcTEhI3EhMSEhITEhMSNxISEhMSExISEhMSEhITEhITNxI3EjcSNxI3EjcTNxISEgAFOAABJEoSAAw4AAEkShMADDgAASVJEwAMNwABJUkTAA0F'
+#     yamaha_standby:
+#       friendly_name: 'Receiver Standby'
+#       command_on: 'JgBgAAABJJMSEhM3EjcSNxI3EjcTNxISEjcSExISExISExISEhMSNxITEjcSEhM3EhISNxITEhMSNxISEjcTEhI3EhMSNxI3EgAFEwABJkgSAAw5AAEmSBQADDYAASRKEgANBQAAAAAAAAAA'

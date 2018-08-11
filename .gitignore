@@ -13,3 +13,4 @@ tradfri.conf
 .uuid
 www/miri.jpg
 .tradfri_psk.conf
+.storage/core.config_entries

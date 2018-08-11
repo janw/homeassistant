@@ -1,0 +1,185 @@
+light.huebedroomjan:
+  config_entry_id: 965d0b5b2d8f4514a0e3845860b7da86
+  name:
+  platform: hue
+  unique_id: 7c:b0:3e:aa:00:a6:f4:f5-03
+light.kuche_arbeitslicht:
+  config_entry_id: 965d0b5b2d8f4514a0e3845860b7da86
+  name:
+  platform: hue
+  unique_id: 7c:b0:3e:aa:00:a3:6b:a8-03
+light.projector:
+  config_entry_id: 965d0b5b2d8f4514a0e3845860b7da86
+  name:
+  platform: hue
+  unique_id: 84:18:26:00:00:0b:5c:eb-03
+light.kuechendecke2:
+  config_entry_id: 965d0b5b2d8f4514a0e3845860b7da86
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:00:de:19:f1-0b
+light.sideboardlampe:
+  config_entry_id: 965d0b5b2d8f4514a0e3845860b7da86
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:00:1f:6f:0f-0b
+light.huebedroomceiling:
+  config_entry_id: 965d0b5b2d8f4514a0e3845860b7da86
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:03:48:1c:6a-0b
+light.bloblampe:
+  config_entry_id: 965d0b5b2d8f4514a0e3845860b7da86
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:03:40:db:51-0b
+light.dudero:
+  config_entry_id: 965d0b5b2d8f4514a0e3845860b7da86
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:00:e3:a8:78-0b
+light.huebedroommiri:
+  config_entry_id: 965d0b5b2d8f4514a0e3845860b7da86
+  name:
+  platform: hue
+  unique_id: 7c:b0:3e:aa:00:a7:0a:22-03
+light.kuechendecke1:
+  config_entry_id: 965d0b5b2d8f4514a0e3845860b7da86
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:00:de:03:a8-0b
+light.regalgirlande:
+  config_entry_id: 965d0b5b2d8f4514a0e3845860b7da86
+  name:
+  platform: hue
+  unique_id: 84:18:26:00:00:0b:6e:e2-03
+light.bad_stimmungslicht:
+  config_entry_id: 965d0b5b2d8f4514a0e3845860b7da86
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:03:40:db:4a-0b
+sensor.miriams_iphone_battery_level:
+  config_entry_id:
+  name:
+  platform: ios
+  unique_id: level_miriams_iphone
+sensor.jans_iphone_battery_state:
+  config_entry_id:
+  name:
+  platform: ios
+  unique_id: state_jans_iphone
+sensor.jans_iphone_battery_level:
+  config_entry_id:
+  name:
+  platform: ios
+  unique_id: level_jans_iphone
+sensor.miriams_ipad_battery_level:
+  config_entry_id:
+  name:
+  platform: ios
+  unique_id: level_miriams_ipad
+sensor.miriams_ipad_battery_state:
+  config_entry_id:
+  name:
+  platform: ios
+  unique_id: state_miriams_ipad
+sensor.miriams_iphone_battery_state:
+  config_entry_id:
+  name:
+  platform: ios
+  unique_id: state_miriams_iphone
+light.trad_bath_tub:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e114d5204400121-65542
+light.trad_hall_front:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e114d5204400121-65538
+light.trad_bath_sink:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e114d5204400121-65540
+light.trad_office:
+  config_entry_id:
+  name: Arbeitszimmer Decke
+  platform: tradfri
+  unique_id: light-7e114d5204400121-65537
+light.trad_hall_back:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e114d5204400121-65539
+light.esstisch_w:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e114d5204400121-65547
+light.trad_couchtisch:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e114d5204400121-65544
+light.onoff_plug_1:
+  config_entry_id: 965d0b5b2d8f4514a0e3845860b7da86
+  name:
+  platform: hue
+  unique_id: 84:18:26:00:00:0a:98:be-03
+sensor.temperature_158d00022c6ae4:
+  config_entry_id:
+  name: Schlafzimmer Temperatur
+  platform: xiaomi_aqara
+  unique_id: temperature158d00022c6ae4
+sensor.humidity_158d00022c6ae4:
+  config_entry_id:
+  name: Schlafzimmer Luftfeuchte
+  platform: xiaomi_aqara
+  unique_id: humidity158d00022c6ae4
+sensor.pressure_158d00022c6ae4:
+  config_entry_id:
+  name: Schlafzimmer Luftdruck
+  platform: xiaomi_aqara
+  unique_id: pressure158d00022c6ae4
+sensor.illumination_7811dcb90864:
+  config_entry_id:
+  name: Helligkeit Xiaomi Bridge
+  platform: xiaomi_aqara
+  unique_id: illumination7811dcb90864
+light.gateway_light_7811dcb90864:
+  config_entry_id:
+  name:
+  platform: xiaomi_aqara
+  unique_id: rgb7811dcb90864
+binary_sensor.switch_158d0001bc8edc:
+  config_entry_id:
+  name: Wohnzimmer Multifunktion
+  platform: xiaomi_aqara
+  unique_id: status158d0001bc8edc
+sensor.humidity_158d00022c9aef:
+  config_entry_id:
+  name: Wohnzimmer Luftfeuchte
+  platform: xiaomi_aqara
+  unique_id: humidity158d00022c9aef
+sensor.temperature_158d00022c9aef:
+  config_entry_id:
+  name: Wohnzimmer Temperatur
+  platform: xiaomi_aqara
+  unique_id: temperature158d00022c9aef
+sensor.pressure_158d00022c9aef:
+  config_entry_id:
+  name: Wohnzimmer Luftdruck
+  platform: xiaomi_aqara
+  unique_id: pressure158d00022c9aef
+binary_sensor.switch_158d0001f35477:
+  config_entry_id:
+  name: Schlafzimmer Bett
+  platform: xiaomi_aqara
+  unique_id: status158d0001f35477
+light.onoff_plug_1_2:
+  config_entry_id: 965d0b5b2d8f4514a0e3845860b7da86
+  name: Arbeitszimmer HiFi
+  platform: hue
+  unique_id: 7c:b0:3e:aa:00:a6:f6:c0-03
