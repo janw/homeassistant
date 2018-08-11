@@ -1,0 +1,71 @@
+title: Zu Hause
+# Optional background for all views. Check https://developer.mozilla.org/en-US/docs/Web/CSS/background for more examples.
+# background: center / cover no-repeat url("/background.png") fixed
+# Exclude entities from "Unused entities" view
+excluded_entities:
+  - weblink.router
+views:
+    # View tab title.
+  - icon: mdi:home-assistant
+    title: Home
+    # Optional unique id for direct access /lovelace/${id}
+    id: home
+    # Optional background (overwrites the global background).
+    background: 'radial-gradient(white, #7397A7)'
+    # Each view can have a different theme applied. Theme should be defined in the frontend.
+    theme: dark-mode
+    # The cards to show on this view.
+    cards:
+        # The filter card will filter entities for their state
+      - type: entity-filter
+        entities:
+          - device_tracker.jans_iphone
+          - device_tracker.miriams_iphone
+          - device_tracker.miriams_ipad
+        state_filter:
+          - 'home'
+        card:
+          type: glance
+          title: Gerade zu Hause
+
+        # The picture entity card will represent an entity with a picture
+      - type: picture-entity
+        image: https://www.home-assistant.io/images/default-social.png
+        entity: light.bed_light
+
+    # Specify a tab icon if you want the view tab to be an icon.
+  - icon: mdi:thermometer-lines
+    # Title of the view. Will be used as the tooltip for tab icon
+    title: Klima
+    id: climate
+    cards:
+        # Entities card will take a list of entities and show their state.
+      - type: glance
+        # Title of the entities card
+        title: Temperaturen
+        # The entities here will be shown in the same order as specified.
+        # Each entry is an entity ID or a map with extra options.
+        column_width: '25%'
+        entities:
+          - entity: sensor.temperature_158d00022c9aef
+            name: Wohnen
+          - entity: sensor.temperature_158d00022c6ae4
+            name: Schlafen
+          - entity: sensor.dark_sky_temperature
+            name: Draußen
+          - entity: sensor.temp_in_out_delta
+            name: Differenz
+      - type: vertical-stack
+        cards:
+          - type: history-graph
+            title: Temperaturen
+            entities:
+              - sensor.temperature_158d00022c9aef
+              - sensor.temperature_158d00022c6ae4
+              - sensor.dark_sky_temperature
+          - type: history-graph
+            title: Luftfeuchtigkeit
+            entities:
+              - sensor.humidity_158d00022c9aef
+              - sensor.humidity_158d00022c6ae4
+              - sensor.dark_sky_humidity
