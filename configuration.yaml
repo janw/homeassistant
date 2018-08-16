@@ -24,7 +24,6 @@ frontend:
 
 http:
   api_password: !secret http_password
-  server_host: 10.10.9.7
   server_port: 8123
   use_x_forwarded_for: true
   base_url: !secret http_base_url
@@ -118,6 +117,7 @@ notify:
       # - service: ios_iphone_two
 
 apcupsd:
+  host: 10.10.10.1
 binary_sensor:
   - platform: apcupsd
 

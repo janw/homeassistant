@@ -232,3 +232,6 @@ group.living_room_climate:
 light.onoff_plug_1_2:
   effect_list: []
   icon: mdi:radio
+binary_sensor.boxjanwxyz:
+  friendly_name: box.janw.xyz (E-Mail, Web)
+  icon: mdi:server-network

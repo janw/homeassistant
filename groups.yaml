@@ -214,8 +214,10 @@ buttons:
     - binary_sensor.switch_158d0001f35477
 
 certificate_expiry:
-  name: "Let's Encrypt Expiry"
+  name: "Certificates and IPs"
   entities:
+    - sensor.homewhausxyz
+    - binary_sensor.boxjanwxyz
     - sensor.cert_expiry_boxjanwxyz
     - sensor.cert_expiry_homewhausxyz
     - sensor.cert_expiry_wwwjanwxyz
